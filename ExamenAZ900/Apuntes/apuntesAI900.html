@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes AI-900 • Certification Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-effect {
+            background: rgba(15, 23, 42, 0.8);
+        }
+        
+        .note-card {
+            transition: all 0.2s ease;
+        }
+        .note-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .prose-custom {
+            line-height: 1.7;
+        }
+        .prose-custom p { margin-bottom: 1rem; }
+        .prose-custom ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+        .prose-custom li { margin-bottom: 0.5rem; }
+        .prose-custom strong { font-weight: 600; color: #0284c7; }
+        .dark .prose-custom strong { color: #38bdf8; }
+
+        /* Custom Scrollbar for TOC */
+        .toc-scroll::-webkit-scrollbar { width: 4px; }
+        .toc-scroll::-webkit-scrollbar-track { background: transparent; }
+        .toc-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+        .dark .toc-scroll::-webkit-scrollbar-thumb { background: #475569; }
+
+        .active-toc {
+            background-color: #f0f9ff;
+            color: #0284c7;
+            border-right: 3px solid #0284c7;
+        }
+        .dark .active-toc {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border-right: 3px solid #38bdf8;
+        }
+    </style>
+</head>
+<body class="h-full bg-slate-50 text-slate-900 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-200">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-4">
+                    <a href="../index.html" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-600 transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-[#0078d4]/10 text-[#0078d4] flex items-center justify-center text-lg">
+                            <i class="fa-brands fa-microsoft"></i>
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-sm md:text-base leading-tight">AI-900: Azure AI Fundamentals</h1>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Guía de Estudio Completa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <div class="hidden md:flex items-center gap-2 text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
+                        <span id="progressText">0% Completado</span>
+                    </div>
+                    <button id="themeToggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            
+            <!-- Sidebar (TOC) -->
+            <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-24 self-start max-h-[calc(100vh-8rem)] overflow-y-auto toc-scroll pr-4">
+                <div class="mb-4">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Contenido</h3>
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input type="text" id="searchInput" placeholder="Filtrar temas..." class="w-full pl-8 pr-3 py-1.5 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                </div>
+                <nav id="toc" class="space-y-1 border-l border-slate-200 dark:border-slate-700">
+                    <!-- TOC items injected here -->
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="flex-1 min-w-0">
+                <!-- Hero / Intro -->
+                <div class="mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Apuntes de Estudio AI-900</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+                        Guía exhaustiva cubriendo conceptos de IA, Machine Learning, Computer Vision, NLP y Principios de IA Responsable en Azure. Basado en todas las preguntas del examen.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <i class="fa-solid fa-print"></i> Imprimir PDF
+                        </button>
+                        <button id="markAllBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <i class="fa-regular fa-check-circle"></i> Marcar todo leído
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notes Container -->
+                <div id="notesContainer" class="space-y-16">
+                    <!-- Content injected here -->
+                </div>
+                
+                <!-- Footer -->
+                <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-sm text-slate-500">
+                    <p>Última actualización: 2025</p>
+                    <a href="#" class="hover:text-brand-600">Reportar un problema</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+
+    <script>
+        // Data & State - AI-900 Full Content
+        const SECTIONS = [
+            {
+                id: 'responsible-ai',
+                title: 'Principios de IA Responsable',
+                icon: 'fa-scale-balanced',
+                items: [
+                    {
+                        title: 'Los 6 Principios Fundamentales',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Microsoft define 6 principios éticos para el desarrollo de IA:</p>
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li><strong>Fairness (Justicia):</strong> La IA debe tratar a todas las personas de manera justa.
+                                        <br><em class="text-slate-500">Ejemplo: Un sistema de aprobación de préstamos no debe discriminar por género o etnia. Si un modelo facial falla con ciertos grupos étnicos, viola este principio.</em>
+                                    </li>
+                                    <li><strong>Reliability & Safety (Fiabilidad y Seguridad):</strong> La IA debe funcionar de forma fiable y segura, incluso en condiciones imprevistas.
+                                        <br><em class="text-slate-500">Ejemplo: Un vehículo autónomo debe reaccionar de forma segura ante un obstáculo inesperado.</em>
+                                    </li>
+                                    <li><strong>Privacy & Security (Privacidad y Seguridad):</strong> Los datos deben estar protegidos.
+                                        <br><em class="text-slate-500">Ejemplo: Proteger información personal médica o financiera usada para entrenar modelos.</em>
+                                    </li>
+                                    <li><strong>Inclusiveness (Inclusión):</strong> La IA debe empoderar a todos y ser accesible.
+                                        <br><em class="text-slate-500">Ejemplo: Herramientas de lectura de pantalla, subtítulos automáticos para personas con discapacidad auditiva.</em>
+                                    </li>
+                                    <li><strong>Transparency (Transparencia):</strong> Los sistemas de IA deben ser comprensibles. Los usuarios deben saber que interactúan con una IA.
+                                        <br><em class="text-slate-500">Ejemplo: Proporcionar documentación sobre cómo funciona un modelo (explicabilidad). Informar al usuario que está hablando con un bot.</em>
+                                    </li>
+                                    <li><strong>Accountability (Responsabilidad):</strong> Las personas deben ser responsables de los sistemas de IA.
+                                        <br><em class="text-slate-500">Ejemplo: Definir claramente quién es responsable del funcionamiento y gobernanza del sistema.</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'machine-learning',
+                title: 'Machine Learning (ML)',
+                icon: 'fa-brain',
+                items: [
+                    {
+                        title: 'Tipos de Modelos de ML',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li><strong>Regresión (Regression):</strong> Predice un <strong>valor numérico continuo</strong>.
+                                        <br><em class="text-slate-500">Ejemplos: Predecir el precio de una casa, la temperatura futura, número de alquileres de coches, precios de acciones.</em>
+                                    </li>
+                                    <li><strong>Clasificación (Classification):</strong> Predice una <strong>categoría o etiqueta</strong>.
+                                        <br><em class="text-slate-500">Ejemplos: ¿Es spam o no? (Binaria). ¿Es un perro, gato o pájaro? (Multiclase). ¿Aprobará el crédito? (Sí/No).</em>
+                                    </li>
+                                    <li><strong>Clustering (Agrupamiento):</strong> Agrupa datos similares <strong>sin etiquetas previas</strong> (No supervisado).
+                                        <br><em class="text-slate-500">Ejemplos: Segmentación de clientes por hábitos de compra, agrupar documentos similares, agrupar pacientes por síntomas.</em>
+                                        <br><strong>OJO:</strong> Predecir alergias basándose en polen NO es clustering (es clasificación/regresión porque hay una etiqueta objetivo).
+                                    </li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Herramientas de Azure ML',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li><strong>Automated ML (AutoML):</strong> Automatiza el proceso de selección de algoritmos y ajuste de hiperparámetros. Ideal para usuarios con poca experiencia en ML o para prototipado rápido.</li>
+                                    <li><strong>Azure Machine Learning Designer:</strong> Interfaz visual "drag-and-drop" (arrastrar y soltar) para crear pipelines de entrenamiento sin escribir código.
+                                        <br><strong>Módulos clave:</strong>
+                                        <ul class="list-circle pl-5 mt-1">
+                                            <li><em>Split Data:</em> Divide los datos en dos conjuntos: uno para <strong>entrenar</strong> y otro para <strong>validar/evaluar</strong>.</li>
+                                            <li><em>Train Model:</em> Entrena el algoritmo con los datos.</li>
+                                            <li><em>Score Model:</em> Genera predicciones usando un modelo entrenado.</li>
+                                            <li><em>Evaluate Model:</em> Calcula métricas de rendimiento (precisión, recall, etc.).</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Métricas de Evaluación',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Evalúan qué tan bueno es un modelo.</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Matriz de Confusión (Confusion Matrix):</strong> Tabla que muestra Verdaderos Positivos, Falsos Positivos, etc. Se usa en Clasificación.</li>
+                                    <li><strong>Accuracy (Exactitud):</strong> Porcentaje total de aciertos.</li>
+                                    <li><strong>Precision:</strong> De los que dijimos que eran positivos, ¿cuántos lo son realmente?</li>
+                                    <li><strong>Recall (Sensibilidad):</strong> De todos los positivos reales, ¿cuántos encontramos?</li>
+                                    <li><strong>RMSE / MAE / R²:</strong> Métricas para <strong>Regresión</strong> (miden el error numérico).</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'computer-vision',
+                title: 'Visión por Computadora (Computer Vision)',
+                icon: 'fa-eye',
+                items: [
+                    {
+                        title: 'Capacidades Principales',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li><strong>Clasificación de Imágenes (Image Classification):</strong> Etiqueta una imagen completa.
+                                        <br><em class="text-slate-500">Ejemplo: "Esto es una imagen de un paisaje". "Esto es una manzana".</em>
+                                    </li>
+                                    <li><strong>Detección de Objetos (Object Detection):</strong> Identifica objetos dentro de una imagen y devuelve sus coordenadas (<strong>bounding box</strong>).
+                                        <br><em class="text-slate-500">Ejemplo: Contar coches en una foto, detectar defectos en una placa base, ubicar un producto en un estante.</em>
+                                    </li>
+                                    <li><strong>Segmentación Semántica (Semantic Segmentation):</strong> Clasifica cada <strong>píxel</strong> de la imagen.
+                                        <br><em class="text-slate-500">Ejemplo: Separar el sujeto del fondo para difuminar el fondo, detectar carreteras para coches autónomos (píxel a píxel).</em>
+                                    </li>
+                                    <li><strong>OCR (Optical Character Recognition):</strong> Extrae texto de imágenes.
+                                        <br><em class="text-slate-500">Ejemplo: Leer señales de tráfico, digitalizar artículos de periódico, extraer texto de una imagen escaneada. El servicio se llama "Read".</em>
+                                    </li>
+                                    <li><strong>Detección Facial (Face API):</strong> Detecta rostros humanos y atributos.
+                                        <br><em class="text-slate-500">Ejemplo: Identificar género, edad, emociones, si lleva gafas, reconocimiento facial para seguridad.</em>
+                                    </li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Servicios Específicos',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li><strong>Custom Vision:</strong> Permite entrenar tus propios modelos de clasificación o detección de objetos con tus propias imágenes (ej: detectar una marca específica de herramientas).</li>
+                                    <li><strong>Form Recognizer (ahora Document Intelligence):</strong> Extrae información estructurada de documentos.
+                                        <br><em class="text-slate-500">Ejemplo: Leer facturas y extraer pares clave-valor (Total: $50, Fecha: 12/12/2023), procesar recibos, formularios de impuestos.</em>
+                                    </li>
+                                    <li><strong>Video Indexer:</strong> Extrae insights de videos (caras, transcripción de audio, marcas detectadas).</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'nlp',
+                title: 'Procesamiento de Lenguaje Natural (NLP)',
+                icon: 'fa-comments',
+                items: [
+                    {
+                        title: 'Conceptos Clave',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li><strong>Utterance (Enunciado):</strong> Lo que dice el usuario. <br><em>Ej: "Reservar un vuelo a Londres".</em></li>
+                                    <li><strong>Intent (Intención):</strong> Lo que el usuario quiere hacer. <br><em>Ej: "ReservarVuelo".</em></li>
+                                    <li><strong>Entity (Entidad):</strong> Detalles específicos dentro del enunciado. <br><em>Ej: "Londres" (Ciudad), "mañana" (Fecha).</em></li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Servicios de Azure AI Language',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-3">
+                                    <li><strong>Language Understanding (LUIS / CLU):</strong> Servicio para entender el lenguaje natural. Identifica <em>Intents</em> y <em>Entities</em>. Se usa en chatbots para comprender comandos complejos.</li>
+                                    <li><strong>Question Answering (QnA Maker):</strong> Crea una base de conocimiento (Knowledge Base) a partir de documentos FAQ, manuales o URLs.
+                                        <br><strong>Características:</strong>
+                                        <ul class="list-circle pl-5 mt-1">
+                                            <li>Soporta <em>Chit-chat</em> (conversación informal predefinida).</li>
+                                            <li>Soporta <em>Active Learning</em> (aprende del feedback de usuarios para mejorar respuestas).</li>
+                                            <li>Soporta <em>Multi-turn conversations</em> (diálogos de varios pasos).</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Text Analytics:</strong> Analiza texto sin estructurar.
+                                        <ul class="list-circle pl-5 mt-1">
+                                            <li><em>Sentiment Analysis:</em> Detecta si es positivo/negativo (ej: monitorizar redes sociales, reseñas de productos).</li>
+                                            <li><em>Key Phrase Extraction:</em> Extrae puntos clave o temas principales.</li>
+                                            <li><em>Named Entity Recognition (NER):</em> Identifica personas, lugares, organizaciones, fechas, emails.</li>
+                                            <li><em>Language Detection:</em> Detecta en qué idioma está escrito el texto.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Translator:</strong> Traduce texto de un idioma a otro.</li>
+                                    <li><strong>Speech Service:</strong>
+                                        <ul class="list-circle pl-5 mt-1">
+                                            <li><em>Speech-to-Text:</em> Transcribe audio a texto (ej: subtítulos en tiempo real, dictado).</li>
+                                            <li><em>Text-to-Speech:</em> Convierte texto en voz audible (ej: leer recetas, asistentes de voz).</li>
+                                            <li><em>Speech Translation:</em> Traducción de voz en tiempo real.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'conversational-ai',
+                title: 'IA Conversacional y Bots',
+                icon: 'fa-robot',
+                items: [
+                    {
+                        title: 'Azure Bot Service',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Plataforma gestionada para desarrollar, conectar y gestionar bots inteligentes.</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Integración:</strong> Se conecta con <em>LUIS</em> para entender intenciones y <em>QnA Maker</em> para responder preguntas frecuentes.</li>
+                                    <li><strong>Canales:</strong> Permite desplegar el bot en múltiples canales sin reescribir código: Web Chat, Microsoft Teams, Email, Slack, Facebook Messenger, Cortana, etc.</li>
+                                    <li><strong>Usos comunes:</strong> Atención al cliente (responder FAQs), reservas, soporte interno (helpdesk), asistentes personales.</li>
+                                </ul>
+                                <div class="bg-yellow-50 dark:bg-yellow-900/20 p-3 rounded-lg border-l-4 border-yellow-500 text-sm">
+                                    <strong>Importante:</strong> Un bot es la interfaz conversacional. La "inteligencia" viene de conectarlo a servicios como LUIS o QnA Maker.
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Diferencias clave',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>¿Cuándo usar qué?</strong></p>
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li>Si quieres responder preguntas frecuentes fijas -> <strong>QnA Maker</strong>.</li>
+                                    <li>Si quieres entender comandos complejos ("Pon música rock") -> <strong>LUIS</strong>.</li>
+                                    <li>Si quieres la plataforma para alojar y conectar el bot -> <strong>Azure Bot Service</strong>.</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'other-workloads',
+                title: 'Otras Cargas de Trabajo',
+                icon: 'fa-layer-group',
+                items: [
+                    {
+                        title: 'Detección de Anomalías (Anomaly Detection)',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Identifica patrones inusuales o eventos inesperados en datos de series temporales.</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Anomaly Detector:</strong> Servicio API para detectar anomalías.</li>
+                                    <li><strong>Casos de uso:</strong> Detección de fraudes en tarjetas de crédito, monitorización de picos de temperatura en maquinaria (IoT), detección de caídas repentinas de tráfico web.</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Minería de Conocimiento (Knowledge Mining)',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Extrae información de grandes volúmenes de contenido no estructurado (PDFs, imágenes, Word, HTML).</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Azure AI Search (antes Cognitive Search):</strong> Servicio de búsqueda en la nube.</li>
+                                    <li><strong>Skillsets:</strong> Tuberías de enriquecimiento que usan IA (OCR, traducción, extracción de entidades) para hacer que el contenido no estructurado sea "buscable".</li>
+                                    <li><strong>Ejemplo:</strong> Una empresa de abogados que necesita buscar cláusulas específicas en miles de contratos escaneados en PDF.</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            }
+        ];
+
+        // --- Logic (Identical to apuntesAZ900.html) ---
+
+        const toc = document.getElementById('toc');
+        const notesContainer = document.getElementById('notesContainer');
+        const progressText = document.getElementById('progressText');
+        const searchInput = document.getElementById('searchInput');
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Initial Render
+        function render() {
+            renderTOC();
+            renderContent();
+            updateProgress();
+        }
+
+        function renderTOC() {
+            toc.innerHTML = SECTIONS.map(section => `
+                <a href="#${section.id}" class="group flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 border-r-2 border-transparent transition-all">
+                    <i class="fa-solid ${section.icon} w-5 text-center opacity-70 group-hover:opacity-100"></i>
+                    <span class="truncate">${section.title}</span>
+                </a>
+            `).join('');
+            
+            // Intersection Observer for Active TOC
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('#toc a').forEach(link => {
+                            link.classList.remove('active-toc');
+                            if (link.getAttribute('href') === '#' + entry.target.id) {
+                                link.classList.add('active-toc');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-20% 0px -60% 0px' });
+
+            SECTIONS.forEach(section => {
+                const el = document.getElementById(section.id);
+                if (el) observer.observe(el);
+            });
+        }
+
+        function renderContent() {
+            notesContainer.innerHTML = SECTIONS.map(section => `
+                <section id="${section.id}" class="scroll-mt-28">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shadow-sm">
+                            <i class="fa-solid ${section.icon}"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">${section.title}</h2>
+                    </div>
+                    
+                    <div class="grid gap-6">
+                        ${section.items.map((item, idx) => `
+                            <div class="note-card bg-white dark:bg-dark-card rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm group">
+                                <div class="flex justify-between items-start gap-4 mb-4">
+                                    <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                                        ${item.title}
+                                    </h3>
+                                    <button class="mark-read-btn text-slate-300 hover:text-green-500 transition-colors" onclick="toggleRead(this)">
+                                        <i class="fa-regular fa-circle-check text-xl"></i>
+                                    </button>
+                                </div>
+                                <div class="prose-custom text-slate-600 dark:text-slate-400 text-sm">
+                                    ${item.content}
+                                </div>
+                            </div>
+                        `).join('')}
+                    </div>
+                </section>
+            `).join('');
+        }
+
+        function toggleRead(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                btn.classList.remove('text-slate-300');
+                btn.classList.add('text-green-500');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                btn.classList.add('text-slate-300');
+                btn.classList.remove('text-green-500');
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.mark-read-btn').length;
+            const read = document.querySelectorAll('.mark-read-btn.text-green-500').length;
+            const percent = Math.round((read / total) * 100) || 0;
+            progressText.textContent = `${percent}% Completado`;
+        }
+
+        // Search Logic
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.note-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(term) ? 'block' : 'none';
+            });
+        });
+
+        // Mark All Logic
+        document.getElementById('markAllBtn').addEventListener('click', () => {
+            document.querySelectorAll('.mark-read-btn').forEach(btn => {
+                const icon = btn.querySelector('i');
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                btn.classList.remove('text-slate-300');
+                btn.classList.add('text-green-500');
+            });
+            updateProgress();
+        });
+
+        // Theme Toggle Logic (Shared)
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme:dark', document.documentElement.classList.contains('dark') ? '1' : '0');
+        });
+
+        // Initialize
+        if (localStorage.getItem('theme:dark') === '1') {
+            document.documentElement.classList.add('dark');
+        }
+        render();
+
+    </script>
+</body>
+</html>

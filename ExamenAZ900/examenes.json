@@ -1,0 +1,100 @@
+[
+  {
+    "name": "AZ-900",
+    "title": "AZ-900 • Fundamentos de Azure",
+    "desc": "Preguntas de verdadero/falso, opción múltiple y emparejamiento.",
+    "pregunta": "Preguntas/preguntasAZ900.json",
+    "apuntes": "Apuntes/apuntesAZ900.html"
+  },
+  {
+    "name": "Google Cloud Digital Leaders",
+    "title": "Google Cloud • Digital Leaders",
+    "desc": "Cuestionario de fundamentos de Google Cloud.",
+    "pregunta": "Preguntas/preguntasGCDL.json",
+    "apuntes": "Apuntes/apuntesGCDL.html"
+  },
+  {
+    "name": "AWS Certified Cloud Practitioner",
+    "title": "AWS • Certified Cloud Practitioner",
+    "desc": "Fundamentos de AWS: servicios, seguridad, precios y soporte.",
+    "pregunta": "Preguntas/preguntasAWSCCP.json",
+    "apuntes": "https://aws.amazon.com/certification/certified-cloud-practitioner/"
+  },
+  {
+    "name": "Google Cloud Associate Cloud Engineer",
+    "title": "GCP • Associate Cloud Engineer",
+    "desc": "Banco de 297 preguntas sobre despliegue, seguridad y gestión en Google Cloud.",
+    "pregunta": "Preguntas/preguntasGCPACE.json",
+    "apuntes": "Apuntes/apuntesGCPACE.html"
+  },
+  {
+    "name": "HashiCorp Terraform Associate",
+    "title": "Terraform • Associate (003)",
+    "desc": "Preguntas de práctica sobre IaC, State, Modules y Core Workflow.",
+    "pregunta": "Preguntas/preguntasTerraform.json",
+    "apuntes": "https://developer.hashicorp.com/terraform/certification/003-study-guide"
+  },
+  {
+    "name": "Microsoft Azure AI Fundamentals",
+    "title": "AI-900 • Azure AI Fundamentals",
+    "desc": "Preguntas de práctica sobre conceptos de IA, ML y servicios de Azure AI.",
+    "pregunta": "Preguntas/preguntasAI900.json",
+    "apuntes": "Apuntes/apuntesAI900.html"
+  },
+  {
+    "name": "DP-900",
+    "title": "DP-900 • Azure Data Fundamentals",
+    "desc": "Preguntas sobre conceptos de datos relacionales y no relacionales.",
+    "pregunta": "Preguntas/preguntasDP900.json",
+    "apuntes": "https://learn.microsoft.com/en-us/credentials/certifications/azure-data-fundamentals/"
+  },
+  {
+    "name": "AWS AI Practitioner",
+    "title": "AWS • AI Practitioner",
+    "desc": "Conceptos de IA/ML en AWS, ética y herramientas.",
+    "pregunta": "Preguntas/preguntasAWSAI.json",
+    "apuntes": "Apuntes/apuntesAWSAI.html"
+  },
+  {
+    "name": "AZ-104",
+    "title": "Microsoft Azure Administrator",
+    "desc": "Manage Azure identities and governance, implement and manage storage, deploy and manage Azure compute resources.",
+    "pregunta": "Preguntas/preguntasAZ104.json",
+    "apuntes": "https://learn.microsoft.com/en-us/credentials/certifications/azure-administrator/"
+  },
+  {
+    "name": "KCNA",
+    "title": "Kubernetes and Cloud Native Associate",
+    "desc": "Certificación de nivel de entrada para el ecosistema Kubernetes.",
+    "pregunta": "Preguntas/preguntasKCNA.json",
+    "apuntes": "https://www.cncf.io/certification/kcna/"
+  },
+  {
+    "name": "GH-300",
+    "title": "GH-300 • GitHub Copilot",
+    "desc": "Banco de 109 preguntas de práctica para la certificación de GitHub Copilot.",
+    "pregunta": "Preguntas/preguntasGH300.json",
+    "apuntes": "https://learn.microsoft.com/en-us/credentials/certifications/github-copilot/"
+  },
+  {
+    "name": "Kubernetes Roadmap",
+    "title": "Plan de Formación Kubernetes",
+    "desc": "De cero a experto: Fundamentos, Arquitectura, Objetos, Networking y Seguridad.",
+    "pregunta": "",
+    "apuntes": "Apuntes/planKubernetes.html"
+  },
+  {
+    "name": "Ka0s Training",
+    "title": "Plan de Formación Ka0s",
+    "desc": "Onboarding técnico: arquitectura, automatización y cultura operativa.",
+    "pregunta": "",
+    "apuntes": "Apuntes/apuntesKa0s.html"
+  },
+  {
+    "name": "Mastering GitHub",
+    "title": "Git & GitHub: De Zero a Hero",
+    "desc": "Aprende flujos de trabajo profesionales, Pull Requests, conflictos y GitHub Actions.",
+    "pregunta": "",
+    "apuntes": "Apuntes/apuntesGithub.html"
+  }
+]

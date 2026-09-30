@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes AWS AI Practitioner • Certification Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#fff7ed',
+                            100: '#ffedd5',
+                            500: '#f97316',
+                            600: '#ea580c',
+                            900: '#7c2d12',
+                        },
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-effect {
+            background: rgba(15, 23, 42, 0.8);
+        }
+        
+        .note-card {
+            transition: all 0.2s ease;
+        }
+        .note-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .prose-custom {
+            line-height: 1.7;
+        }
+        .prose-custom p { margin-bottom: 1rem; }
+        .prose-custom ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+        .prose-custom li { margin-bottom: 0.5rem; }
+        .prose-custom strong { font-weight: 600; color: #ea580c; }
+        .dark .prose-custom strong { color: #fb923c; }
+
+        /* Custom Scrollbar for TOC */
+        .toc-scroll::-webkit-scrollbar { width: 4px; }
+        .toc-scroll::-webkit-scrollbar-track { background: transparent; }
+        .toc-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+        .dark .toc-scroll::-webkit-scrollbar-thumb { background: #475569; }
+
+        .active-toc {
+            background-color: #fff7ed;
+            color: #ea580c;
+            border-right: 3px solid #ea580c;
+        }
+        .dark .active-toc {
+            background-color: rgba(251, 146, 60, 0.1);
+            color: #fb923c;
+            border-right: 3px solid #fb923c;
+        }
+    </style>
+</head>
+<body class="h-full bg-slate-50 text-slate-900 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-200">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-4">
+                    <a href="../index.html" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-600 transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-[#ff9900]/10 text-[#ff9900] flex items-center justify-center text-lg">
+                            <i class="fa-brands fa-aws"></i>
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-sm md:text-base leading-tight">AWS Certified AI Practitioner</h1>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Guía de Estudio Completa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <div class="hidden md:flex items-center gap-2 text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
+                        <span id="progressText">0% Completado</span>
+                    </div>
+                    <button id="themeToggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            
+            <!-- Sidebar (TOC) -->
+            <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-24 self-start max-h-[calc(100vh-8rem)] overflow-y-auto toc-scroll pr-4">
+                <div class="mb-4">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Contenido</h3>
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input type="text" id="searchInput" placeholder="Filtrar temas..." class="w-full pl-8 pr-3 py-1.5 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                </div>
+                <nav id="toc" class="space-y-1 border-l border-slate-200 dark:border-slate-700">
+                    <!-- TOC items injected here -->
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="flex-1 min-w-0">
+                <!-- Hero / Intro -->
+                <div class="mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Apuntes AWS AI Practitioner</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+                        Guía de estudio basada en las preguntas del examen AWS Certified AI Practitioner (AIF-C01), cubriendo IA Generativa, Bedrock, SageMaker y principios de IA responsable.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <i class="fa-solid fa-print"></i> Imprimir PDF
+                        </button>
+                        <button id="markAllBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <i class="fa-regular fa-check-circle"></i> Marcar todo leído
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notes Container -->
+                <div id="notesContainer" class="space-y-16">
+                    <!-- Content injected here -->
+                </div>
+                
+                <!-- Footer -->
+                <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-sm text-slate-500">
+                    <p>Última actualización: 2025</p>
+                    <a href="#" class="hover:text-brand-600">Reportar un problema</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script>
+        const SECTIONS = [
+            {
+                id: 'gen-ai-bedrock',
+                title: 'IA Generativa y Amazon Bedrock',
+                icon: 'fa-cubes',
+                items: [
+                    {
+                        title: 'Amazon Bedrock',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Servicio totalmente gestionado que ofrece acceso a <strong>Modelos Fundacionales (FMs)</strong> de startups líderes (AI21 Labs, Anthropic, Cohere, Meta, Mistral AI, Stability AI) y Amazon a través de una API unificada.</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Knowledge Bases:</strong> Permite implementar <strong>RAG (Retrieval Augmented Generation)</strong> conectando FMs a tus fuentes de datos para respuestas más precisas y contextuales.</li>
+                                    <li><strong>Agents:</strong> Ejecutan tareas complejas de varios pasos orquestando interacciones entre FMs, fuentes de datos y APIs.</li>
+                                    <li><strong>Guardrails:</strong> Implementa salvaguardas para filtrar contenido (Odio, Violencia, etc.) y temas denegados ("Denied topics") tanto en entradas como salidas.</li>
+                                    <li><strong>Model Evaluation:</strong> Herramientas para evaluar modelos usando métricas como BERTScore (precisión semántica) o F1 Score.</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Prompt Engineering',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Técnicas para optimizar las respuestas de los LLMs:</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Zero-shot:</strong> Pedir algo sin ejemplos previos.</li>
+                                    <li><strong>Few-shot:</strong> Dar al modelo algunos ejemplos de entrada-salida para guiar su respuesta.</li>
+                                    <li><strong>Chain-of-Thought (CoT):</strong> Pedir al modelo que "piense paso a paso" o explique su razonamiento (útil para problemas matemáticos o lógicos).</li>
+                                    <li><strong>Negative Prompting:</strong> Especificar qué NO debe generar el modelo (ej: para evitar imágenes borrosas o contenido no deseado).</li>
+                                    <li><strong>Prompt Chaining:</strong> Dividir una tarea compleja en sub-tareas secuenciales.</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'RAG (Retrieval Augmented Generation)',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Técnica que combina un LLM con una base de conocimiento externa.</p>
+                                <p><strong>Beneficios:</strong> Reduce alucinaciones, proporciona información actualizada (sin reentrenar), y permite citar fuentes.</p>
+                                <p><strong>Componentes:</strong> Embeddings (vectores numéricos), Base de datos vectorial (como OpenSearch o Aurora PostgreSQL con pgvector), Chunking (dividir texto para mejorar relevancia).</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'ml-concepts',
+                title: 'Conceptos de Machine Learning',
+                icon: 'fa-brain',
+                items: [
+                    {
+                        title: 'Tipos de Aprendizaje',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Supervisado:</strong> Datos etiquetados (Input -> Output conocido). Ej: Clasificación de imágenes de animales, Regresión de precios.</li>
+                                    <li><strong>No Supervisado:</strong> Datos NO etiquetados. Busca patrones ocultos. Ej: <strong>Clustering (K-Means)</strong> para segmentación de clientes.</li>
+                                    <li><strong>Por Refuerzo (Reinforcement Learning):</strong> Agente aprende por prueba y error (recompensas/castigos). Ej: Robótica, Juegos.</li>
+                                    <li><strong>Federated Learning:</strong> Entrena modelos en dispositivos locales (edge) sin enviar datos privados a un servidor central. Preserva privacidad.</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Métricas de Evaluación',
+                        content: `
+                            <div class="space-y-2">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>Accuracy:</strong> % total de aciertos.</li>
+                                    <li><strong>Precision:</strong> Calidad de los positivos (minimizar Falsos Positivos). Útil en detección de fraude para no molestar a clientes legítimos.</li>
+                                    <li><strong>Recall:</strong> Cantidad de positivos detectados (minimizar Falsos Negativos). Útil en diagnósticos médicos.</li>
+                                    <li><strong>F1 Score:</strong> Balance entre Precision y Recall.</li>
+                                    <li><strong>ROUGE:</strong> Evalúa calidad de resúmenes de texto (comparando con referencia humana).</li>
+                                    <li><strong>BERTScore:</strong> Evalúa similitud semántica.</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'sagemaker',
+                title: 'Amazon SageMaker',
+                icon: 'fa-microchip',
+                items: [
+                    {
+                        title: 'Capacidades Principales',
+                        content: `
+                            <div class="space-y-4">
+                                <p>Plataforma integral para construir, entrenar y desplegar modelos de ML.</p>
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>SageMaker Clarify:</strong> Detecta sesgos (bias) en datos y modelos, y proporciona explicabilidad (Feature Importance).</li>
+                                    <li><strong>SageMaker Model Cards:</strong> Documentación estandarizada de modelos (uso, limitaciones, rendimiento) para gobernanza.</li>
+                                    <li><strong>SageMaker Model Monitor:</strong> Monitoriza modelos en producción para detectar "Data Drift" (cambios en datos) o "Model Drift" (degradación de calidad).</li>
+                                    <li><strong>SageMaker Feature Store:</strong> Repositorio centralizado para almacenar y compartir "features" (variables) de ML entre equipos.</li>
+                                    <li><strong>SageMaker JumpStart:</strong> Acceso a modelos pre-entrenados y soluciones listas para usar.</li>
+                                    <li><strong>SageMaker Autopilot:</strong> AutoML (crea modelos automáticamente).</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'ai-services',
+                title: 'Servicios de IA de AWS',
+                icon: 'fa-puzzle-piece',
+                items: [
+                    {
+                        title: 'Procesamiento de Documentos y Texto',
+                        content: `
+                            <div class="space-y-2">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>Amazon Textract:</strong> Extrae texto y datos de documentos escaneados (OCR inteligente, tablas, formularios).</li>
+                                    <li><strong>Amazon Comprehend:</strong> NLP (Análisis de sentimiento, detección de toxicidad, PII, entidades). <strong>Comprehend Medical</strong> para datos de salud.</li>
+                                    <li><strong>Amazon Translate:</strong> Traducción automática de texto.</li>
+                                    <li><strong>Amazon Kendra:</strong> Búsqueda empresarial inteligente (basada en ML).</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Visión y Voz',
+                        content: `
+                            <div class="space-y-2">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>Amazon Rekognition:</strong> Análisis de imagen y video (Moderación de contenido, detección de caras, objetos).</li>
+                                    <li><strong>Amazon Transcribe:</strong> Voz a Texto (Speech-to-Text). Útil para transcribir llamadas de contact center.</li>
+                                    <li><strong>Amazon Polly:</strong> Texto a Voz (Text-to-Speech).</li>
+                                    <li><strong>AWS HealthScribe:</strong> Genera notas clínicas a partir de conversaciones médico-paciente.</li>
+                                </ul>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Otros Servicios Especializados',
+                        content: `
+                            <div class="space-y-2">
+                                <ul class="list-disc pl-5 space-y-1">
+                                    <li><strong>Amazon Personalize:</strong> Recomendaciones personalizadas (ecommerce, VOD).</li>
+                                    <li><strong>Amazon Q Developer:</strong> Asistente de codificación generativa (sugerencias de código, refactorización, tests).</li>
+                                    <li><strong>Amazon Fraud Detector:</strong> Detección de fraudes automatizada.</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'responsible-ai',
+                title: 'IA Responsable y Gobernanza',
+                icon: 'fa-shield-halved',
+                items: [
+                    {
+                        title: 'Principios y Herramientas',
+                        content: `
+                            <div class="space-y-4">
+                                <ul class="list-disc pl-5 space-y-2">
+                                    <li><strong>Fairness (Justicia):</strong> Evitar sesgos discriminatorios. Herramienta: <em>SageMaker Clarify</em>.</li>
+                                    <li><strong>Explainability (Explicabilidad):</strong> Entender por qué el modelo toma una decisión. Herramienta: <em>SageMaker Clarify</em> (SHAP values, PDPs).</li>
+                                    <li><strong>Transparency (Transparencia):</strong> Documentar el modelo. Herramienta: <em>SageMaker Model Cards</em> (AI Service Cards para servicios gestionados).</li>
+                                    <li><strong>Privacy & Security:</strong>
+                                        <ul class="list-circle pl-5 mt-1">
+                                            <li><strong>Data Residency:</strong> Mantener datos en una región específica por regulación.</li>
+                                            <li><strong>AWS PrivateLink:</strong> Conexión privada a servicios (sin salir a internet pública).</li>
+                                            <li><strong>Amazon Macie:</strong> Descubre y protege datos sensibles (PII) en S3.</li>
+                                            <li><strong>AWS Audit Manager:</strong> Ayuda a auditar el uso de AWS para cumplimiento normativo.</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Human-in-the-loop (HITL):</strong> Revisión humana de predicciones de baja confianza (ej: Amazon Augmented AI - A2I).</li>
+                                </ul>
+                            </div>
+                        `
+                    }
+                ]
+            }
+        ];
+
+        const toc = document.getElementById('toc');
+        const notesContainer = document.getElementById('notesContainer');
+        const progressText = document.getElementById('progressText');
+        const searchInput = document.getElementById('searchInput');
+        const themeToggle = document.getElementById('themeToggle');
+
+        function render() {
+            renderTOC();
+            renderContent();
+            updateProgress();
+        }
+
+        function renderTOC() {
+            toc.innerHTML = SECTIONS.map(section => \`
+                <a href="#\${section.id}" class="group flex items-center gap-3 px-3 py-2 text-sm font-medium text-slate-600 dark:text-slate-400 hover:bg-slate-50 dark:hover:bg-slate-800 hover:text-brand-600 dark:hover:text-brand-400 border-r-2 border-transparent transition-all">
+                    <i class="fa-solid \${section.icon} w-5 text-center opacity-70 group-hover:opacity-100"></i>
+                    <span class="truncate">\${section.title}</span>
+                </a>
+            \`).join('');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        document.querySelectorAll('#toc a').forEach(link => {
+                            link.classList.remove('active-toc');
+                            if (link.getAttribute('href') === '#' + entry.target.id) {
+                                link.classList.add('active-toc');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-20% 0px -60% 0px' });
+
+            SECTIONS.forEach(section => {
+                const el = document.getElementById(section.id);
+                if (el) observer.observe(el);
+            });
+        }
+
+        function renderContent() {
+            notesContainer.innerHTML = SECTIONS.map(section => \`
+                <section id="\${section.id}" class="scroll-mt-28">
+                    <div class="flex items-center gap-3 mb-6">
+                        <div class="w-10 h-10 rounded-xl bg-brand-100 dark:bg-brand-900/30 text-brand-600 dark:text-brand-400 flex items-center justify-center text-xl shadow-sm">
+                            <i class="fa-solid \${section.icon}"></i>
+                        </div>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">\${section.title}</h2>
+                    </div>
+                    
+                    <div class="grid gap-6">
+                        \${section.items.map((item, idx) => \`
+                            <div class="note-card bg-white dark:bg-dark-card rounded-xl p-6 border border-slate-200 dark:border-slate-700 shadow-sm group">
+                                <div class="flex justify-between items-start gap-4 mb-4">
+                                    <h3 class="text-lg font-semibold text-slate-800 dark:text-slate-100 group-hover:text-brand-600 dark:group-hover:text-brand-400 transition-colors">
+                                        \${item.title}
+                                    </h3>
+                                    <button class="mark-read-btn text-slate-300 hover:text-green-500 transition-colors" onclick="toggleRead(this)">
+                                        <i class="fa-regular fa-circle-check text-xl"></i>
+                                    </button>
+                                </div>
+                                <div class="prose-custom text-slate-600 dark:text-slate-400 text-sm">
+                                    \${item.content}
+                                </div>
+                            </div>
+                        \`).join('')}
+                    </div>
+                </section>
+            \`).join('');
+        }
+
+        function toggleRead(btn) {
+            const icon = btn.querySelector('i');
+            if (icon.classList.contains('fa-regular')) {
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                btn.classList.remove('text-slate-300');
+                btn.classList.add('text-green-500');
+            } else {
+                icon.classList.remove('fa-solid');
+                icon.classList.add('fa-regular');
+                btn.classList.add('text-slate-300');
+                btn.classList.remove('text-green-500');
+            }
+            updateProgress();
+        }
+
+        function updateProgress() {
+            const total = document.querySelectorAll('.mark-read-btn').length;
+            const read = document.querySelectorAll('.mark-read-btn.text-green-500').length;
+            const percent = Math.round((read / total) * 100) || 0;
+            progressText.textContent = \`\${percent}% Completado\`;
+        }
+
+        searchInput.addEventListener('input', (e) => {
+            const term = e.target.value.toLowerCase();
+            document.querySelectorAll('.note-card').forEach(card => {
+                const text = card.textContent.toLowerCase();
+                card.style.display = text.includes(term) ? 'block' : 'none';
+            });
+        });
+
+        document.getElementById('markAllBtn').addEventListener('click', () => {
+            document.querySelectorAll('.mark-read-btn').forEach(btn => {
+                const icon = btn.querySelector('i');
+                icon.classList.remove('fa-regular');
+                icon.classList.add('fa-solid');
+                btn.classList.remove('text-slate-300');
+                btn.classList.add('text-green-500');
+            });
+            updateProgress();
+        });
+
+        themeToggle.addEventListener('click', () => {
+            document.documentElement.classList.toggle('dark');
+            localStorage.setItem('theme:dark', document.documentElement.classList.contains('dark') ? '1' : '0');
+        });
+
+        if (localStorage.getItem('theme:dark') === '1') {
+            document.documentElement.classList.add('dark');
+        }
+        render();
+
+    </script>
+</body>
+</html>

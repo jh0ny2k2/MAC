@@ -1,0 +1,48 @@
+[build]
+  command = "npm install --legacy-peer-deps && npm run build"
+  publish = "dist"
+
+[build.environment]
+  NODE_VERSION = "20"
+  NPM_FLAGS = "--legacy-peer-deps"
+
+[functions]
+  directory = "netlify/functions"
+
+# Incluir archivos de plantillas de email para que la Function pueda requerirlos
+[functions."email-send"]
+  included_files = ["src/emails/**"]
+
+# Redirects para las APIs de Stripe
+[[redirects]]
+  from = "/api/stripe/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+
+# Redirect para auth API
+[[redirects]]
+  from = "/api/auth/*"
+  to = "/.netlify/functions/auth"
+  status = 200
+
+# Redirect para sitemap dinámico
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/.netlify/functions/sitemap"
+  status = 200
+
+# Configuración para SPA (Single Page Application)
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Headers de seguridad
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Content-Security-Policy = "default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://connect.facebook.net https://www.topcreativeformat.com https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://accounts.google.com https://*.google.com; img-src 'self' data: https: blob: https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net; font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com https://*.google.com; connect-src 'self' https: wss: https://*.supabase.co wss://*.supabase.co https://vzvlyexpgcvdtzaekgeb.supabase.co wss://vzvlyexpgcvdtzaekgeb.supabase.co https://www.google-analytics.com https://pagead2.googlesyndication.com https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net; frame-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net; object-src 'none'; base-uri 'self'; worker-src 'self' blob:;"

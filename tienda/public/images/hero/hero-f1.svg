@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" width="1600" height="900">
+
+  <defs>
+    <linearGradient id="hg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0a0a10"/>
+      <stop offset="50%" stop-color="#060609"/>
+      <stop offset="100%" stop-color="#050507"/>
+    </linearGradient>
+    <linearGradient id="hcg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f0f0f5"/>
+      <stop offset="60%" stop-color="#c8c8d0"/>
+    </linearGradient>
+    <linearGradient id="redAccent" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#e10600"/>
+      <stop offset="100%" stop-color="#ff2d2d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="url(#hg)"/>
+  <g opacity="0.12">
+    <line x1="-120" y1="-100" x2="-120" y2="1100" stroke="white" stroke-width="2"/><line x1="-60" y1="-100" x2="-60" y2="1100" stroke="white" stroke-width="2"/><line x1="0" y1="-100" x2="0" y2="1100" stroke="white" stroke-width="2"/><line x1="60" y1="-100" x2="60" y2="1100" stroke="white" stroke-width="2"/><line x1="120" y1="-100" x2="120" y2="1100" stroke="white" stroke-width="2"/><line x1="180" y1="-100" x2="180" y2="1100" stroke="white" stroke-width="2"/><line x1="240" y1="-100" x2="240" y2="1100" stroke="white" stroke-width="2"/><line x1="300" y1="-100" x2="300" y2="1100" stroke="white" stroke-width="2"/><line x1="360" y1="-100" x2="360" y2="1100" stroke="white" stroke-width="2"/><line x1="420" y1="-100" x2="420" y2="1100" stroke="white" stroke-width="2"/><line x1="480" y1="-100" x2="480" y2="1100" stroke="white" stroke-width="2"/><line x1="540" y1="-100" x2="540" y2="1100" stroke="white" stroke-width="2"/><line x1="600" y1="-100" x2="600" y2="1100" stroke="white" stroke-width="2"/><line x1="660" y1="-100" x2="660" y2="1100" stroke="white" stroke-width="2"/><line x1="720" y1="-100" x2="720" y2="1100" stroke="white" stroke-width="2"/><line x1="780" y1="-100" x2="780" y2="1100" stroke="white" stroke-width="2"/><line x1="840" y1="-100" x2="840" y2="1100" stroke="white" stroke-width="2"/><line x1="900" y1="-100" x2="900" y2="1100" stroke="white" stroke-width="2"/><line x1="960" y1="-100" x2="960" y2="1100" stroke="white" stroke-width="2"/><line x1="1020" y1="-100" x2="1020" y2="1100" stroke="white" stroke-width="2"/><line x1="1080" y1="-100" x2="1080" y2="1100" stroke="white" stroke-width="2"/><line x1="1140" y1="-100" x2="1140" y2="1100" stroke="white" stroke-width="2"/><line x1="1200" y1="-100" x2="1200" y2="1100" stroke="white" stroke-width="2"/><line x1="1260" y1="-100" x2="1260" y2="1100" stroke="white" stroke-width="2"/><line x1="1320" y1="-100" x2="1320" y2="1100" stroke="white" stroke-width="2"/><line x1="1380" y1="-100" x2="1380" y2="1100" stroke="white" stroke-width="2"/><line x1="1440" y1="-100" x2="1440" y2="1100" stroke="white" stroke-width="2"/><line x1="1500" y1="-100" x2="1500" y2="1100" stroke="white" stroke-width="2"/><line x1="1560" y1="-100" x2="1560" y2="1100" stroke="white" stroke-width="2"/><line x1="1620" y1="-100" x2="1620" y2="1100" stroke="white" stroke-width="2"/><line x1="1680" y1="-100" x2="1680" y2="1100" stroke="white" stroke-width="2"/><line x1="1740" y1="-100" x2="1740" y2="1100" stroke="white" stroke-width="2"/><line x1="1800" y1="-100" x2="1800" y2="1100" stroke="white" stroke-width="2"/><line x1="1860" y1="-100" x2="1860" y2="1100" stroke="white" stroke-width="2"/><line x1="1920" y1="-100" x2="1920" y2="1100" stroke="white" stroke-width="2"/>
+  </g>
+  <rect x="0" y="840" width="1600" height="60" fill="#e10600" opacity="0.08"/>
+  <rect x="0" y="870" width="1600" height="30" fill="#e10600" opacity="0.04"/>
+  <g style="--team-color:#e10600; transform:translate(580px,180px) scale(1.8);">
+    
+  <!-- front wing endplate -->
+  <rect x="120" y="336" width="12" height="44" rx="3" fill="#ddd"/>
+  <rect x="132" y="370" width="100" height="10" rx="4" fill="#ccc"/>
+  <rect x="132" y="376" width="110" height="5" rx="2.5" fill="#bbb"/>
+  <!-- floor -->
+  <rect x="145" y="378" width="330" height="6" rx="1.5" fill="#1a1a1a"/>
+  <!-- nose to cockpit -->
+  <path d="M 232 370 C 248 348 262 330 295 320 L 435 312 C 452 310 465 318 470 338 L 474 366 L 149 366 L 144 358 Z"
+        fill="url(#carGrad)" stroke="#555" stroke-width="1"/>
+  <!-- sidepod -->
+  <path d="M 330 316 C 350 312 410 310 450 314 L 456 340 C 420 338 355 336 330 334 Z"
+        fill="var(--team-color, #e10600)" opacity="0.85"/>
+  <!-- halo -->
+  <path d="M 310 318 C 328 298 370 292 400 296 C 424 300 440 310 440 312"
+        fill="none" stroke="#555" stroke-width="4" stroke-linecap="round"/>
+  <!-- cockpit opening -->
+  <ellipse cx="355" cy="309" rx="32" ry="9" fill="#0a0a0a"/>
+  <ellipse cx="355" cy="309" rx="12" ry="4" fill="#1a1a2a"/>
+  <!-- rear wing -->
+  <rect x="470" y="282" width="60" height="8" rx="2" fill="#ddd"/>
+  <rect x="468" y="276" width="64" height="6" rx="2" fill="var(--team-color, #e10600)"/>
+  <rect x="468" y="368" width="64" height="7" rx="2" fill="#bbb"/>
+  <rect x="530" y="272" width="10" height="110" rx="2" fill="#bbb"/>
+  <!-- diffuser -->
+  <path d="M 472 378 L 540 382 L 540 386 L 468 390 Z" fill="#1a1a1a"/>
+  <!-- front wheel -->
+  <circle cx="268" cy="392" r="40" fill="#0a0a0a" stroke="#222" stroke-width="2"/>
+  <circle cx="268" cy="392" r="34" fill="#0d0d0d"/>
+  <circle cx="268" cy="392" r="8" fill="#222"/>
+  <g transform="translate(268,392)">
+    <line x1="0" y1="-32" x2="0" y2="-10" stroke="#222" stroke-width="1.5"/>
+    <line x1="22" y1="-22" x2="7" y2="-7" stroke="#222" stroke-width="1.5"/>
+    <line x1="32" y1="0" x2="10" y2="0" stroke="#222" stroke-width="1.5"/>
+    <line x1="22" y1="22" x2="7" y2="7" stroke="#222" stroke-width="1.5"/>
+    <line x1="0" y1="32" x2="0" y2="10" stroke="#222" stroke-width="1.5"/>
+    <line x1="-22" y1="22" x2="-7" y2="7" stroke="#222" stroke-width="1.5"/>
+    <line x1="-32" y1="0" x2="-10" y2="0" stroke="#222" stroke-width="1.5"/>
+    <line x1="-22" y1="-22" x2="-7" y2="-7" stroke="#222" stroke-width="1.5"/>
+  </g>
+  <!-- rear wheel -->
+  <circle cx="432" cy="392" r="44" fill="#0a0a0a" stroke="#222" stroke-width="2"/>
+  <circle cx="432" cy="392" r="38" fill="#0d0d0d"/>
+  <circle cx="432" cy="392" r="9" fill="#222"/>
+  <g transform="translate(432,392)">
+    <line x1="0" y1="-36" x2="0" y2="-12" stroke="#222" stroke-width="1.5"/>
+    <line x1="25" y1="-25" x2="8" y2="-8" stroke="#222" stroke-width="1.5"/>
+    <line x1="36" y1="0" x2="12" y2="0" stroke="#222" stroke-width="1.5"/>
+    <line x1="25" y1="25" x2="8" y2="8" stroke="#222" stroke-width="1.5"/>
+    <line x1="0" y1="36" x2="0" y2="12" stroke="#222" stroke-width="1.5"/>
+    <line x1="-25" y1="25" x2="-8" y2="8" stroke="#222" stroke-width="1.5"/>
+    <line x1="-36" y1="0" x2="-12" y2="0" stroke="#222" stroke-width="1.5"/>
+    <line x1="-25" y1="-25" x2="-8" y2="-8" stroke="#222" stroke-width="1.5"/>
+  </g>
+  <!-- mirror -->
+  <rect x="310" y="322" width="12" height="8" rx="2" fill="var(--team-color, #e10600)"/>
+  <rect x="306" y="324" width="6" height="4" rx="1" fill="#ccc"/>
+
+  </g>
+  <rect x="120" y="800" width="180" height="6" rx="3" fill="url(#redAccent)"/>
+  <text x="120" y="760" font-family="Oswald, sans-serif" font-size="52" font-weight="700" fill="white">APEX COLLECTION</text>
+  <text x="120" y="860" font-family="Oswald, sans-serif" font-size="140" font-weight="700" fill="rgba(255,255,255,0.05)">F1</text>
+  
+</svg>

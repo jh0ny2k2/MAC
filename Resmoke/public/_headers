@@ -1,0 +1,16 @@
+/*
+  X-Frame-Options: DENY
+  X-XSS-Protection: 1; mode=block
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin
+  Permissions-Policy: geolocation=(), microphone=(), camera=()
+  Content-Security-Policy: default-src 'self'; script-src 'self' 'unsafe-inline' 'unsafe-eval' https://pagead2.googlesyndication.com https://connect.facebook.net https://www.topcreativeformat.com https://www.googletagmanager.com https://www.google-analytics.com https://cdn.tailwindcss.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdn.jsdelivr.net https://cdnjs.cloudflare.com https://accounts.google.com https://*.google.com; img-src 'self' data: https: blob: https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net; font-src 'self' data: https://fonts.gstatic.com https://fonts.googleapis.com https://*.google.com; connect-src 'self' https: wss: https://*.supabase.co wss://*.supabase.co https://vzrlyexpgcvdtzaekgeb.supabase.co wss://vzrlyexpgcvdtzaekgeb.supabase.co https://www.google-analytics.com https://pagead2.googlesyndication.com https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.googleadservices.com https://*.doubleclick.net; frame-src 'self' https://pagead2.googlesyndication.com https://googleads.g.doubleclick.net https://tpc.googlesyndication.com https://accounts.google.com https://ep2.adtrafficquality.google https://*.google.com https://*.googlesyndication.com https://*.doubleclick.net; object-src 'none'; base-uri 'self'; worker-src 'self' blob:;
+
+/manifest.json
+  Content-Type: application/manifest+json
+
+/sitemap.xml
+  Content-Type: application/xml
+
+/robots.txt
+  Content-Type: text/plain

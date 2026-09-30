@@ -1,0 +1,900 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan de Formación Ka0s</title>
+    <script>
+      // Protección de Acceso (Auth Guard)
+      if (sessionStorage.getItem('ka0s_auth') !== 'true') {
+          // Redirigir al login si no hay sesión
+          window.location.href = 'loginKa0s.html';
+      }
+    </script>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              mono: ['Fira Code', 'monospace'],
+            },
+            colors: {
+              github: {
+                dark: '#0d1117',
+                darker: '#010409',
+                border: '#30363d',
+                light: '#ffffff',
+                accent: '#238636',
+                link: '#58a6ff'
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+      /* Custom Scrollbar */
+      ::-webkit-scrollbar { width: 8px; height: 8px; }
+      ::-webkit-scrollbar-track { background: transparent; }
+      ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+      .dark ::-webkit-scrollbar-thumb { background: #30363d; }
+      ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
+      .dark ::-webkit-scrollbar-thumb:hover { background: #8b949e; }
+
+      /* GitHub-like Typography */
+      .prose h2, .prose h3, .prose h4 { color: #1f2328; font-weight: 600; margin-top: 24px; margin-bottom: 16px; }
+      .dark .prose h2, .dark .prose h3, .dark .prose h4 { color: #e6edf3; }
+      
+      .prose h2 { font-size: 1.5em; border-bottom: 1px solid #d0d7de; padding-bottom: 0.3em; }
+      .dark .prose h2 { border-bottom-color: #30363d; }
+      
+      .prose p { margin-bottom: 16px; line-height: 1.5; color: #1f2328; }
+      .dark .prose p { color: #e6edf3; }
+      
+      .prose code { background: rgba(175, 184, 193, 0.2); padding: 0.2em 0.4em; border-radius: 6px; font-family: 'Fira Code', monospace; font-size: 0.85em; color: #24292f; }
+      .dark .prose code { background: rgba(110, 118, 129, 0.4); color: #c9d1d9; }
+      
+      .prose pre { background: #f6f8fa; padding: 16px; border-radius: 6px; overflow-x: auto; margin-bottom: 16px; border: 1px solid #d0d7de; }
+      .dark .prose pre { background: #161b22; border-color: #30363d; }
+      
+      .prose ul { list-style-type: disc; padding-left: 2em; margin-bottom: 16px; color: #1f2328; }
+      .dark .prose ul { color: #e6edf3; }
+      
+      .prose a { color: #0969da; text-decoration: none; }
+      .dark .prose a { color: #58a6ff; }
+      .prose a:hover { text-decoration: underline; }
+
+      /* Alerts */
+      .alert-note {
+          border-left: 3px solid #0969da;
+          background-color: #ddf4ff;
+          padding: 16px;
+          margin-bottom: 16px;
+          color: #24292f;
+          border-radius: 0 6px 6px 0;
+      }
+      .dark .alert-note {
+          background-color: rgba(56, 139, 253, 0.1);
+          color: #c9d1d9;
+          border-left-color: #1f6feb;
+      }
+      
+      .alert-tip {
+          border-left: 3px solid #1a7f37;
+          background-color: #dafbe1;
+          padding: 16px;
+          margin-bottom: 16px;
+          color: #24292f;
+          border-radius: 0 6px 6px 0;
+      }
+      .dark .alert-tip {
+          background-color: rgba(45, 164, 78, 0.1);
+          color: #c9d1d9;
+          border-left-color: #238636;
+      }
+
+      /* Layout Utilities */
+      .file-header {
+          background-color: #f6f8fa;
+          border: 1px solid #d0d7de;
+          border-bottom: 0;
+          border-top-left-radius: 6px;
+          border-top-right-radius: 6px;
+          padding: 8px 16px;
+          font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+          font-size: 14px;
+          color: #1f2328;
+      }
+      .dark .file-header {
+          background-color: #161b22;
+          border-color: #30363d;
+          color: #e6edf3;
+      }
+      
+      .file-content {
+          border: 1px solid #d0d7de;
+          border-bottom-left-radius: 6px;
+          border-bottom-right-radius: 6px;
+          background-color: #ffffff;
+          padding: 32px;
+      }
+      .dark .file-content {
+          border-color: #30363d;
+          background-color: #0d1117;
+      }
+    </style>
+  </head>
+  <body class="bg-white dark:bg-[#0d1117] text-[#1f2328] dark:text-[#e6edf3] transition-colors duration-200">
+    <!-- Header -->
+    <header class="bg-[#f6f8fa] dark:bg-[#161b22] border-b border-[#d0d7de] dark:border-[#30363d] sticky top-0 z-20">
+      <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+        <div class="flex items-center gap-3">
+          <svg height="32" viewBox="0 0 16 16" width="32" class="fill-black dark:fill-white">
+              <path d="M8 0c4.42 0 8 3.58 8 8a8.013 8.013 0 0 1-5.45 7.59c-.4.08-.55-.17-.55-.38 0-.27.01-1.13.01-2.2 0-.75-.25-1.23-.54-1.48 1.78-.2 3.65-.88 3.65-3.95 0-.88-.31-1.59-.82-2.15.08-.2.36-1.02-.08-2.12 0 0-.67-.22-2.2.82-.64-.18-1.32-.27-2-.27-.68 0-1.36.09-2 .27-1.53-1.03-2.2-.82-2.2-.82-.44 1.1-.16 1.92-.08 2.12-.51.56-.82 1.28-.82 2.15 0 3.06 1.86 3.75 3.64 3.95-.23.2-.44.55-.51 1.07-.46.21-1.61.55-2.33-.66-.15-.24-.6-.83-1.23-.82-.67.01-.27.38.01.53.34.19.73.9.82 1.13.16.45.68 1.31 2.69.94 0 .67.01 1.3.01 1.49 0 .21-.15.45-.55.38A7.995 7.995 0 0 1 0 8c0-4.42 3.58-8 8-8Z"></path>
+          </svg>
+          <div>
+            <h1 class="font-semibold text-lg leading-tight">Ka0s Training Plan</h1>
+            <p class="text-xs text-gray-500 dark:text-gray-400">master branch</p>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-3">
+            <button id="themeToggle" class="p-2 rounded-md hover:bg-gray-200 dark:hover:bg-gray-800 text-gray-500 dark:text-gray-400 transition-colors">
+                <svg id="sunIcon" class="hidden dark:block w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path></svg>
+                <svg id="moonIcon" class="block dark:hidden w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path></svg>
+            </button>
+            <button id="logoutBtn" class="text-sm font-medium text-red-600 hover:text-red-700 dark:text-red-400 border border-red-200 dark:border-red-900 bg-red-50 dark:bg-red-900/10 px-3 py-1.5 rounded-md transition-colors">Sign Out</button>
+        </div>
+      </div>
+    </header>
+
+    <main class="max-w-7xl mx-auto px-4 py-8 md:grid md:grid-cols-12 gap-8">
+      
+      <!-- Left Sidebar: File Explorer / TOC -->
+      <aside class="md:col-span-3 lg:col-span-3">
+        <div class="sticky top-24">
+            <div class="mb-4">
+                <input id="search" type="text" placeholder="Go to file..." class="w-full bg-[#f6f8fa] dark:bg-[#0d1117] border border-[#d0d7de] dark:border-[#30363d] rounded-md px-3 py-1.5 text-sm focus:border-[#0969da] focus:ring-1 focus:ring-[#0969da] outline-none text-[#1f2328] dark:text-[#c9d1d9]" />
+            </div>
+            
+            <nav class="border border-[#d0d7de] dark:border-[#30363d] rounded-md bg-white dark:bg-[#0d1117] overflow-hidden">
+                <div class="bg-[#f6f8fa] dark:bg-[#161b22] px-3 py-2 border-b border-[#d0d7de] dark:border-[#30363d] text-xs font-semibold text-[#1f2328] dark:text-[#c9d1d9] flex justify-between items-center">
+                    <span>Explorer</span>
+                    <span id="studiedCount" class="bg-[#afb8c1]/20 px-1.5 py-0.5 rounded-full text-[10px]">0%</span>
+                </div>
+                <div id="toc" class="text-sm"></div>
+            </nav>
+
+            <div class="mt-4 flex gap-2">
+                <button id="expandAll" class="text-xs text-[#0969da] hover:underline">Expand all</button>
+                <span class="text-gray-300">|</span>
+                <button id="collapseAll" class="text-xs text-[#0969da] hover:underline">Collapse all</button>
+            </div>
+        </div>
+      </aside>
+
+      <!-- Main Content: README View -->
+      <section class="md:col-span-9 lg:col-span-9">
+        <div id="notes" class="space-y-8">
+            <!-- Content injected here -->
+        </div>
+      </section>
+
+    </main>
+
+    <script>
+      const els = {
+        notes: document.getElementById('notes'),
+        sectionCount: document.getElementById('sectionCount'),
+        noteCount: document.getElementById('noteCount'),
+        studiedCount: document.getElementById('studiedCount'),
+        search: document.getElementById('search'),
+        expandAll: document.getElementById('expandAll'),
+        collapseAll: document.getElementById('collapseAll'),
+        toc: document.getElementById('toc'),
+      };
+
+      const studied = JSON.parse(localStorage.getItem('ka0s:studied') || '{}');
+
+      function parseMarkdown(md) {
+        if (!md) return '';
+        let html = md.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+        html = html.replace(/^### (.*$)/gim, '<h5>$1</h5>');
+        html = html.replace(/^## (.*$)/gim, '<h4>$1</h4>');
+        html = html.replace(/^# (.*$)/gim, ''); 
+        html = html.replace(/^\* (.*$)/gim, '<li>$1</li>');
+        html = html.replace(/\*\*(.*?)\*\*/gim, '<strong>$1</strong>');
+        html = html.replace(/`(.*?)`/gim, '<code>$1</code>');
+        html = html.replace(/\[(.*?)\]\((.*?)\)/gim, '<a href="$2" target="_blank">$1</a>');
+        html = html.replace(/\n\n/gim, '</p><p>');
+        html = '<p>' + html + '</p>';
+        html = html.replace(/\n/g, ' ');
+        html = html.replace(/(<li>.*?<\/li>)+/gim, '<ul>$&</ul>');
+        return html;
+      }
+
+      const SECTIONS = [
+        {
+          id: 'week1',
+          label: 'Semana 1: Fundamentos y Arquitectura',
+          desc: 'Entender el "organismo" Ka0s, el rol del orquestador y la importancia crítica de la evidencia.',
+          items: [
+            { t: 'Día 1: Mapa mental del sistema', d: 'Concepto de organismo y componentes.', md: `
+## Objetivo del día
+Al final de este día debes ser capaz de:
+*   Explicar Ka0s en 2–3 minutos como un “organismo” (cerebro, músculo, memoria, sentidos, sistema nervioso).
+*   Señalar en el repositorio dónde vive cada parte (rutas concretas).
+*   Entender por qué \`audit/\` es central y cómo se usa como “verdad del sistema”.
+
+## Por qué esto importa
+Ka0s no es un conjunto de scripts sueltos. Es una plataforma con una idea fuerte:
+*   El repositorio es **código + operaciones + seguridad + evidencia**.
+*   Si una automatización no deja evidencia, operativamente “no existe”.
+*   La modularidad existe para que puedas reutilizar y escalar.
+
+Piensa Ka0s como un organismo:
+*   **Cerebro (GitHub Actions)**: decide qué hacer y orquesta el flujo.
+*   **Músculo (Kubernetes + scripts)**: ejecuta despliegues y auditorías en el entorno real.
+*   **Sentidos (Zabbix / Wazuh / ELK)**: observan disponibilidad, seguridad y logs.
+*   **Memoria (iTop + \`audit/\`)**: registra el estado operacional (tickets) y la evidencia de ejecuciones.
+*   **Sistema nervioso (n8n)**: conecta señales y acciones.
+
+## Mapa del repositorio
+*   **Cerebro**: workflows y actions reutilizables (\`.github/workflows/\`)
+*   **Músculo**: scripts operativos y manifests (\`devops/core/k8s/\`)
+*   **Sentidos**: definición/operación de observabilidad (\`core/ai/prompt_*.md\`)
+*   **Memoria**: iTop y Evidencia (\`audit/\`)
+*   **Sistema nervioso**: n8n
+
+## Paso a paso
+### Paso 1 — Aprende el vocabulario
+*   **Atómicos**: automatismos de una acción, combinables.
+*   **Efímeros**: acciones muy cortas.
+*   **Inspector**: sistema de auditoría/resultado.
+*   **Número Aureo (3)**: conseguir resultado en menos de 3 pasos.
+
+### Paso 2 — Ubica la documentación base
+Lee [ka0s.md](core/docs/ka0s/ka0s.md) para entender el Core Orchestrator.
+
+### Paso 3 — Lee la Constitución
+Lee [prompt_ka0s.md](core/ai/prompt_ka0s.md):
+*   **Evidencia**: todo deja rastro en \`audit/\`.
+*   **SSH First**: se opera en el entorno real.
+*   **JSON por defecto**: salidas estructuradas.
+            `},
+            { t: 'Día 2: Orquestador', d: 'Triggers, workflows y evidencia.', md: `
+## Objetivo del día
+Al final de este día debes ser capaz de:
+*   Explicar qué activa Ka0s y qué no.
+*   Seguir el workflow principal de principio a fin.
+*   Identificar qué evidencia se genera y en qué ruta.
+
+## Por qué esto importa
+El orquestador es la pieza que transforma un commit en una ejecución auditable.
+*   No sabrás por qué un cambio disparó (o no) automatizaciones.
+*   No sabrás dónde mirar cuando algo falla.
+
+## Dónde verlo en el repo
+*   Workflow principal: \`kaos.yml\`
+*   Evidencia típica: \`audit/kaos\`
+
+## Paso a paso
+### Paso 1 — Entiende los disparadores (triggers)
+Revisa el bloque \`on:\` en \`kaos.yml\`. Define qué eventos (push) y qué rutas activan el pipeline.
+
+### Paso 2 — Entiende permisos y variables
+Las variables \`KAOS_*\` son metadatos clave:
+*   \`KAOS_CODE\`: run_id
+*   \`KAOS_MODULE\`: etiqueta del módulo
+*   \`KAOS_PATH_RESUME\`: ruta de evidencia
+
+### Paso 3 — Sigue el job principal
+1.  **Checkout**: clona el repo.
+2.  **Validación**: verifica extensiones permitidas.
+3.  **JSON del evento**: guarda "qué pasó" para auditoría.
+4.  **Lista de archivos**: evidencia explícita de cambios.
+5.  **Subida de evidencias**: commit/push a \`audit/\`.
+6.  **Selección de módulos**: dispatcher que elige el subworkflow.
+
+## Errores típicos
+*   **No se ejecuta**: revisa \`on.paths\`.
+*   **No hay evidencia**: revisa step de commit/push.
+            `},
+            { t: 'Día 3: Auditoría e Inspector', d: 'El Inspector como memoria objetiva.', md: `
+## Objetivo del día
+Al final de este día debes ser capaz de:
+*   Explicar qué es el **Inspector**.
+*   Identificar qué información produce y dónde la guarda.
+*   Abrir una evidencia real en \`audit/\`.
+
+## Qué es el Inspector
+Es el “módulo de cierre” que resume y registra lo ocurrido. Su output sirve para operación diaria, auditoría y análisis post-mortem.
+
+## Paso a paso
+### Paso 1 — Lee el contrato
+Revisa \`ka0s_inspector.md\`. Propósito: dejar evidencia inmutable.
+
+### Paso 2 — Lee el workflow
+Revisa \`inspector.yml\`. Identifica inputs y outputs.
+
+### Paso 3 — Abre evidencia real
+Entra en \`audit/inspector/\`. Busca un JSON y un log.
+*   ¿Qué campos identifican la ejecución?
+*   ¿Cómo se representa éxito/fallo?
+
+### Paso 4 — Rutina de depuración
+1.  Identificar \`run_id\`.
+2.  Mirar \`audit/inspector\` para resumen.
+3.  Mirar \`audit/kaos\` para archivos implicados.
+4.  Mirar \`audit/kube\` o \`audit/deploy\`.
+            `},
+            { t: 'Día 4: SSH First', d: 'Ejecución remota segura.', md: `
+## Objetivo del día
+Al final de este día debes ser capaz de:
+*   Explicar por qué Ka0s opera “en el host real”.
+*   Identificar el workflow y action de SSH.
+*   Definir reglas para scripts remotos.
+
+## Por qué esto importa
+SSH First evita operar sobre entornos simulados. Inspeccionas y actúas sobre el control plane real, reduciendo drift.
+
+## Dónde verlo
+*   Workflow reusable: \`ssh-connect.yml\`
+*   Action reusable: \`ssh-exec/action.yml\`
+
+## Reglas de oro para scripts remotos
+1.  **No interactivo**: jamás pedir input.
+2.  **Exit codes**: 0 éxito, >0 error.
+3.  **Salida estructurada**: JSON o logs parseables.
+4.  **Timeouts**: evita comandos colgados.
+5.  **Secretos por env**: nunca hardcode.
+            `},
+            { t: 'Día 5: Estructura K8s', d: 'Organización de servicios y manifests.', md: `
+## Objetivo del día
+Al final de este día debes ser capaz de:
+*   Navegar un servicio de \`core-services\`.
+*   Explicar el flujo: namespace -> deployment -> service -> ingress.
+*   Entender Kustomize.
+
+## Por qué esto importa
+Ka0s busca que cada servicio tenga una estructura consistente y declarativa.
+
+## Paso a paso
+### Paso 1 — Elige un servicio
+Revisa \`core-services/itop\`. Busca \`kustomization.yaml\` y \`namespace.yaml\`.
+
+### Paso 2 — Entiende kustomization.yaml
+Identifica recursos incluidos y orden lógico.
+
+### Paso 3 — Entiende workloads
+Revisa Deployment/StatefulSet. Localiza imagen, puertos, env vars y volúmenes.
+
+### Paso 4 — Entiende red
+Revisa Service e Ingress. Flujo: Cliente -> Ingress -> Service -> Pod.
+
+### Paso 5 — Entiende persistencia
+Busca PVC/PV. ¿Qué datos guarda? ¿Hay backups?
+            `}
+          ]
+        },
+        {
+          id: 'week2',
+          label: 'Semana 2: CI/CD y Calidad',
+          desc: 'Pipelines de integración continua y despliegue.',
+          items: [
+            { t: 'Día 1: CI de Kubernetes', d: 'Validación de manifests.', md: `
+## Objetivo del día
+Explicar qué valida el pipeline de CI y por qué.
+*   Evita desplegar YAMLs inválidos.
+*   Evita configuraciones inseguras.
+
+## Paso a paso
+### Paso 1 — Entiende el objetivo
+Diferenciar "CI validate" vs "CD deploy".
+
+### Paso 2 — Lee el workflow
+Revisa \`ci-k8s-validate.yml\`.
+*   Linting, security scan.
+*   Triggers (paths).
+
+### Paso 3 — Fallos típicos a detectar
+*   YAML inválido.
+*   Imagen \`:latest\`.
+*   Contenedor privilegiado.
+*   Sin \`readinessProbe\`.
+            `},
+            { t: 'Día 2: CD de Servicios', d: 'Despliegue automatizado.', md: `
+## Objetivo del día
+Entender el flujo de CD y qué cambia en el clúster.
+*   CI dice "debería funcionar".
+*   CD hace que "funcione en el mundo real".
+
+## Paso a paso
+### Paso 1 — Objetivo operativo
+Revisa \`02_usage_validation.md\`.
+
+### Paso 2 — Workflow CD
+Revisa \`cd-core-services.yml\`.
+*   Credenciales.
+*   Comando kubectl/kustomize.
+*   Verificación y evidencia.
+
+### Paso 3 — Definition of Done
+*   Pods Ready.
+*   Services con endpoints.
+*   Ingress responde.
+*   No hay CrashLoop.
+*   Evidencia guardada.
+            `},
+            { t: 'Día 3: Verificación Post-Deploy', d: 'Health checks y smoke tests.', md: `
+## Objetivo del día
+Explicar por qué "aplicar manifests" no es suficiente. Ka0s busca "deploy verificado".
+
+## Dónde verlo
+*   Script: \`k8s-verify-deployment.sh\`
+*   Evidencia: \`audit/kube\`
+
+## Paso a paso
+### Paso 1 — Lee el script
+Identifica qué considera fallo. Haz una lista de checks.
+
+### Paso 2 — Compara con salud del clúster
+Diferencia entre salud del clúster (nodos, sistema) y salud del despliegue (tu app).
+
+### Paso 3 — Conecta con fallos
+*   Pod no Ready -> ImagePullBackOff/CrashLoop.
+*   Service sin endpoints -> selector incorrecto.
+*   Ingress 503 -> backend no responde.
+            `},
+            { t: 'Día 4: Evidencias en audit/', d: 'Lectura de reportes.', md: `
+## Objetivo del día
+Explicar qué es evidencia y cómo usarla para operar sin "adivinar".
+*   Operar sin acceso directo.
+*   Reconstruir ejecuciones.
+
+## Dónde verlo
+*   \`audit/kaos\`
+*   \`audit/inspector\`
+*   \`audit/kube\`
+*   \`audit/deploy\`
+
+## Paso a paso
+### Paso 1 — Lee el contrato
+Revisa \`audit/README.md\`.
+
+### Paso 2 — Correlacionar
+Salta de \`run_id\` en \`audit/kaos\` a \`audit/inspector\` y luego a \`audit/kube\`.
+
+### Paso 3 — Campos clave
+Timestamp, run id, recurso afectado, severidad, recomendación.
+            `},
+            { t: 'Día 5: Estándares Ka0s', d: 'Prompts y control-files.', md: `
+## Objetivo del día
+Explicar para qué sirven los prompts y control-files.
+*   Sin estándares, el sistema se fragmenta.
+*   Reglas no negociables.
+
+## Dónde verlo
+*   Prompts: \`core/ai/\`
+*   Control files: \`core/config/\`
+
+## Paso a paso
+### Paso 1 — Qué es un prompt
+Lee \`prompt_ka0s.md\`. Reglas clave: evidencia, SSH first, formatos.
+
+### Paso 2 — Prompt DevOps/K8s
+Decisiones "siempre": secrets fuera, hardening, validación.
+
+### Paso 3 — Control files
+Contrato de configuración. Parámetros y restricciones.
+
+### Paso 4 — Reglas no negociables
+Ejemplo: "Todo deja evidencia en \`audit/\`".
+            `}
+          ]
+        },
+        {
+          id: 'week3',
+          label: 'Semana 3: Auditoría y K8s Profundo',
+          desc: 'Compliance y seguridad.',
+          items: [
+            { t: 'Día 1: Requerimientos', d: 'Controles verificables.', md: `
+## Objetivo del día
+Leer requisitos como lista de controles (pass/fail).
+*   Compliance as Code.
+*   Evitar validación "a ojo".
+
+## Paso a paso
+### Paso 1 — Dominios
+Infra, Software base, Red, Persistencia, Servicios core.
+
+### Paso 2 — Controles sí/no
+Ej: "¿API server >= 1.28?".
+
+### Paso 3 — Medición
+Comando, evidencia y severidad (blocker/high/medium).
+            `},
+            { t: 'Día 2: Auditoría de estado', d: 'Scripts Bash de observación.', md: `
+## Objetivo del día
+Leer scripts de auditoría en Bash.
+*   Sensores activos.
+*   Transforman estado en datos.
+
+## Dónde verlo
+*   \`kube-audit.sh\`
+*   \`audit/kube\`
+
+## Paso a paso
+### Paso 1 — Intención
+Qué audita y con qué periodicidad.
+
+### Paso 2 — Lee el script
+Identifica validación, comandos kubectl y formateo de salida.
+
+### Paso 3 — Evidencia
+Revisa reportes JSON vs texto.
+            `},
+            { t: 'Día 3: Pods fallando', d: 'Detección y clasificación.', md: `
+## Objetivo del día
+Entender el pipeline "detecta -> estructura -> clasifica".
+*   Bash recolecta.
+*   Python procesa.
+
+## Dónde verlo
+*   \`audit-failed-pods.sh\`
+*   \`process-failed-pods.py\`
+
+## Paso a paso
+### Paso 1 — Qué es failed
+CrashLoopBackOff, ImagePullBackOff, Pending, Error.
+
+### Paso 2 — Detección (Bash)
+Consulta, filtra y serializa.
+
+### Paso 3 — Procesamiento (Python)
+Clasifica y genera salida accionable.
+
+### Paso 4 — Causa -> Acción
+ImagePullBackOff -> credenciales. Pending -> recursos.
+            `},
+            { t: 'Día 4: Auditoría de Seguridad', d: 'Workloads, RBAC y Trivy.', md: `
+## Objetivo del día
+Entender controles de seguridad: pods privilegiados, permisos excesivos, supply chain.
+
+## Dónde verlo
+*   \`security-audit-workloads.sh\`
+*   \`security-audit-rbac-net.sh\`
+*   \`security-audit-trivy.sh\`
+
+## Paso a paso
+### Paso 1 — Alcance
+Qué cubre y qué evidencia deja.
+
+### Paso 2 — Workloads
+Checks de seguridad (runAsRoot, privileged).
+
+### Paso 3 — RBAC y Red
+ClusterRoles, Bindings, NetworkPolicies.
+
+### Paso 4 — Trivy
+Escaneo de imágenes (CVEs).
+            `},
+            { t: 'Día 5: Autocuración', d: 'Diseño de tickets idempotentes.', md: `
+## Objetivo del día
+Diseñar el ciclo: detectar -> reconciliar -> crear/actualizar -> cerrar.
+*   Idempotencia para evitar ruido.
+*   Cierre automático.
+
+## Paso a paso
+### Paso 1 — Operaciones base
+Buscar, Crear, Actualizar, Aplicar estímulo.
+
+### Paso 2 — Firma del incidente
+Clave estable: \`cluster + namespace + workload + reason\`.
+
+### Paso 3 — Algoritmo
+1. Construir firma.
+2. Buscar ticket.
+3. Si existe: update. Si no: create.
+4. Si recupera: cerrar.
+            `}
+          ]
+        },
+        {
+          id: 'week4',
+          label: 'Semana 4: Ecosistema Operativo',
+          desc: 'Integración con iTop, Zabbix, Wazuh, n8n.',
+          items: [
+            { t: 'Día 1: iTop como CMDB', d: 'Fuente de verdad.', md: `
+## Objetivo del día
+Explicar el rol de iTop en Ka0s.
+*   Memoria activa.
+*   Evita ruido y duplicados.
+
+## Paso a paso
+### Paso 1 — Rol de iTop
+Integra señales, gestiona incidentes, fuente de verdad.
+
+### Paso 2 — Patrón API
+Buscar antes de crear. Endpoint y auth.
+
+### Paso 3 — Workflow export
+Extracción de datos para auditoría.
+            `},
+            { t: 'Día 2: Zabbix', d: 'Alertas accionables.', md: `
+## Objetivo del día
+Filosofía "Actionability".
+*   Alerta buena = acción.
+*   Alerta mala = ruido.
+
+## Paso a paso
+### Paso 1 — Reglas
+Severidades, integración con n8n.
+
+### Paso 2 — Despliegue
+Server, Agent, RBAC. Qué recolecta.
+
+### Paso 3 — Flujo alerta -> ticket
+Trigger -> Webhook -> n8n -> iTop -> Cierre.
+            `},
+            { t: 'Día 3: Wazuh', d: 'Seguridad y SIEM.', md: `
+## Objetivo del día
+Rol de Wazuh: detección y respuesta.
+*   Sistema inmune.
+*   Alertas críticas -> incidentes.
+
+## Paso a paso
+### Paso 1 — Qué hace
+Detección, respuesta, integración.
+
+### Paso 2 — Despliegue
+Manager, Indexer, Dashboard, Agents.
+
+### Paso 3 — Verificación
+Validar que los servicios reportan.
+
+### Paso 4 — Integración
+Alertas críticas crean ticket. Repetidas actualizan.
+            `},
+            { t: 'Día 4: n8n', d: 'Sistema nervioso.', md: `
+## Objetivo del día
+Diseñar flujos robustos e idempotentes.
+*   Conecta órganos del sistema.
+*   Resiliencia.
+
+## Paso a paso
+### Paso 1 — Reglas
+Error Trigger, idempotencia, rate limit.
+
+### Paso 2 — Payload normalizado
+Source, severity, fingerprint, title, message, evidence.
+
+### Paso 3 — Nodos
+Webhook -> Normalización -> API iTop -> Error Handler.
+            `},
+            { t: 'Día 5: Planka', d: 'Tareas humanas.', md: `
+## Objetivo del día
+Coordinación humana vs automatización.
+*   Planka: trabajo humano.
+*   iTop: gobierno de incidentes.
+
+## Paso a paso
+### Paso 1 — Reglas
+Qué va en Planka, qué va en iTop.
+
+### Paso 2 — Tablero
+Backlog, To Do, In Progress, Done.
+
+### Paso 3 — Automatización
+Webhook "Moved to Done" -> n8n -> Cerrar ticket iTop.
+            `}
+          ]
+        },
+        {
+          id: 'week5',
+          label: 'Semana 5: Proyecto Final y BI',
+          desc: 'BI segura y Compliance.',
+          items: [
+            { t: 'Día 1: Metabase', d: 'BI segura.', md: `
+## Objetivo del día
+BI segura por diseño.
+*   TLS, Auth, Mínimo privilegio.
+*   Evitar "superusuario de datos".
+
+## Paso a paso
+### Paso 1 — Requisitos
+TLS/SSO, secretos, hardening.
+
+### Paso 2 — Modelo de datos
+Usuarios de DB de solo lectura.
+
+### Paso 3 — Despliegue
+DB interna (Postgres) en K8s.
+            `},
+            { t: 'Día 2: ELK', d: 'Logs estructurados.', md: `
+## Objetivo del día
+Flujo: ingesta -> storage -> visualización -> acción.
+*   Logs estructurados (JSON/ECS).
+*   Dashboards útiles.
+
+## Paso a paso
+### Paso 1 — Objetivos
+ECS, parseo, alertas.
+
+### Paso 2 — Despliegue
+Elasticsearch, Kibana, Logstash.
+
+### Paso 3 — Casos de uso
+Errores 5xx, Logins fallidos, Reinicios de pods.
+            `},
+            { t: 'Día 3: Proyecto Diseño', d: 'Compliance pipeline.', md: `
+## Objetivo del día
+Diseñar pipeline de compliance.
+*   Requisitos -> Controles automatizados.
+
+## Paso a paso
+### Paso 1 — Controles
+Selecciona 15 controles. Severidad y dueño.
+
+### Paso 2 — Medición
+Comando, output, evidencia.
+
+### Paso 3 — Reporte JSON
+Metadata + Controls (status, recommendation).
+            `},
+            { t: 'Día 4: Proyecto Implementación', d: 'Orquestación.', md: `
+## Objetivo del día
+Orquestar auditoría y guardar evidencia.
+*   Automatizar, versionar, evidenciar.
+
+## Paso a paso
+### Paso 1 — Workflow
+Scripts, credenciales, output.
+
+### Paso 2 — Patrones
+Reutiliza scripts de auditoría/seguridad.
+
+### Paso 3 — Evidencia
+Ruta estándar \`audit/compliance/\`. JSON mínimo.
+            `},
+            { t: 'Día 5: Proyecto Integración', d: 'Tickets de compliance.', md: `
+## Objetivo del día
+Cierre del ciclo: Compliance -> iTop.
+*   Mapear hallazgo a ticket.
+*   Idempotencia.
+*   Cierre automático.
+
+## Paso a paso
+### Paso 1 — Firma
+\`cluster + control_id + scope\`.
+
+### Paso 2 — Ticket
+Título, descripción (evidencia), severidad.
+
+### Paso 3 — Algoritmo
+Get -> Update/Create -> Close (si OK).
+            `}
+          ]
+        }
+      ];
+
+      function render() {
+        const searchTerm = els.search.value.trim().toLowerCase();
+        els.notes.innerHTML = '';
+        els.toc.innerHTML = '';
+        let totalNotes = 0;
+        let studiedTotal = 0;
+        
+        SECTIONS.forEach((sec, secIdx) => {
+          const filtered = sec.items.map((it, idx) => ({...it, id: `${sec.id}-${idx}`})).filter(it => {
+            if (!searchTerm) return true;
+            return it.t.toLowerCase().includes(searchTerm) || (it.d && it.d.toLowerCase().includes(searchTerm));
+          });
+          
+          if (filtered.length === 0) return;
+          totalNotes += filtered.length;
+
+          // TOC Folder
+          const folderOpen = true; // Always open for now
+          const secDiv = document.createElement('div');
+          secDiv.className = 'border-b border-[#d0d7de] dark:border-[#30363d] last:border-0';
+          
+          const folderHeader = document.createElement('div');
+          folderHeader.className = 'px-3 py-2 flex items-center gap-2 hover:bg-[#f6f8fa] dark:hover:bg-[#161b22] cursor-pointer text-[#1f2328] dark:text-[#c9d1d9]';
+          folderHeader.innerHTML = `
+            <svg class="w-4 h-4 text-[#54aeff]" viewBox="0 0 16 16" fill="currentColor"><path d="M1.75 1A1.75 1.75 0 0 0 0 2.75v10.5C0 14.216.784 15 1.75 15h12.5A1.75 1.75 0 0 0 16 13.25v-8.5A1.75 1.75 0 0 0 14.25 3H7.5a.25.25 0 0 1-.2-.1l-.9-1.2C6.07 1.26 5.55 1 5 1H1.75Z"></path></svg>
+            <span class="font-semibold truncate">${sec.label}</span>
+          `;
+          secDiv.appendChild(folderHeader);
+
+          const folderContent = document.createElement('div');
+          // folderContent.className = 'pl-2'; // Indent
+          
+          filtered.forEach((it) => {
+            const checked = !!studied[it.id];
+            if (checked) studiedTotal += 1;
+
+            // TOC Item (File)
+            const fileLink = document.createElement('a');
+            fileLink.href = `#note-${it.id}`;
+            fileLink.className = `block px-3 py-1.5 flex items-center gap-2 text-[#1f2328] dark:text-[#c9d1d9] hover:text-[#0969da] dark:hover:text-[#58a6ff] hover:underline decoration-dashed text-xs pl-8`;
+            fileLink.innerHTML = `
+                <svg class="w-3.5 h-3.5 text-[#656d76] dark:text-[#7d8590]" viewBox="0 0 16 16" fill="currentColor"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.228.504l2.932 2.932c.32.319.504.764.504 1.228v8.59c0 .966-.784 1.75-1.75 1.75H3.75A1.75 1.75 0 0 1 2 13.25v-11.5Z"></path></svg>
+                <span class="truncate ${checked ? 'line-through opacity-50' : ''}">${it.t}</span>
+            `;
+            folderContent.appendChild(fileLink);
+
+            // Note Content (README style)
+            const noteContainer = document.createElement('div');
+            noteContainer.id = `note-${it.id}`;
+            noteContainer.className = 'mb-8 scroll-mt-24';
+            
+            const renderedContent = parseMarkdown(it.md);
+            
+            noteContainer.innerHTML = `
+                <div class="file-header flex items-center justify-between">
+                    <div class="flex items-center gap-2">
+                        <svg class="w-4 h-4 text-[#656d76] dark:text-[#7d8590]" viewBox="0 0 16 16" fill="currentColor"><path d="M2 1.75C2 .784 2.784 0 3.75 0h6.586c.464 0 .909.184 1.228.504l2.932 2.932c.32.319.504.764.504 1.228v8.59c0 .966-.784 1.75-1.75 1.75H3.75A1.75 1.75 0 0 1 2 13.25v-11.5Z"></path></svg>
+                        <span class="font-mono font-semibold">${it.t}.md</span>
+                    </div>
+                    <div class="flex items-center gap-2">
+                        <label class="text-xs cursor-pointer select-none flex items-center gap-1 px-2 py-1 rounded hover:bg-[#eaeef2] dark:hover:bg-[#30363d] transition-colors border border-transparent hover:border-[#d0d7de] dark:hover:border-[#6e7681]">
+                            <input type="checkbox" ${checked ? 'checked' : ''} data-id="${it.id}" class="accent-[#238636]">
+                            <span>Mark as read</span>
+                        </label>
+                    </div>
+                </div>
+                <div class="file-content prose prose-sm md:prose-base dark:prose-invert max-w-none">
+                    ${renderedContent}
+                </div>
+            `;
+            
+            noteContainer.querySelector('input').addEventListener('change', (e) => {
+                studied[it.id] = e.target.checked;
+                localStorage.setItem('ka0s:studied', JSON.stringify(studied));
+                render(); // Re-render to update TOC strikethrough and progress
+            });
+
+            els.notes.appendChild(noteContainer);
+          });
+
+          secDiv.appendChild(folderContent);
+          els.toc.appendChild(secDiv);
+        });
+
+        // Update Progress
+        const percent = totalNotes > 0 ? Math.round((studiedTotal / totalNotes) * 100) : 0;
+        els.studiedCount.textContent = `${percent}%`;
+        els.studiedCount.className = `px-1.5 py-0.5 rounded-full text-[10px] text-white font-bold ${percent === 100 ? 'bg-[#238636]' : 'bg-[#1f6feb]'}`;
+      }
+
+      function setupSpy(){
+        // Simplified spy not needed with this new layout, 
+        // as we are using anchors directly.
+      }
+
+      function init() {
+        render();
+        els.search.addEventListener('input', render);
+        
+        // Expand/Collapse now just scroll to top/bottom for simplicity in this view
+        // or could toggle folder visibility if implemented.
+        if(els.expandAll) els.expandAll.style.display = 'none'; 
+        if(els.collapseAll) els.collapseAll.style.display = 'none';
+
+        document.getElementById('logoutBtn').addEventListener('click', () => {
+          if(confirm('¿Cerrar sesión de Ka0s Training?')) {
+            sessionStorage.removeItem('ka0s_auth');
+            window.location.href = 'loginKa0s.html';
+          }
+        });
+      }
+
+      init();
+    </script>
+  </body>
+</html>

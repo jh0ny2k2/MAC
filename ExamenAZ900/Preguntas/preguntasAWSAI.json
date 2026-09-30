@@ -1,0 +1,1766 @@
+[
+  {
+    "id": "1",
+    "type": "multiple-choice",
+    "question": "A company makes forecasts each quarter to decide how to optimize operations to meet expected demand. The company uses ML models to make these forecasts.\r\n\r\nAn AI practitioner is writing a report about the trained ML models to provide transparency and explainability to company stakeholders.\r\n\r\nWhat should the AI practitioner include in the report to meet the transparency and explainability requirements?",
+    "options": [
+      "Code for model training",
+      "Partial dependence plots (PDPs)",
+      "Sample data for training",
+      "Model convergence tables"
+    ],
+    "image": null,
+    "answer": "Partial dependence plots (PDPs)",
+    "explanation": "Partial Dependence Plots (PDPs) are useful tools for understanding the relationship between specific features and the model's predictions, making it easier to see how changes in input variables affect the forecast. PDPs are particularly helpful for stakeholders because they visually show the impact of individual features on predictions without requiring a deep understanding of the model's inner workings.",
+    "question_en": "A company makes forecasts each quarter to decide how to optimize operations to meet expected demand. The company uses ML models to make these forecasts.\r\n\r\nAn AI practitioner is writing a report about the trained ML models to provide transparency and explainability to company stakeholders.\r\n\r\nWhat should the AI practitioner include in the report to meet the transparency and explainability requirements?",
+    "question_es": "A company makes forecasts each quarter to decide how to optimize operations to meet expected demand. The company uses ML models to make these forecasts.\r\n\r\nAn AI practitioner is writing a report about the trained ML models to provide transparency and explainability to company stakeholders.\r\n\r\nWhat should the AI practitioner include in the report to meet the transparency and explainability requirements?",
+    "explanation_en": "Partial Dependence Plots (PDPs) are useful tools for understanding the relationship between specific features and the model's predictions, making it easier to see how changes in input variables affect the forecast. PDPs are particularly helpful for stakeholders because they visually show the impact of individual features on predictions without requiring a deep understanding of the model's inner workings.",
+    "explanation_es": "Partial Dependence Plots (PDPs) are useful tools for understanding the relationship between specific features and the model's predictions, making it easier to see how changes in input variables affect the forecast. PDPs are particularly helpful for stakeholders because they visually show the impact of individual features on predictions without requiring a deep understanding of the model's inner workings."
+  },
+  {
+    "id": "2",
+    "type": "multiple-choice",
+    "question": "A company wants to use language models to create an application for inference on edge devices. The inference must have the lowest latency possible.\r\n\r\nWhich solution will meet these requirements?",
+    "options": [
+      "Deploy optimized small language models (SLMs) on edge devices.",
+      "Deploy optimized large language models (LLMs) on edge devices.",
+      "Incorporate a centralized small language model (SLM) API for asynchronous communication with edge devices.",
+      "Incorporate a centralized large language model (LLM) API for asynchronous communication with edge devices."
+    ],
+    "image": null,
+    "answer": "Deploy optimized small language models (SLMs) on edge devices.",
+    "explanation": "Deploying optimized small language models (SLMs) on edge devices ensures low latency because the inference happens directly on the device without relying on cloud communication. Small language models are lightweight and designed to run efficiently on devices with limited resources, making them ideal for edge computing.",
+    "question_en": "A company wants to use language models to create an application for inference on edge devices. The inference must have the lowest latency possible.\r\n\r\nWhich solution will meet these requirements?",
+    "question_es": "A company wants to use language models to create an application for inference on edge devices. The inference must have the lowest latency possible.\r\n\r\nWhich solution will meet these requirements?",
+    "explanation_en": "Deploying optimized small language models (SLMs) on edge devices ensures low latency because the inference happens directly on the device without relying on cloud communication. Small language models are lightweight and designed to run efficiently on devices with limited resources, making them ideal for edge computing.",
+    "explanation_es": "Deploying optimized small language models (SLMs) on edge devices ensures low latency because the inference happens directly on the device without relying on cloud communication. Small language models are lightweight and designed to run efficiently on devices with limited resources, making them ideal for edge computing."
+  },
+  {
+    "id": "3",
+    "type": "multiple-choice",
+    "question": "A company is developing a mobile ML app that uses a phone's camera to diagnose and treat insect bites. The company wants to train an image classification model by using a diverse dataset of insect bite photos from different genders, ethnicities, and geographic locations around the world.\r\n\r\nWhich principle of responsible AI does the company demonstrate in this scenario?",
+    "options": [
+      "Fairness",
+      "Explainability",
+      "Governance",
+      "Transparency"
+    ],
+    "image": null,
+    "answer": "Fairness",
+    "explanation": null,
+    "question_en": "A company is developing a mobile ML app that uses a phone's camera to diagnose and treat insect bites. The company wants to train an image classification model by using a diverse dataset of insect bite photos from different genders, ethnicities, and geographic locations around the world.\r\n\r\nWhich principle of responsible AI does the company demonstrate in this scenario?",
+    "question_es": "A company is developing a mobile ML app that uses a phone's camera to diagnose and treat insect bites. The company wants to train an image classification model by using a diverse dataset of insect bite photos from different genders, ethnicities, and geographic locations around the world.\r\n\r\nWhich principle of responsible AI does the company demonstrate in this scenario?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "4",
+    "type": "multiple-choice",
+    "question": "A company is developing an ML model to make loan approvals. The company must implement a solution to detect bias in the model. The company must also be able to explain the model's predictions.\r\n\r\nWhich solution will meet these requirements?",
+    "options": [
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Model Cards",
+      "AWS AI Service Cards"
+    ],
+    "image": null,
+    "answer": "Amazon SageMaker Clarify",
+    "explanation": null,
+    "question_en": "A company is developing an ML model to make loan approvals. The company must implement a solution to detect bias in the model. The company must also be able to explain the model's predictions.\r\n\r\nWhich solution will meet these requirements?",
+    "question_es": "A company is developing an ML model to make loan approvals. The company must implement a solution to detect bias in the model. The company must also be able to explain the model's predictions.\r\n\r\nWhich solution will meet these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "5",
+    "type": "multiple-choice",
+    "question": "A company has developed a generative text summarization model by using Amazon Bedrock. The company will use Amazon Bedrock automatic model evaluation capabilities.\r\n\r\nWhich metric should the company use to evaluate the accuracy of the model?",
+    "options": [
+      "Area Under the ROC Curve (AUC) score",
+      "F1 score",
+      "BERTScore",
+      "Real world knowledge (RWK) score"
+    ],
+    "image": null,
+    "answer": "BERTScore",
+    "explanation": null,
+    "question_en": "A company has developed a generative text summarization model by using Amazon Bedrock. The company will use Amazon Bedrock automatic model evaluation capabilities.\r\n\r\nWhich metric should the company use to evaluate the accuracy of the model?",
+    "question_es": "A company has developed a generative text summarization model by using Amazon Bedrock. The company will use Amazon Bedrock automatic model evaluation capabilities.\r\n\r\nWhich metric should the company use to evaluate the accuracy of the model?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "6",
+    "type": "multiple-choice",
+    "question": "An AI practitioner wants to predict the classification of flowers based on petal length, petal width, sepal length, and sepal width.\r\n\r\nWhich algorithm meets these requirements?",
+    "options": [
+      "K-nearest neighbors (k-NN)",
+      "K-mean",
+      "Autoregressive Integrated Moving Average (ARIMA)",
+      "Linear regression"
+    ],
+    "image": null,
+    "answer": "K-nearest neighbors (k-NN)",
+    "explanation": null,
+    "question_en": "An AI practitioner wants to predict the classification of flowers based on petal length, petal width, sepal length, and sepal width.\r\n\r\nWhich algorithm meets these requirements?",
+    "question_es": "An AI practitioner wants to predict the classification of flowers based on petal length, petal width, sepal length, and sepal width.\r\n\r\nWhich algorithm meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "7",
+    "type": "multiple-choice",
+    "question": "A company is using custom models in Amazon Bedrock for a generative AI application. The company wants to use a company managed encryption key to encrypt the model artifacts that the model customization jobs create.\r\n\r\nWhich AWS service meets these requirements?",
+    "options": [
+      "AWS Key Management Service (AWS KMS)",
+      "Amazon Inspector",
+      "Amazon Macie",
+      "AWS Secrets Manager"
+    ],
+    "image": null,
+    "answer": "AWS Key Management Service (AWS KMS)",
+    "explanation": null,
+    "question_en": "A company is using custom models in Amazon Bedrock for a generative AI application. The company wants to use a company managed encryption key to encrypt the model artifacts that the model customization jobs create.\r\n\r\nWhich AWS service meets these requirements?",
+    "question_es": "A company is using custom models in Amazon Bedrock for a generative AI application. The company wants to use a company managed encryption key to encrypt the model artifacts that the model customization jobs create.\r\n\r\nWhich AWS service meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "8",
+    "type": "multiple-choice",
+    "question": "A company wants to use large language models (LLMs) to produce code from natural language code comments.\r\n\r\nWhich LLM feature meets these requirements?",
+    "options": [
+      "Text summarization",
+      "Text generation",
+      "Text completion",
+      "Text classification"
+    ],
+    "image": null,
+    "answer": "Text generation",
+    "explanation": "La finalización de texto es la capacidad de un LLM para generar la continuación más probable de una entrada dada. En este caso, la entrada es el comentario de código en lenguaje natural y el modelo necesita generar el código correspondiente. Esto se alinea perfectamente con cómo funciona la finalización de texto, ya que predice la siguiente secuencia de tokens basándose en el contexto proporcionado.",
+    "question_en": "A company wants to use large language models (LLMs) to produce code from natural language code comments.\r\n\r\nWhich LLM feature meets these requirements?",
+    "question_es": "A company wants to use large language models (LLMs) to produce code from natural language code comments.\r\n\r\nWhich LLM feature meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "La finalización de texto es la capacidad de un LLM para generar la continuación más probable de una entrada dada. En este caso, la entrada es el comentario de código en lenguaje natural y el modelo necesita generar el código correspondiente. Esto se alinea perfectamente con cómo funciona la finalización de texto, ya que predice la siguiente secuencia de tokens basándose en el contexto proporcionado."
+  },
+  {
+    "id": "9",
+    "type": "multiple-choice",
+    "question": "A company is introducing a mobile app that helps users learn foreign languages. The app makes text more coherent by calling a large language model (LLM). The company collected a diverse dataset of text and supplemented the dataset with examples of more readable versions. The company wants the LLM output to resemble the provided examples.\r\n\r\nWhich metric should the company use to assess whether the LLM meets these requirements?",
+    "options": [
+      "Value of the loss function",
+      "Semantic robustness",
+      "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score",
+      "Latency of the text generation"
+    ],
+    "image": null,
+    "answer": "Recall-Oriented Understudy for Gisting Evaluation (ROUGE) score",
+    "explanation": null,
+    "question_en": "A company is introducing a mobile app that helps users learn foreign languages. The app makes text more coherent by calling a large language model (LLM). The company collected a diverse dataset of text and supplemented the dataset with examples of more readable versions. The company wants the LLM output to resemble the provided examples.\r\n\r\nWhich metric should the company use to assess whether the LLM meets these requirements?",
+    "question_es": "A company is introducing a mobile app that helps users learn foreign languages. The app makes text more coherent by calling a large language model (LLM). The company collected a diverse dataset of text and supplemented the dataset with examples of more readable versions. The company wants the LLM output to resemble the provided examples.\r\n\r\nWhich metric should the company use to assess whether the LLM meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "10",
+    "type": "multiple-choice",
+    "question": "A company notices that its foundation model (FM) generates images that are unrelated to the prompts. The company wants to modify the prompt techniques to decrease unrelated images.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Use zero-shot prompts.",
+      "Use negative prompts.",
+      "Use positive prompts.",
+      "Use ambiguous prompts."
+    ],
+    "image": null,
+    "answer": "Use negative prompts.",
+    "explanation": null,
+    "question_en": "A company notices that its foundation model (FM) generates images that are unrelated to the prompts. The company wants to modify the prompt techniques to decrease unrelated images.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A company notices that its foundation model (FM) generates images that are unrelated to the prompts. The company wants to modify the prompt techniques to decrease unrelated images.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "11",
+    "type": "multiple-choice",
+    "question": "A company wants to use a large language model (LLM) to generate concise, feature-specific descriptions for the company’s products.\r\n\r\nWhich prompt engineering technique meets these requirements?",
+    "options": [
+      "Create one prompt that covers all products. Edit the responses to make the responses more specific, concise, and tailored to each product.",
+      "Create prompts for each product category that highlight the key features. Include the desired output format and length for each prompt response.",
+      "Include a diverse range of product features in each prompt to generate creative and unique descriptions.",
+      "Provide detailed, product-specific prompts to ensure precise and customized descriptions."
+    ],
+    "image": null,
+    "answer": "Create prompts for each product category that highlight the key features. Include the desired output format and length for each prompt response.",
+    "explanation": null,
+    "question_en": "A company wants to use a large language model (LLM) to generate concise, feature-specific descriptions for the company’s products.\r\n\r\nWhich prompt engineering technique meets these requirements?",
+    "question_es": "A company wants to use a large language model (LLM) to generate concise, feature-specific descriptions for the company’s products.\r\n\r\nWhich prompt engineering technique meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "12",
+    "type": "multiple-choice",
+    "question": "A company is developing an ML model to predict customer churn. The model performs well on the training dataset but does not accurately predict churn for new data.\r\n\r\nWhich solution will resolve this issue?",
+    "options": [
+      "Decrease the regularization parameter to increase model complexity.",
+      "Increase the regularization parameter to decrease model complexity.",
+      "Add more features to the input data.",
+      "Train the model for more epochs."
+    ],
+    "image": null,
+    "answer": "Increase the regularization parameter to decrease model complexity.",
+    "explanation": null,
+    "question_en": "A company is developing an ML model to predict customer churn. The model performs well on the training dataset but does not accurately predict churn for new data.\r\n\r\nWhich solution will resolve this issue?",
+    "question_es": "A company is developing an ML model to predict customer churn. The model performs well on the training dataset but does not accurately predict churn for new data.\r\n\r\nWhich solution will resolve this issue?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "13",
+    "type": "multiple-choice",
+    "question": "A company wants to build an ML model by using Amazon SageMaker. The company needs to share and manage variables for model development across multiple teams.\r\n\r\nWhich SageMaker feature meets these requirements?",
+    "options": [
+      "Amazon SageMaker Feature Store",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Clarify",
+      "Amazon SageMaker Model Cards"
+    ],
+    "image": null,
+    "answer": "Amazon SageMaker Feature Store",
+    "explanation": "Amazon SageMaker Feature Store es un repositorio diseñado específicamente para almacenar, compartir y administrar características (variables) utilizadas en modelos de aprendizaje automático. Permite a los equipos colaborar de manera efectiva proporcionando una ubicación centralizada para almacenar y acceder a características a través de múltiples flujos de trabajo de ML, asegurando consistencia y reutilización.",
+    "question_en": "A company wants to build an ML model by using Amazon SageMaker. The company needs to share and manage variables for model development across multiple teams.\r\n\r\nWhich SageMaker feature meets these requirements?",
+    "question_es": "A company wants to build an ML model by using Amazon SageMaker. The company needs to share and manage variables for model development across multiple teams.\r\n\r\nWhich SageMaker feature meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Amazon SageMaker Feature Store es un repositorio diseñado específicamente para almacenar, compartir y administrar características (variables) utilizadas en modelos de aprendizaje automático. Permite a los equipos colaborar de manera efectiva proporcionando una ubicación centralizada para almacenar y acceder a características a través de múltiples flujos de trabajo de ML, asegurando consistencia y reutilización."
+  },
+  {
+    "id": "14",
+    "type": "multiple-choice",
+    "question": "A company is implementing intelligent agents to provide conversational search experiences for its customers. The company needs a database service that will support storage and queries of embeddings from a generative AI model as vectors in the database.\r\n\r\nWhich AWS service will meet these requirements?",
+    "options": [
+      "Amazon Athena",
+      "Amazon Aurora PostgreSQL",
+      "Amazon Redshift",
+      "Amazon EMR"
+    ],
+    "image": null,
+    "answer": "Amazon Aurora PostgreSQL",
+    "explanation": null,
+    "question_en": "A company is implementing intelligent agents to provide conversational search experiences for its customers. The company needs a database service that will support storage and queries of embeddings from a generative AI model as vectors in the database.\r\n\r\nWhich AWS service will meet these requirements?",
+    "question_es": "A company is implementing intelligent agents to provide conversational search experiences for its customers. The company needs a database service that will support storage and queries of embeddings from a generative AI model as vectors in the database.\r\n\r\nWhich AWS service will meet these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "15",
+    "type": "multiple-choice",
+    "question": "A financial institution is building an AI solution to make loan approval decisions by using a foundation model (FM). For security and audit purposes, the company needs the AI solution's decisions to be explainable.\r\n\r\nWhich factor relates to the explainability of the AI solution's decisions?",
+    "options": [
+      "Model complexity",
+      "Training time",
+      "Number of hyperparameters",
+      "Deployment time"
+    ],
+    "image": null,
+    "answer": "Model complexity",
+    "explanation": null,
+    "question_en": "A financial institution is building an AI solution to make loan approval decisions by using a foundation model (FM). For security and audit purposes, the company needs the AI solution's decisions to be explainable.\r\n\r\nWhich factor relates to the explainability of the AI solution's decisions?",
+    "question_es": "A financial institution is building an AI solution to make loan approval decisions by using a foundation model (FM). For security and audit purposes, the company needs the AI solution's decisions to be explainable.\r\n\r\nWhich factor relates to the explainability of the AI solution's decisions?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "16",
+    "type": "multiple-choice",
+    "question": "A pharmaceutical company wants to analyze user reviews of new medications and provide a concise overview for each medication.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Create a time-series forecasting model to analyze the medication reviews by using Amazon Personalize.",
+      "Create medication review summaries by using Amazon Bedrock large language models (LLMs).",
+      "Create a classification model that categorizes medications into different groups by using Amazon SageMaker.",
+      "Create medication review summaries by using Amazon Rekognition."
+    ],
+    "image": null,
+    "answer": "Create medication review summaries by using Amazon Bedrock large language models (LLMs).",
+    "explanation": null,
+    "question_en": "A pharmaceutical company wants to analyze user reviews of new medications and provide a concise overview for each medication.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A pharmaceutical company wants to analyze user reviews of new medications and provide a concise overview for each medication.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "17",
+    "type": "multiple-choice",
+    "question": "A company wants to build a lead prioritization application for its employees to contact potential customers. The application must give employees the ability to view and adjust the weights assigned to different variables in the model based on domain knowledge and expertise.\r\n\r\nWhich ML model type meets these requirements?",
+    "options": [
+      "Logistic regression model",
+      "Deep learning model built on principal components",
+      "K-nearest neighbors (k-NN) model",
+      "Neural network"
+    ],
+    "image": null,
+    "answer": "Logistic regression model",
+    "explanation": "Un modelo de regresión logística es interpretable y permite el ajuste directo de los pesos asignados a diferentes variables (características). Esto se alinea con el requisito de que los empleados vean y modifiquen los pesos basándose en su conocimiento y experiencia del dominio. La regresión logística proporciona una relación clara entre las características de entrada y las predicciones de salida, lo que la hace ideal para casos de uso que exigen transparencia y control.",
+    "question_en": "A company wants to build a lead prioritization application for its employees to contact potential customers. The application must give employees the ability to view and adjust the weights assigned to different variables in the model based on domain knowledge and expertise.\r\n\r\nWhich ML model type meets these requirements?",
+    "question_es": "A company wants to build a lead prioritization application for its employees to contact potential customers. The application must give employees the ability to view and adjust the weights assigned to different variables in the model based on domain knowledge and expertise.\r\n\r\nWhich ML model type meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Un modelo de regresión logística es interpretable y permite el ajuste directo de los pesos asignados a diferentes variables (características). Esto se alinea con el requisito de que los empleados vean y modifiquen los pesos basándose en su conocimiento y experiencia del dominio. La regresión logística proporciona una relación clara entre las características de entrada y las predicciones de salida, lo que la hace ideal para casos de uso que exigen transparencia y control."
+  },
+  {
+    "id": "18",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants to build an ML application.\r\n\r\nSelect and order the correct steps from the following list to develop a well-architected ML workload. Each step should be selected one time.\r\n\r\nQuestion\r\nCorrect answer:",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants to build an ML application.\r\n\r\nSelect and order the correct steps from the following list to develop a well-architected ML workload. Each step should be selected one time.\r\n\r\nQuestion\r\nCorrect answer:",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants to build an ML application.\r\n\r\nSelect and order the correct steps from the following list to develop a well-architected ML workload. Each step should be selected one time.\r\n\r\nQuestion\r\nCorrect answer:",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "19",
+    "type": "multiple-choice",
+    "question": "Which strategy will determine if a foundation model (FM) effectively meets business objectives?",
+    "options": [
+      "Evaluate the model's performance on benchmark datasets.",
+      "Analyze the model's architecture and hyperparameters.",
+      "Assess the model's alignment with specific use cases.",
+      "Measure the computational resources required for model deployment."
+    ],
+    "image": null,
+    "answer": "Assess the model's alignment with specific use cases.",
+    "explanation": "Para determinar si un modelo fundacional (FM) cumple efectivamente con los objetivos comerciales, es crucial evaluar qué tan bien se alinea el modelo con los casos de uso y objetivos específicos del negocio. Esto implica probar el rendimiento del modelo en tareas del mundo real y asegurar que aborde los resultados deseados, como precisión, relevancia y satisfacción del usuario, en el contexto del problema comercial.\n\n¿Por qué no las otras opciones?\n\nA: Evaluar el rendimiento del modelo en conjuntos de datos de referencia:\n\nSi bien la evaluación comparativa proporciona información útil sobre las capacidades del modelo, no garantiza la alineación con las necesidades u objetivos específicos del negocio.",
+    "question_en": "Which strategy will determine if a foundation model (FM) effectively meets business objectives?",
+    "question_es": "Which strategy will determine if a foundation model (FM) effectively meets business objectives?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Para determinar si un modelo fundacional (FM) cumple efectivamente con los objetivos comerciales, es crucial evaluar qué tan bien se alinea el modelo con los casos de uso y objetivos específicos del negocio. Esto implica probar el rendimiento del modelo en tareas del mundo real y asegurar que aborde los resultados deseados, como precisión, relevancia y satisfacción del usuario, en el contexto del problema comercial.\n\n¿Por qué no las otras opciones?\n\nA: Evaluar el rendimiento del modelo en conjuntos de datos de referencia:\n\nSi bien la evaluación comparativa proporciona información útil sobre las capacidades del modelo, no garantiza la alineación con las necesidades u objetivos específicos del negocio."
+  },
+  {
+    "id": "20",
+    "type": "multiple-choice",
+    "question": "A company needs to train an ML model to classify images of different types of animals. The company has a large dataset of labeled images and will not label more data.\r\n\r\nWhich type of learning should the company use to train the model?",
+    "options": [
+      "Supervised learning",
+      "Unsupervised learning",
+      "Reinforcement learning",
+      "Active learning"
+    ],
+    "image": null,
+    "answer": "Supervised learning",
+    "explanation": "El aprendizaje supervisado es el método apropiado cuando se dispone de un conjunto de datos de ejemplos etiquetados, ya que implica entrenar un modelo utilizando pares de entrada-salida. En este caso, las imágenes etiquetadas de animales (entrada) y sus categorías correspondientes (salida) hacen que el aprendizaje supervisado sea el enfoque ideal. El modelo aprende de estos ejemplos para clasificar nuevas imágenes no vistas en las categorías correctas.\n\n¿Por qué no las otras opciones?\n\nB: Aprendizaje no supervisado:\n\nEl aprendizaje no supervisado no utiliza datos etiquetados y se utiliza normalmente para agrupamiento o descubrimiento de patrones. No es adecuado para esta tarea de clasificación, que requiere datos etiquetados.",
+    "question_en": "A company needs to train an ML model to classify images of different types of animals. The company has a large dataset of labeled images and will not label more data.\r\n\r\nWhich type of learning should the company use to train the model?",
+    "question_es": "A company needs to train an ML model to classify images of different types of animals. The company has a large dataset of labeled images and will not label more data.\r\n\r\nWhich type of learning should the company use to train the model?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "El aprendizaje supervisado es el método apropiado cuando se dispone de un conjunto de datos de ejemplos etiquetados, ya que implica entrenar un modelo utilizando pares de entrada-salida. En este caso, las imágenes etiquetadas de animales (entrada) y sus categorías correspondientes (salida) hacen que el aprendizaje supervisado sea el enfoque ideal. El modelo aprende de estos ejemplos para clasificar nuevas imágenes no vistas en las categorías correctas.\n\n¿Por qué no las otras opciones?\n\nB: Aprendizaje no supervisado:\n\nEl aprendizaje no supervisado no utiliza datos etiquetados y se utiliza normalmente para agrupamiento o descubrimiento de patrones. No es adecuado para esta tarea de clasificación, que requiere datos etiquetados."
+  },
+  {
+    "id": "21",
+    "type": "multiple-choice",
+    "question": "Which phase of the ML lifecycle determines compliance and regulatory requirements?",
+    "options": [
+      "Feature engineering",
+      "Model training",
+      "Data collection",
+      "Business goal identification"
+    ],
+    "image": null,
+    "answer": "Business goal identification",
+    "explanation": "La fase de recopilación de datos del ciclo de vida de ML es donde se determinan principalmente los requisitos de cumplimiento y normativos. Durante esta fase, es importante asegurarse de que los datos que se recopilan cumplan con los estándares legales y normativos, como las leyes de privacidad de datos (por ejemplo, GDPR, HIPAA). Las consideraciones de cumplimiento incluyen garantizar que los datos se recopilen de manera ética, con el consentimiento adecuado, y que la información confidencial o personal se maneje de manera adecuada.",
+    "question_en": "Which phase of the ML lifecycle determines compliance and regulatory requirements?",
+    "question_es": "Which phase of the ML lifecycle determines compliance and regulatory requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "La fase de recopilación de datos del ciclo de vida de ML es donde se determinan principalmente los requisitos de cumplimiento y normativos. Durante esta fase, es importante asegurarse de que los datos que se recopilan cumplan con los estándares legales y normativos, como las leyes de privacidad de datos (por ejemplo, GDPR, HIPAA). Las consideraciones de cumplimiento incluyen garantizar que los datos se recopilen de manera ética, con el consentimiento adecuado, y que la información confidencial o personal se maneje de manera adecuada."
+  },
+  {
+    "id": "22",
+    "type": "multiple-choice",
+    "question": "A food service company wants to develop an ML model to help decrease daily food waste and increase sales revenue. The company needs to continuously improve the model's accuracy.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Use Amazon SageMaker and iterate with newer data.",
+      "Use Amazon Personalize and iterate with historical data.",
+      "Use Amazon CloudWatch to analyze customer orders.",
+      "Use Amazon Rekognition to optimize the model."
+    ],
+    "image": null,
+    "answer": "Use Amazon SageMaker and iterate with newer data.",
+    "explanation": "Para cumplir con los requisitos de disminuir el desperdicio de alimentos y aumentar los ingresos por ventas, la empresa necesita un modelo de aprendizaje automático que pueda mejorar y ajustarse continuamente en función de nuevos datos.\n\nAmazon SageMaker es un servicio totalmente administrado que permite a las empresas crear, entrenar e implementar modelos de aprendizaje automático a escala. Al iterar con datos más nuevos, el modelo se puede actualizar continuamente para reflejar los patrones cambiantes en el comportamiento del cliente, la demanda y el consumo de alimentos, lo que lleva a predicciones más precisas con el tiempo.",
+    "question_en": "A food service company wants to develop an ML model to help decrease daily food waste and increase sales revenue. The company needs to continuously improve the model's accuracy.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A food service company wants to develop an ML model to help decrease daily food waste and increase sales revenue. The company needs to continuously improve the model's accuracy.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Para cumplir con los requisitos de disminuir el desperdicio de alimentos y aumentar los ingresos por ventas, la empresa necesita un modelo de aprendizaje automático que pueda mejorar y ajustarse continuamente en función de nuevos datos.\n\nAmazon SageMaker es un servicio totalmente administrado que permite a las empresas crear, entrenar e implementar modelos de aprendizaje automático a escala. Al iterar con datos más nuevos, el modelo se puede actualizar continuamente para reflejar los patrones cambiantes en el comportamiento del cliente, la demanda y el consumo de alimentos, lo que lleva a predicciones más precisas con el tiempo."
+  },
+  {
+    "id": "23",
+    "type": "multiple-choice",
+    "question": "A company has developed an ML model to predict real estate sale prices. The company wants to deploy the model to make predictions without managing servers or infrastructure.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Deploy the model on an Amazon EC2 instance.",
+      "Deploy the model on an Amazon Elastic Kubernetes Service (Amazon EKS) cluster.",
+      "Deploy the model by using Amazon CloudFront with an Amazon S3 integration.",
+      "Deploy the model by using an Amazon SageMaker endpoint."
+    ],
+    "image": null,
+    "answer": "Deploy the model by using an Amazon SageMaker endpoint.",
+    "explanation": "Amazon SageMaker es un servicio totalmente administrado que le permite crear, entrenar e implementar rápidamente modelos de aprendizaje automático a escala. La implementación de un modelo mediante un punto de enlace de Amazon SageMaker permite a la empresa realizar predicciones sin necesidad de administrar servidores o infraestructura. SageMaker maneja automáticamente el aprovisionamiento de recursos, el escalado y el mantenimiento, lo que lo convierte en una solución ideal para implementaciones de ML de grado de producción.",
+    "question_en": "A company has developed an ML model to predict real estate sale prices. The company wants to deploy the model to make predictions without managing servers or infrastructure.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A company has developed an ML model to predict real estate sale prices. The company wants to deploy the model to make predictions without managing servers or infrastructure.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Amazon SageMaker es un servicio totalmente administrado que le permite crear, entrenar e implementar rápidamente modelos de aprendizaje automático a escala. La implementación de un modelo mediante un punto de enlace de Amazon SageMaker permite a la empresa realizar predicciones sin necesidad de administrar servidores o infraestructura. SageMaker maneja automáticamente el aprovisionamiento de recursos, el escalado y el mantenimiento, lo que lo convierte en una solución ideal para implementaciones de ML de grado de producción."
+  },
+  {
+    "id": "24",
+    "type": "multiple-choice",
+    "question": "A company wants to use generative AI to increase developer productivity and software development. The company wants to use Amazon Q Developer.\r\n\r\nWhat can Amazon Q Developer do to help the company meet these requirements?",
+    "options": [
+      "Create software snippets, reference tracking, and open source license tracking.",
+      "Run an application without provisioning or managing servers.",
+      "Enable voice commands for coding and providing natural language search.",
+      "Convert audio files to text documents by using ML models."
+    ],
+    "image": null,
+    "answer": "Create software snippets, reference tracking, and open source license tracking.",
+    "explanation": "Amazon Q Developer es una herramienta de IA generativa diseñada para ayudar a los desarrolladores aumentando la productividad. Ayuda a generar fragmentos de software, automatizar el seguimiento de referencias y administrar licencias de código abierto, lo que beneficia directamente al ciclo de vida del desarrollo de software.",
+    "question_en": "A company wants to use generative AI to increase developer productivity and software development. The company wants to use Amazon Q Developer.\r\n\r\nWhat can Amazon Q Developer do to help the company meet these requirements?",
+    "question_es": "A company wants to use generative AI to increase developer productivity and software development. The company wants to use Amazon Q Developer.\r\n\r\nWhat can Amazon Q Developer do to help the company meet these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Amazon Q Developer es una herramienta de IA generativa diseñada para ayudar a los desarrolladores aumentando la productividad. Ayuda a generar fragmentos de software, automatizar el seguimiento de referencias y administrar licencias de código abierto, lo que beneficia directamente al ciclo de vida del desarrollo de software."
+  },
+  {
+    "id": "25",
+    "type": "multiple-choice",
+    "question": "A company wants to develop an AI application to help its employees check open customer claims, identify details for a specific claim, and access documents for a claim.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Use Agents for Amazon Bedrock with Amazon Fraud Detector to build the application.",
+      "Use Agents for Amazon Bedrock with Amazon Bedrock knowledge bases to build the application.",
+      "Use Amazon Personalize with Amazon Bedrock knowledge bases to build the application.",
+      "Use Amazon SageMaker to build the application by training a new ML model."
+    ],
+    "image": null,
+    "answer": "Use Agents for Amazon Bedrock with Amazon Bedrock knowledge bases to build the application.",
+    "explanation": "Amazon Bedrock es un servicio totalmente administrado que le permite crear e implementar aplicaciones de IA generativa. Los agentes para Amazon Bedrock proporcionan agentes impulsados por IA para interactuar con los usuarios y ayudarlos a obtener información, lo que lo hace ideal para ayudar a los empleados a verificar reclamos de clientes abiertos, identificar detalles de reclamos y acceder a documentos.",
+    "question_en": "A company wants to develop an AI application to help its employees check open customer claims, identify details for a specific claim, and access documents for a claim.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A company wants to develop an AI application to help its employees check open customer claims, identify details for a specific claim, and access documents for a claim.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Amazon Bedrock es un servicio totalmente administrado que le permite crear e implementar aplicaciones de IA generativa. Los agentes para Amazon Bedrock proporcionan agentes impulsados por IA para interactuar con los usuarios y ayudarlos a obtener información, lo que lo hace ideal para ayudar a los empleados a verificar reclamos de clientes abiertos, identificar detalles de reclamos y acceder a documentos."
+  },
+  {
+    "id": "26",
+    "type": "multiple-choice",
+    "question": "A manufacturing company uses AI to inspect products and find any damages or defects.\r\n\r\nWhich type of AI application is the company using?",
+    "options": [
+      "Recommendation system",
+      "Natural language processing (NLP)",
+      "Computer vision",
+      "Image processing"
+    ],
+    "image": null,
+    "answer": "Computer vision",
+    "explanation": "La visión por computadora es un campo de la IA que permite a las máquinas interpretar y tomar decisiones basadas en datos visuales, como imágenes o videos. En el contexto de la inspección de productos en busca de daños o defectos, los algoritmos de visión por computadora pueden analizar imágenes de productos para detectar patrones visuales, anomalías o defectos, lo que lo convierte en el tipo de aplicación de IA más apropiado para este caso de uso.",
+    "question_en": "A manufacturing company uses AI to inspect products and find any damages or defects.\r\n\r\nWhich type of AI application is the company using?",
+    "question_es": "A manufacturing company uses AI to inspect products and find any damages or defects.\r\n\r\nWhich type of AI application is the company using?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "La visión por computadora es un campo de la IA que permite a las máquinas interpretar y tomar decisiones basadas en datos visuales, como imágenes o videos. En el contexto de la inspección de productos en busca de daños o defectos, los algoritmos de visión por computadora pueden analizar imágenes de productos para detectar patrones visuales, anomalías o defectos, lo que lo convierte en el tipo de aplicación de IA más apropiado para este caso de uso."
+  },
+  {
+    "id": "27",
+    "type": "multiple-choice",
+    "question": "A company wants to create an ML model to predict customer satisfaction. The company needs fully automated model tuning.\r\n\r\nWhich AWS service meets these requirements?",
+    "options": [
+      "Amazon Personalize",
+      "Amazon SageMaker",
+      "Amazon Athena",
+      "Amazon Comprehend"
+    ],
+    "image": null,
+    "answer": "Amazon SageMaker",
+    "explanation": "Amazon SageMaker es un servicio totalmente administrado que proporciona herramientas para crear, entrenar e implementar modelos de aprendizaje automático. Incluye SageMaker Autopilot, que automatiza el proceso de desarrollo de modelos de aprendizaje automático, incluido el ajuste de modelos. Esta característica ayuda a los usuarios a crear y optimizar modelos con una intervención manual mínima, lo que lo hace ideal para el ajuste de modelos totalmente automatizado.",
+    "question_en": "A company wants to create an ML model to predict customer satisfaction. The company needs fully automated model tuning.\r\n\r\nWhich AWS service meets these requirements?",
+    "question_es": "A company wants to create an ML model to predict customer satisfaction. The company needs fully automated model tuning.\r\n\r\nWhich AWS service meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Amazon SageMaker es un servicio totalmente administrado que proporciona herramientas para crear, entrenar e implementar modelos de aprendizaje automático. Incluye SageMaker Autopilot, que automatiza el proceso de desarrollo de modelos de aprendizaje automático, incluido el ajuste de modelos. Esta característica ayuda a los usuarios a crear y optimizar modelos con una intervención manual mínima, lo que lo hace ideal para el ajuste de modelos totalmente automatizado."
+  },
+  {
+    "id": "28",
+    "type": "multiple-choice",
+    "question": "Which technique can a company use to lower bias and toxicity in generative AI applications during the post-processing ML lifecycle?",
+    "options": [
+      "Human-in-the-loop",
+      "Data augmentation",
+      "Feature engineering",
+      "Adversarial training"
+    ],
+    "image": null,
+    "answer": "Human-in-the-loop",
+    "explanation": "Human-in-the-loop (HITL) es una técnica utilizada en la etapa de posprocesamiento del ciclo de vida del aprendizaje automático para mejorar el rendimiento del modelo, incluida la reducción del sesgo y la toxicidad. En HITL, los evaluadores humanos intervienen para evaluar y refinar las salidas del modelo. Este ciclo de retroalimentación ayuda a identificar y corregir sesgos, lenguaje tóxico u otros resultados indeseables antes de que se presenten a los usuarios finales. Asegura que el sistema de IA se adhiera a las pautas éticas y mejore la calidad del contenido generado.",
+    "question_en": "Which technique can a company use to lower bias and toxicity in generative AI applications during the post-processing ML lifecycle?",
+    "question_es": "Which technique can a company use to lower bias and toxicity in generative AI applications during the post-processing ML lifecycle?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Human-in-the-loop (HITL) es una técnica utilizada en la etapa de posprocesamiento del ciclo de vida del aprendizaje automático para mejorar el rendimiento del modelo, incluida la reducción del sesgo y la toxicidad. En HITL, los evaluadores humanos intervienen para evaluar y refinar las salidas del modelo. Este ciclo de retroalimentación ayuda a identificar y corregir sesgos, lenguaje tóxico u otros resultados indeseables antes de que se presenten a los usuarios finales. Asegura que el sistema de IA se adhiera a las pautas éticas y mejore la calidad del contenido generado."
+  },
+  {
+    "id": "29",
+    "type": "multiple-choice",
+    "question": "A bank has fine-tuned a large language model (LLM) to expedite the loan approval process. During an external audit of the model, the company discovered that the model was approving loans at a faster pace for a specific demographic than for other demographics.\r\n\r\nHow should the bank fix this issue MOST cost-effectively?",
+    "options": [
+      "Include more diverse training data. Fine-tune the model again by using the new data.",
+      "Use Retrieval Augmented Generation (RAG) with the fine-tuned model.",
+      "Use AWS Trusted Advisor checks to eliminate bias.",
+      "Pre-train a new LLM with more diverse training data."
+    ],
+    "image": null,
+    "answer": "Include more diverse training data. Fine-tune the model again by using the new data.",
+    "explanation": "El problema del sesgo en el modelo de aprobación de préstamos probablemente surja del hecho de que el modelo se entrenó con datos que no representan suficientemente a todos los grupos demográficos. Para abordar esto, el banco debe aumentar el conjunto de datos de entrenamiento con datos más diversos para garantizar que el modelo pueda aprender a tomar decisiones justas y equitativas en diferentes grupos demográficos. Después de incorporar los datos de entrenamiento más diversos, el banco puede ajustar el modelo nuevamente para ajustar su comportamiento y reducir cualquier sesgo identificado durante la auditoría.",
+    "question_en": "A bank has fine-tuned a large language model (LLM) to expedite the loan approval process. During an external audit of the model, the company discovered that the model was approving loans at a faster pace for a specific demographic than for other demographics.\r\n\r\nHow should the bank fix this issue MOST cost-effectively?",
+    "question_es": "A bank has fine-tuned a large language model (LLM) to expedite the loan approval process. During an external audit of the model, the company discovered that the model was approving loans at a faster pace for a specific demographic than for other demographics.\r\n\r\nHow should the bank fix this issue MOST cost-effectively?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "El problema del sesgo en el modelo de aprobación de préstamos probablemente surja del hecho de que el modelo se entrenó con datos que no representan suficientemente a todos los grupos demográficos. Para abordar esto, el banco debe aumentar el conjunto de datos de entrenamiento con datos más diversos para garantizar que el modelo pueda aprender a tomar decisiones justas y equitativas en diferentes grupos demográficos. Después de incorporar los datos de entrenamiento más diversos, el banco puede ajustar el modelo nuevamente para ajustar su comportamiento y reducir cualquier sesgo identificado durante la auditoría."
+  },
+  {
+    "id": "30",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company has developed a large language model (LLM) and wants to make the LLM available to multiple internal teams. The company needs to select the appropriate inference mode for each team.\r\n\r\nSelect the correct inference mode from the following list for each use case. Each inference mode should be selected one or more times.\r\n\r\nQuestion\r\nCorrect answer:",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company has developed a large language model (LLM) and wants to make the LLM available to multiple internal teams. The company needs to select the appropriate inference mode for each team.\r\n\r\nSelect the correct inference mode from the following list for each use case. Each inference mode should be selected one or more times.\r\n\r\nQuestion\r\nCorrect answer:",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company has developed a large language model (LLM) and wants to make the LLM available to multiple internal teams. The company needs to select the appropriate inference mode for each team.\r\n\r\nSelect the correct inference mode from the following list for each use case. Each inference mode should be selected one or more times.\r\n\r\nQuestion\r\nCorrect answer:",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "31",
+    "type": "multiple-choice",
+    "question": "A company needs to log all requests made to its Amazon Bedrock API. The company must retain the logs securely for 5 years at the lowest possible cost.\r\n\r\nWhich combination of AWS service and storage class meets these requirements? (Choose two.)",
+    "options": [
+      "AWS CloudTrail",
+      "Amazon CloudWatch",
+      "AWS Audit Manager",
+      "Amazon S3 Intelligent-Tiering",
+      "Amazon S3 Standard"
+    ],
+    "image": null,
+    "answer": "AWS CloudTrail",
+    "explanation": "A: AWS CloudTrail:\n\nAWS CloudTrail registra todas las llamadas a la API realizadas a los servicios de AWS, incluido Amazon Bedrock, y proporciona registros detallados de estas interacciones. Es el servicio principal para rastrear y registrar solicitudes de API.\n\nD: Amazon S3 Intelligent-Tiering:\n\nAmazon S3 Intelligent-Tiering es una clase de almacenamiento rentable diseñada para optimizar los costos de los datos con patrones de acceso desconocidos o cambiantes. Mueve automáticamente los datos entre niveles de acceso frecuente e infrecuente según el uso, lo que garantiza la eficiencia de costos al tiempo que cumple con los requisitos de retención a largo plazo.",
+    "question_en": "A company needs to log all requests made to its Amazon Bedrock API. The company must retain the logs securely for 5 years at the lowest possible cost.\r\n\r\nWhich combination of AWS service and storage class meets these requirements? (Choose two.)",
+    "question_es": "A company needs to log all requests made to its Amazon Bedrock API. The company must retain the logs securely for 5 years at the lowest possible cost.\r\n\r\nWhich combination of AWS service and storage class meets these requirements? (Choose two.)",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "A: AWS CloudTrail:\n\nAWS CloudTrail registra todas las llamadas a la API realizadas a los servicios de AWS, incluido Amazon Bedrock, y proporciona registros detallados de estas interacciones. Es el servicio principal para rastrear y registrar solicitudes de API.\n\nD: Amazon S3 Intelligent-Tiering:\n\nAmazon S3 Intelligent-Tiering es una clase de almacenamiento rentable diseñada para optimizar los costos de los datos con patrones de acceso desconocidos o cambiantes. Mueve automáticamente los datos entre niveles de acceso frecuente e infrecuente según el uso, lo que garantiza la eficiencia de costos al tiempo que cumple con los requisitos de retención a largo plazo."
+  },
+  {
+    "id": "32",
+    "type": "multiple-choice",
+    "question": "An ecommerce company wants to improve search engine recommendations by customizing the results for each user of the company’s ecommerce platform.\r\n\r\nWhich AWS service meets these requirements?",
+    "options": [
+      "Amazon Personalize",
+      "Amazon Kendra",
+      "Amazon Rekognition",
+      "Amazon Transcribe"
+    ],
+    "image": null,
+    "answer": "Amazon Personalize",
+    "explanation": null,
+    "question_en": "An ecommerce company wants to improve search engine recommendations by customizing the results for each user of the company’s ecommerce platform.\r\n\r\nWhich AWS service meets these requirements?",
+    "question_es": "An ecommerce company wants to improve search engine recommendations by customizing the results for each user of the company’s ecommerce platform.\r\n\r\nWhich AWS service meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "33",
+    "type": "multiple-choice",
+    "question": "A hospital is developing an AI system to assist doctors in diagnosing diseases based on patient records and medical images. To comply with regulations, the sensitive patient data must not leave the country the data is located in.\r\n\r\nWhich data governance strategy will ensure compliance and protect patient privacy?",
+    "options": [
+      "Data residency",
+      "Data quality",
+      "Data discoverability",
+      "Data enrichment"
+    ],
+    "image": null,
+    "answer": "Data residency",
+    "explanation": null,
+    "question_en": "A hospital is developing an AI system to assist doctors in diagnosing diseases based on patient records and medical images. To comply with regulations, the sensitive patient data must not leave the country the data is located in.\r\n\r\nWhich data governance strategy will ensure compliance and protect patient privacy?",
+    "question_es": "A hospital is developing an AI system to assist doctors in diagnosing diseases based on patient records and medical images. To comply with regulations, the sensitive patient data must not leave the country the data is located in.\r\n\r\nWhich data governance strategy will ensure compliance and protect patient privacy?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "34",
+    "type": "multiple-choice",
+    "question": "A company needs to monitor the performance of its ML systems by using a highly scalable AWS service.\r\n\r\nWhich AWS service meets these requirements?",
+    "options": [
+      "Amazon CloudWatch",
+      "AWS CloudTrail",
+      "AWS Trusted Advisor",
+      "AWS Config"
+    ],
+    "image": null,
+    "answer": "Amazon CloudWatch",
+    "explanation": null,
+    "question_en": "A company needs to monitor the performance of its ML systems by using a highly scalable AWS service.\r\n\r\nWhich AWS service meets these requirements?",
+    "question_es": "A company needs to monitor the performance of its ML systems by using a highly scalable AWS service.\r\n\r\nWhich AWS service meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "35",
+    "type": "multiple-choice",
+    "question": "A financial institution is using Amazon Bedrock to develop an AI application. The application is hosted in a VPC. To meet regulatory compliance standards, the VPC is not allowed access to any internet traffic.\r\n\r\nWhich AWS service or feature will meet these requirements?",
+    "options": [
+      "AWS PrivateLink",
+      "Amazon Macie",
+      "Amazon CloudFront",
+      "Internet gateway"
+    ],
+    "image": null,
+    "answer": "AWS PrivateLink",
+    "explanation": "Dado que la VPC no tiene acceso a Internet, la institución financiera debe utilizar una opción de conectividad privada para acceder a Amazon Bedrock, que es un servicio de IA administrado. AWS PrivateLink permite la comunicación privada entre las VPC y los servicios de AWS sin requerir acceso a Internet, lo que la convierte en la mejor opción para el cumplimiento normativo.\n\nAmazon Macie (B): Un servicio de seguridad de datos que ayuda a identificar datos confidenciales pero no proporciona conectividad privada.\n\nAmazon CloudFront (C): Un servicio de CDN que optimiza la entrega de contenido pero aún requiere acceso a Internet.\n\nInternet Gateway (D): Esto proporcionaría acceso a Internet, lo cual no está permitido explícitamente según los requisitos.\n\nPor lo tanto, AWS PrivateLink es la solución correcta para permitir el acceso seguro y privado a Amazon Bedrock dentro de la VPC.",
+    "question_en": "A financial institution is using Amazon Bedrock to develop an AI application. The application is hosted in a VPC. To meet regulatory compliance standards, the VPC is not allowed access to any internet traffic.\r\n\r\nWhich AWS service or feature will meet these requirements?",
+    "question_es": "A financial institution is using Amazon Bedrock to develop an AI application. The application is hosted in a VPC. To meet regulatory compliance standards, the VPC is not allowed access to any internet traffic.\r\n\r\nWhich AWS service or feature will meet these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Dado que la VPC no tiene acceso a Internet, la institución financiera debe utilizar una opción de conectividad privada para acceder a Amazon Bedrock, que es un servicio de IA administrado. AWS PrivateLink permite la comunicación privada entre las VPC y los servicios de AWS sin requerir acceso a Internet, lo que la convierte en la mejor opción para el cumplimiento normativo.\n\nAmazon Macie (B): Un servicio de seguridad de datos que ayuda a identificar datos confidenciales pero no proporciona conectividad privada.\n\nAmazon CloudFront (C): Un servicio de CDN que optimiza la entrega de contenido pero aún requiere acceso a Internet.\n\nInternet Gateway (D): Esto proporcionaría acceso a Internet, lo cual no está permitido explícitamente según los requisitos.\n\nPor lo tanto, AWS PrivateLink es la solución correcta para permitir el acceso seguro y privado a Amazon Bedrock dentro de la VPC."
+  },
+  {
+    "id": "36",
+    "type": "multiple-choice",
+    "question": "An AI practitioner is developing a prompt for an Amazon Titan model. The model is hosted on Amazon Bedrock. The AI practitioner is using the model to solve numerical reasoning challenges. The AI practitioner adds the following phrase to the end of the prompt: “Ask the model to show its work by explaining its reasoning step by step.”\r\n\r\nWhich prompt engineering technique is the AI practitioner using?",
+    "options": [
+      "Chain-of-thought prompting",
+      "Prompt injection",
+      "Few-shot prompting",
+      "Prompt templating"
+    ],
+    "image": null,
+    "answer": "Chain-of-thought prompting",
+    "explanation": null,
+    "question_en": "An AI practitioner is developing a prompt for an Amazon Titan model. The model is hosted on Amazon Bedrock. The AI practitioner is using the model to solve numerical reasoning challenges. The AI practitioner adds the following phrase to the end of the prompt: “Ask the model to show its work by explaining its reasoning step by step.”\r\n\r\nWhich prompt engineering technique is the AI practitioner using?",
+    "question_es": "An AI practitioner is developing a prompt for an Amazon Titan model. The model is hosted on Amazon Bedrock. The AI practitioner is using the model to solve numerical reasoning challenges. The AI practitioner adds the following phrase to the end of the prompt: “Ask the model to show its work by explaining its reasoning step by step.”\r\n\r\nWhich prompt engineering technique is the AI practitioner using?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "37",
+    "type": "multiple-choice",
+    "question": "Which AWS service makes foundation models (FMs) available to help users build and scale generative AI applications?",
+    "options": [
+      "Amazon Q Developer",
+      "Amazon Bedrock",
+      "Amazon Kendra",
+      "Amazon Comprehend"
+    ],
+    "image": null,
+    "answer": "Amazon Bedrock",
+    "explanation": null,
+    "question_en": "Which AWS service makes foundation models (FMs) available to help users build and scale generative AI applications?",
+    "question_es": "Which AWS service makes foundation models (FMs) available to help users build and scale generative AI applications?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "38",
+    "type": "multiple-choice",
+    "question": "A company is building a mobile app for users who have a visual impairment. The app must be able to hear what users say and provide voice responses.\r\n\r\nWhich solution will meet these requirements?",
+    "options": [
+      "Use a deep learning neural network to perform speech recognition.",
+      "Build ML models to search for patterns in numeric data.",
+      "Use generative AI summarization to generate human-like text.",
+      "Build custom models for image classification and recognition."
+    ],
+    "image": null,
+    "answer": "Use a deep learning neural network to perform speech recognition.",
+    "explanation": null,
+    "question_en": "A company is building a mobile app for users who have a visual impairment. The app must be able to hear what users say and provide voice responses.\r\n\r\nWhich solution will meet these requirements?",
+    "question_es": "A company is building a mobile app for users who have a visual impairment. The app must be able to hear what users say and provide voice responses.\r\n\r\nWhich solution will meet these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "39",
+    "type": "multiple-choice",
+    "question": "A company wants to enhance response quality for a large language model (LLM) for complex problem-solving tasks. The tasks require detailed reasoning and a step-by-step explanation process.\r\n\r\nWhich prompt engineering technique meets these requirements?",
+    "options": [
+      "Few-shot prompting",
+      "Zero-shot prompting",
+      "Directional stimulus prompting",
+      "Chain-of-thought prompting"
+    ],
+    "image": null,
+    "answer": "Chain-of-thought prompting",
+    "explanation": null,
+    "question_en": "A company wants to enhance response quality for a large language model (LLM) for complex problem-solving tasks. The tasks require detailed reasoning and a step-by-step explanation process.\r\n\r\nWhich prompt engineering technique meets these requirements?",
+    "question_es": "A company wants to enhance response quality for a large language model (LLM) for complex problem-solving tasks. The tasks require detailed reasoning and a step-by-step explanation process.\r\n\r\nWhich prompt engineering technique meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "40",
+    "type": "multiple-choice",
+    "question": "A company wants to keep its foundation model (FM) relevant by using the most recent data. The company wants to implement a model training strategy that includes regular updates to the FM.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Batch learning",
+      "Continuous pre-training",
+      "Static training",
+      "Latent training"
+    ],
+    "image": null,
+    "answer": "Continuous pre-training",
+    "explanation": null,
+    "question_en": "A company wants to keep its foundation model (FM) relevant by using the most recent data. The company wants to implement a model training strategy that includes regular updates to the FM.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A company wants to keep its foundation model (FM) relevant by using the most recent data. The company wants to implement a model training strategy that includes regular updates to the FM.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "41",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants to develop ML applications to improve business operations and efficiency.\r\n\r\nSelect the correct ML paradigm from the following list for each use case. Each ML paradigm should be selected one or more times.\r\n![alt text](image.png)\r\nQuestion\r\nCorrect answer:\r\n![alt text](image-1.png)",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants to develop ML applications to improve business operations and efficiency.\r\n\r\nSelect the correct ML paradigm from the following list for each use case. Each ML paradigm should be selected one or more times.\r\n![alt text](image.png)\r\nQuestion\r\nCorrect answer:\r\n![alt text](image-1.png)",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants to develop ML applications to improve business operations and efficiency.\r\n\r\nSelect the correct ML paradigm from the following list for each use case. Each ML paradigm should be selected one or more times.\r\n![alt text](image.png)\r\nQuestion\r\nCorrect answer:\r\n![alt text](image-1.png)",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "42",
+    "type": "multiple-choice",
+    "question": "Which option is a characteristic of AI governance frameworks for building trust and deploying human-centered AI technologies?",
+    "options": [
+      "Expanding initiatives across business units to create long-term business value",
+      "Ensuring alignment with business standards, revenue goals, and stakeholder expectations",
+      "Overcoming challenges to drive business transformation and growth",
+      "Developing policies and guidelines for data, transparency, responsible AI, and compliance"
+    ],
+    "image": null,
+    "answer": "Developing policies and guidelines for data, transparency, responsible AI, and compliance",
+    "explanation": null,
+    "question_en": "Which option is a characteristic of AI governance frameworks for building trust and deploying human-centered AI technologies?",
+    "question_es": "Which option is a characteristic of AI governance frameworks for building trust and deploying human-centered AI technologies?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "43",
+    "type": "multiple-choice",
+    "question": "An ecommerce company is using a generative AI chatbot to respond to customer inquiries. The company wants to measure the financial effect of the chatbot on the company’s operations.\r\n\r\nWhich metric should the company use?",
+    "options": [
+      "Number of customer inquiries handled",
+      "Cost of training AI models",
+      "Cost for each customer conversation",
+      "Average handled time (AHT)"
+    ],
+    "image": null,
+    "answer": "Cost for each customer conversation",
+    "explanation": null,
+    "question_en": "An ecommerce company is using a generative AI chatbot to respond to customer inquiries. The company wants to measure the financial effect of the chatbot on the company’s operations.\r\n\r\nWhich metric should the company use?",
+    "question_es": "An ecommerce company is using a generative AI chatbot to respond to customer inquiries. The company wants to measure the financial effect of the chatbot on the company’s operations.\r\n\r\nWhich metric should the company use?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "44",
+    "type": "multiple-choice",
+    "question": "A company wants to find groups for its customers based on the customers’ demographics and buying patterns.\r\n\r\nWhich algorithm should the company use to meet this requirement?",
+    "options": [
+      "K-nearest neighbors (k-NN)",
+      "K-means",
+      "Decision tree",
+      "Support vector machine"
+    ],
+    "image": null,
+    "answer": "K-means",
+    "explanation": null,
+    "question_en": "A company wants to find groups for its customers based on the customers’ demographics and buying patterns.\r\n\r\nWhich algorithm should the company use to meet this requirement?",
+    "question_es": "A company wants to find groups for its customers based on the customers’ demographics and buying patterns.\r\n\r\nWhich algorithm should the company use to meet this requirement?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "45",
+    "type": "multiple-choice",
+    "question": "A company’s large language model (LLM) is experiencing hallucinations.\r\n\r\nHow can the company decrease hallucinations?",
+    "options": [
+      "Set up Agents for Amazon Bedrock to supervise the model training.",
+      "Use data pre-processing and remove any data that causes hallucinations.",
+      "Decrease the temperature inference parameter for the model.",
+      "Use a foundation model (FM) that is trained to not hallucinate."
+    ],
+    "image": null,
+    "answer": "Decrease the temperature inference parameter for the model.",
+    "explanation": null,
+    "question_en": "A company’s large language model (LLM) is experiencing hallucinations.\r\n\r\nHow can the company decrease hallucinations?",
+    "question_es": "A company’s large language model (LLM) is experiencing hallucinations.\r\n\r\nHow can the company decrease hallucinations?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "46",
+    "type": "multiple-choice",
+    "question": "A company wants to develop an educational game where users answer questions such as the following: \"A jar contains six red, four green, and three yellow marbles. What is the probability of choosing a green marble from the jar?\"\r\n\r\nWhich solution meets these requirements with the LEAST operational overhead?",
+    "options": [
+      "Use supervised learning to create a regression model that will predict probability.",
+      "Use reinforcement learning to train a model to return the probability.",
+      "Use code that will calculate probability by using simple rules and computations.",
+      "Use unsupervised learning to create a model that will estimate probability density."
+    ],
+    "image": null,
+    "answer": "Use code that will calculate probability by using simple rules and computations.",
+    "explanation": "Para una pregunta como esta, donde la probabilidad se puede calcular utilizando aritmética básica (por ejemplo, número de resultados favorables dividido por el total de resultados), implementar una función directa en código cumplirá con los requisitos con la menor sobrecarga operativa. Esto evita la complejidad y las demandas de recursos del aprendizaje automático.\n\nPor ejemplo:\n\nCanicas totales =\n\n6\n\n+\n\n4\n\n+\n\n3\n\n=\n\n13\n\n6+4+3=13",
+    "question_en": "A company wants to develop an educational game where users answer questions such as the following: \"A jar contains six red, four green, and three yellow marbles. What is the probability of choosing a green marble from the jar?\"\r\n\r\nWhich solution meets these requirements with the LEAST operational overhead?",
+    "question_es": "A company wants to develop an educational game where users answer questions such as the following: \"A jar contains six red, four green, and three yellow marbles. What is the probability of choosing a green marble from the jar?\"\r\n\r\nWhich solution meets these requirements with the LEAST operational overhead?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Para una pregunta como esta, donde la probabilidad se puede calcular utilizando aritmética básica (por ejemplo, número de resultados favorables dividido por el total de resultados), implementar una función directa en código cumplirá con los requisitos con la menor sobrecarga operativa. Esto evita la complejidad y las demandas de recursos del aprendizaje automático.\n\nPor ejemplo:\n\nCanicas totales =\n\n6\n\n+\n\n4\n\n+\n\n3\n\n=\n\n13\n\n6+4+3=13"
+  },
+  {
+    "id": "47",
+    "type": "multiple-choice",
+    "question": "A company is using a large language model (LLM) on Amazon Bedrock to build a chatbot. The chatbot processes customer support requests. To resolve a request, the customer and the chatbot must interact a few times.\r\n\r\nWhich solution gives the LLM the ability to use content from previous customer messages?",
+    "options": [
+      "Turn on model invocation logging to collect messages.",
+      "Add messages to the model prompt.",
+      "Use Amazon Personalize to save conversation history.",
+      "Use Provisioned Throughput for the LLM."
+    ],
+    "image": null,
+    "answer": "Add messages to the model prompt.",
+    "explanation": null,
+    "question_en": "A company is using a large language model (LLM) on Amazon Bedrock to build a chatbot. The chatbot processes customer support requests. To resolve a request, the customer and the chatbot must interact a few times.\r\n\r\nWhich solution gives the LLM the ability to use content from previous customer messages?",
+    "question_es": "A company is using a large language model (LLM) on Amazon Bedrock to build a chatbot. The chatbot processes customer support requests. To resolve a request, the customer and the chatbot must interact a few times.\r\n\r\nWhich solution gives the LLM the ability to use content from previous customer messages?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "48",
+    "type": "multiple-choice",
+    "question": "A company’s employees provide product descriptions and recommendations to customers when customers call the customer service center. These recommendations are based on where the customers are located. The company wants to use foundation models (FMs) to automate this process.\r\n\r\nWhich AWS service meets these requirements?",
+    "options": [
+      "Amazon Macie",
+      "Amazon Transcribe",
+      "Amazon Bedrock",
+      "Amazon Textract"
+    ],
+    "image": null,
+    "answer": "Amazon Bedrock",
+    "explanation": null,
+    "question_en": "A company’s employees provide product descriptions and recommendations to customers when customers call the customer service center. These recommendations are based on where the customers are located. The company wants to use foundation models (FMs) to automate this process.\r\n\r\nWhich AWS service meets these requirements?",
+    "question_es": "A company’s employees provide product descriptions and recommendations to customers when customers call the customer service center. These recommendations are based on where the customers are located. The company wants to use foundation models (FMs) to automate this process.\r\n\r\nWhich AWS service meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "49",
+    "type": "multiple-choice",
+    "question": "A company wants to upload customer service email messages to Amazon S3 to develop a business analysis application. The messages sometimes contain sensitive data. The company wants to receive an alert every time sensitive information is found.\r\n\r\nWhich solution fully automates the sensitive information detection process with the LEAST development effort?",
+    "options": [
+      "Configure Amazon Macie to detect sensitive information in the documents that are uploaded to Amazon S3.",
+      "Use Amazon SageMaker endpoints to deploy a large language model (LLM) to redact sensitive data.",
+      "Develop multiple regex patterns to detect sensitive data. Expose the regex patterns on an Amazon SageMaker notebook.",
+      "Ask the customers to avoid sharing sensitive information in their email messages."
+    ],
+    "image": null,
+    "answer": "Configure Amazon Macie to detect sensitive information in the documents that are uploaded to Amazon S3.",
+    "explanation": null,
+    "question_en": "A company wants to upload customer service email messages to Amazon S3 to develop a business analysis application. The messages sometimes contain sensitive data. The company wants to receive an alert every time sensitive information is found.\r\n\r\nWhich solution fully automates the sensitive information detection process with the LEAST development effort?",
+    "question_es": "A company wants to upload customer service email messages to Amazon S3 to develop a business analysis application. The messages sometimes contain sensitive data. The company wants to receive an alert every time sensitive information is found.\r\n\r\nWhich solution fully automates the sensitive information detection process with the LEAST development effort?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "50",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company is training its employees on how to structure prompts for foundation models.\r\n\r\nSelect the correct prompt engineering technique from the following list for each prompt template. Each prompt engineering technique should be selected one time.\r\n![alt text](image-2.png)\r\nQuestion\r\nCorrect answer:",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company is training its employees on how to structure prompts for foundation models.\r\n\r\nSelect the correct prompt engineering technique from the following list for each prompt template. Each prompt engineering technique should be selected one time.\r\n![alt text](image-2.png)\r\nQuestion\r\nCorrect answer:",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company is training its employees on how to structure prompts for foundation models.\r\n\r\nSelect the correct prompt engineering technique from the following list for each prompt template. Each prompt engineering technique should be selected one time.\r\n![alt text](image-2.png)\r\nQuestion\r\nCorrect answer:",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "51",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company is using a generative AI model to develop a digital assistant. The model’s responses occasionally include undesirable and potentially harmful content.\r\n\r\nSelect the correct Amazon Bedrock filter policy from the following list for each mitigation action. Each filter policy should be selected one time.\r\n![alt text](image-3.png)\r\nQuestion\r\nCorrect answer:",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company is using a generative AI model to develop a digital assistant. The model’s responses occasionally include undesirable and potentially harmful content.\r\n\r\nSelect the correct Amazon Bedrock filter policy from the following list for each mitigation action. Each filter policy should be selected one time.\r\n![alt text](image-3.png)\r\nQuestion\r\nCorrect answer:",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company is using a generative AI model to develop a digital assistant. The model’s responses occasionally include undesirable and potentially harmful content.\r\n\r\nSelect the correct Amazon Bedrock filter policy from the following list for each mitigation action. Each filter policy should be selected one time.\r\n![alt text](image-3.png)\r\nQuestion\r\nCorrect answer:",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "52",
+    "type": "multiple-choice",
+    "question": "Which option is a benefit of using Amazon SageMaker Model Cards to document AI models?",
+    "options": [
+      "Providing a visually appealing summary of a mode’s capabilities.",
+      "Standardizing information about a model’s purpose, performance, and limitations.",
+      "Reducing the overall computational requirements of a model.",
+      "Physically storing models for archival purposes."
+    ],
+    "image": null,
+    "answer": "Standardizing information about a model’s purpose, performance, and limitations.",
+    "explanation": null,
+    "question_en": "Which option is a benefit of using Amazon SageMaker Model Cards to document AI models?",
+    "question_es": "Which option is a benefit of using Amazon SageMaker Model Cards to document AI models?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "53",
+    "type": "multiple-choice",
+    "question": "What does an F1 score measure in the context of foundation model (FM) performance?",
+    "options": [
+      "Model precision and recall",
+      "Model speed in generating responses",
+      "Financial cost of operating the model",
+      "Energy efficiency of the model’s computations"
+    ],
+    "image": null,
+    "answer": "Model precision and recall",
+    "explanation": null,
+    "question_en": "What does an F1 score measure in the context of foundation model (FM) performance?",
+    "question_es": "What does an F1 score measure in the context of foundation model (FM) performance?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "54",
+    "type": "multiple-choice",
+    "question": "A company deployed an AI/ML solution to help customer service agents respond to frequently asked questions. The questions can change over time. The company wants to give customer service agents the ability to ask questions and receive automatically generated answers to common customer questions.\r\n\r\nWhich strategy will meet these requirements MOST cost-effectively?",
+    "options": [
+      "Fine-tune the model regularly.",
+      "Train the model by using context data.",
+      "Pre-train and benchmark the model by using context data.",
+      "Use Retrieval Augmented Generation (RAG) with prompt engineering techniques."
+    ],
+    "image": null,
+    "answer": "Use Retrieval Augmented Generation (RAG) with prompt engineering techniques.",
+    "explanation": null,
+    "question_en": "A company deployed an AI/ML solution to help customer service agents respond to frequently asked questions. The questions can change over time. The company wants to give customer service agents the ability to ask questions and receive automatically generated answers to common customer questions.\r\n\r\nWhich strategy will meet these requirements MOST cost-effectively?",
+    "question_es": "A company deployed an AI/ML solution to help customer service agents respond to frequently asked questions. The questions can change over time. The company wants to give customer service agents the ability to ask questions and receive automatically generated answers to common customer questions.\r\n\r\nWhich strategy will meet these requirements MOST cost-effectively?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "55",
+    "type": "multiple-choice",
+    "question": "A company built an AI-powered resume screening system. The company used a large dataset to train the model. The dataset contained resumes that were not representative of all demographics.\r\n\r\nWhich core dimension of responsible AI does this scenario present?",
+    "options": [
+      "Fairness",
+      "Explainability",
+      "Privacy and security",
+      "Transparency"
+    ],
+    "image": null,
+    "answer": "Fairness",
+    "explanation": null,
+    "question_en": "A company built an AI-powered resume screening system. The company used a large dataset to train the model. The dataset contained resumes that were not representative of all demographics.\r\n\r\nWhich core dimension of responsible AI does this scenario present?",
+    "question_es": "A company built an AI-powered resume screening system. The company used a large dataset to train the model. The dataset contained resumes that were not representative of all demographics.\r\n\r\nWhich core dimension of responsible AI does this scenario present?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "56",
+    "type": "multiple-choice",
+    "question": "A global financial company has developed an ML application to analyze stock market data and provide stock market trends. The company wants to continuously monitor the application development phases and to ensure that company policies and industry regulations are followed.\r\n\r\nWhich AWS services will help the company assess compliance requirements? (Choose two.)",
+    "options": [
+      "AWS Audit Manager",
+      "AWS Config",
+      "Amazon Inspector",
+      "Amazon CloudWatch",
+      "AWS CloudTrail"
+    ],
+    "image": null,
+    "answer": "AWS Audit Manager",
+    "explanation": null,
+    "question_en": "A global financial company has developed an ML application to analyze stock market data and provide stock market trends. The company wants to continuously monitor the application development phases and to ensure that company policies and industry regulations are followed.\r\n\r\nWhich AWS services will help the company assess compliance requirements? (Choose two.)",
+    "question_es": "A global financial company has developed an ML application to analyze stock market data and provide stock market trends. The company wants to continuously monitor the application development phases and to ensure that company policies and industry regulations are followed.\r\n\r\nWhich AWS services will help the company assess compliance requirements? (Choose two.)",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "57",
+    "type": "multiple-choice",
+    "question": "Which metric measures the runtime efficiency of operating AI models?",
+    "options": [
+      "Customer satisfaction score (CSAT)",
+      "Training time for each epoch",
+      "Average response time",
+      "Number of training instances"
+    ],
+    "image": null,
+    "answer": "Average response time",
+    "explanation": "El tiempo de respuesta promedio es una métrica clave para medir la eficiencia del tiempo de ejecución de los modelos de IA. Indica qué tan rápido el modelo de IA procesa una solicitud y devuelve una respuesta, lo cual es crítico para evaluar el rendimiento y la eficiencia de los modelos implementados, especialmente en aplicaciones en tiempo real.",
+    "question_en": "Which metric measures the runtime efficiency of operating AI models?",
+    "question_es": "Which metric measures the runtime efficiency of operating AI models?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "El tiempo de respuesta promedio es una métrica clave para medir la eficiencia del tiempo de ejecución de los modelos de IA. Indica qué tan rápido el modelo de IA procesa una solicitud y devuelve una respuesta, lo cual es crítico para evaluar el rendimiento y la eficiencia de los modelos implementados, especialmente en aplicaciones en tiempo real."
+  },
+  {
+    "id": "58",
+    "type": "multiple-choice",
+    "question": "A company wants to improve the accuracy of the responses from a generative AI application. The application uses a foundation model (FM) on Amazon Bedrock.\r\n\r\nWhich solution meets these requirements MOST cost-effectively?",
+    "options": [
+      "Fine-tune the FM.",
+      "Retrain the FM.",
+      "Train a new FM.",
+      "Use prompt engineering."
+    ],
+    "image": null,
+    "answer": "Use prompt engineering.",
+    "explanation": null,
+    "question_en": "A company wants to improve the accuracy of the responses from a generative AI application. The application uses a foundation model (FM) on Amazon Bedrock.\r\n\r\nWhich solution meets these requirements MOST cost-effectively?",
+    "question_es": "A company wants to improve the accuracy of the responses from a generative AI application. The application uses a foundation model (FM) on Amazon Bedrock.\r\n\r\nWhich solution meets these requirements MOST cost-effectively?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "59",
+    "type": "multiple-choice",
+    "question": "A company wants to identify harmful language in the comments section of social media posts by using an ML model. The company will not use labeled data to train the model.\r\n\r\nWhich strategy should the company use to identify harmful language?",
+    "options": [
+      "Use Amazon Rekognition moderation.",
+      "Use Amazon Comprehend toxicity detection.",
+      "Use Amazon SageMaker built-in algorithms to train the model.",
+      "Use Amazon Polly to monitor comments."
+    ],
+    "image": null,
+    "answer": "Use Amazon Comprehend toxicity detection.",
+    "explanation": null,
+    "question_en": "A company wants to identify harmful language in the comments section of social media posts by using an ML model. The company will not use labeled data to train the model.\r\n\r\nWhich strategy should the company use to identify harmful language?",
+    "question_es": "A company wants to identify harmful language in the comments section of social media posts by using an ML model. The company will not use labeled data to train the model.\r\n\r\nWhich strategy should the company use to identify harmful language?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "60",
+    "type": "multiple-choice",
+    "question": "A media company wants to analyze viewer behavior and demographics to recommend personalized content. The company wants to deploy a customized ML model in its production environment. The company also wants to observe if the model quality drifts over time.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "options": [
+      "Amazon Rekognition",
+      "Amazon SageMaker Clarify",
+      "Amazon Comprehend",
+      "Amazon SageMaker Model Monitor"
+    ],
+    "image": null,
+    "answer": "Amazon SageMaker Model Monitor",
+    "explanation": null,
+    "question_en": "A media company wants to analyze viewer behavior and demographics to recommend personalized content. The company wants to deploy a customized ML model in its production environment. The company also wants to observe if the model quality drifts over time.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "question_es": "A media company wants to analyze viewer behavior and demographics to recommend personalized content. The company wants to deploy a customized ML model in its production environment. The company also wants to observe if the model quality drifts over time.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "61",
+    "type": "multiple-choice",
+    "question": "A company is deploying AI/ML models by using AWS services. The company wants to offer transparency into the models’ decision-making processes and provide explanations for the model outputs.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "options": [
+      "Amazon SageMaker Model Cards",
+      "Amazon Rekognition",
+      "Amazon Comprehend",
+      "Amazon Lex"
+    ],
+    "image": null,
+    "answer": "Amazon SageMaker Model Cards",
+    "explanation": null,
+    "question_en": "A company is deploying AI/ML models by using AWS services. The company wants to offer transparency into the models’ decision-making processes and provide explanations for the model outputs.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "question_es": "A company is deploying AI/ML models by using AWS services. The company wants to offer transparency into the models’ decision-making processes and provide explanations for the model outputs.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "62",
+    "type": "multiple-choice",
+    "question": "A manufacturing company wants to create product descriptions in multiple languages.\r\n\r\nWhich AWS service will automate this task?",
+    "options": [
+      "Amazon Translate",
+      "Amazon Transcribe",
+      "Amazon Kendra",
+      "Amazon Polly"
+    ],
+    "image": null,
+    "answer": "Amazon Translate",
+    "explanation": null,
+    "question_en": "A manufacturing company wants to create product descriptions in multiple languages.\r\n\r\nWhich AWS service will automate this task?",
+    "question_es": "A manufacturing company wants to create product descriptions in multiple languages.\r\n\r\nWhich AWS service will automate this task?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "63",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants more customized responses to its generative AI models’ prompts.\r\n\r\nSelect the correct customization methodology from the following list for each use case. Each use case should be selected one time.\r\n![alt text](image-4.png)\r\nQuestion\r\nCorrect answer:",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants more customized responses to its generative AI models’ prompts.\r\n\r\nSelect the correct customization methodology from the following list for each use case. Each use case should be selected one time.\r\n![alt text](image-4.png)\r\nQuestion\r\nCorrect answer:",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company wants more customized responses to its generative AI models’ prompts.\r\n\r\nSelect the correct customization methodology from the following list for each use case. Each use case should be selected one time.\r\n![alt text](image-4.png)\r\nQuestion\r\nCorrect answer:",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "64",
+    "type": "multiple-choice",
+    "question": "Which AWS feature records details about ML instance data for governance and reporting?",
+    "options": [
+      "Amazon SageMaker Model Cards",
+      "Amazon SageMaker Debugger",
+      "Amazon SageMaker Model Monitor",
+      "Amazon SageMaker JumpStart"
+    ],
+    "image": null,
+    "answer": "Amazon SageMaker Model Cards",
+    "explanation": null,
+    "question_en": "Which AWS feature records details about ML instance data for governance and reporting?",
+    "question_es": "Which AWS feature records details about ML instance data for governance and reporting?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "65",
+    "type": "multiple-choice",
+    "question": "A financial company is using ML to help with some of the company’s tasks.\r\n\r\nWhich option is a use of generative AI models?",
+    "options": [
+      "Summarizing customer complaints",
+      "Classifying customers based on product usage",
+      "Segmenting customers based on type of investments",
+      "Forecasting revenue for certain products"
+    ],
+    "image": null,
+    "answer": "Summarizing customer complaints",
+    "explanation": null,
+    "question_en": "A financial company is using ML to help with some of the company’s tasks.\r\n\r\nWhich option is a use of generative AI models?",
+    "question_es": "A financial company is using ML to help with some of the company’s tasks.\r\n\r\nWhich option is a use of generative AI models?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "66",
+    "type": "multiple-choice",
+    "question": "A medical company wants to develop an AI application that can access structured patient records, extract relevant information, and generate concise summaries.\r\n\r\nWhich solution will meet these requirements?",
+    "options": [
+      "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.",
+      "Use Amazon Personalize to analyze patient engagement patterns. Integrate the output with a general purpose text summarization tool.",
+      "Use Amazon Textract to convert scanned documents into digital text. Design a keyword extraction system to generate summaries.",
+      "Implement Amazon Kendra to provide a searchable index for medical records. Use a template-based system to format summaries."
+    ],
+    "image": null,
+    "answer": "Use Amazon Comprehend Medical to extract relevant medical entities and relationships. Apply rule-based logic to structure and format summaries.",
+    "explanation": null,
+    "question_en": "A medical company wants to develop an AI application that can access structured patient records, extract relevant information, and generate concise summaries.\r\n\r\nWhich solution will meet these requirements?",
+    "question_es": "A medical company wants to develop an AI application that can access structured patient records, extract relevant information, and generate concise summaries.\r\n\r\nWhich solution will meet these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "67",
+    "type": "multiple-choice",
+    "question": "Which option describes embeddings in the context of AI?",
+    "options": [
+      "A method for compressing large datasets",
+      "An encryption method for securing sensitive data",
+      "A method for visualizing high-dimensional data",
+      "A numerical method for data representation in a reduced dimensionality space"
+    ],
+    "image": null,
+    "answer": "A numerical method for data representation in a reduced dimensionality space",
+    "explanation": null,
+    "question_en": "Which option describes embeddings in the context of AI?",
+    "question_es": "Which option describes embeddings in the context of AI?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "68",
+    "type": "multiple-choice",
+    "question": "A company is building a contact center application and wants to gain insights from customer conversations. The company wants to analyze and extract key information from the audio of the customer calls.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Build a conversational chatbot by using Amazon Lex.",
+      "Transcribe call recordings by using Amazon Transcribe.",
+      "Extract information from call recordings by using Amazon SageMaker Model Monitor.",
+      "Create classification labels by using Amazon Comprehend."
+    ],
+    "image": null,
+    "answer": "Transcribe call recordings by using Amazon Transcribe.",
+    "explanation": "Amazon Transcribe está diseñado para convertir voz en archivos de audio (como llamadas de clientes) en texto. Este texto luego se puede analizar más a fondo para extraer información clave. Es el primer paso para obtener información de conversaciones de audio, lo que lo convierte en la solución adecuada para el requisito dado.",
+    "question_en": "A company is building a contact center application and wants to gain insights from customer conversations. The company wants to analyze and extract key information from the audio of the customer calls.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A company is building a contact center application and wants to gain insights from customer conversations. The company wants to analyze and extract key information from the audio of the customer calls.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Amazon Transcribe está diseñado para convertir voz en archivos de audio (como llamadas de clientes) en texto. Este texto luego se puede analizar más a fondo para extraer información clave. Es el primer paso para obtener información de conversaciones de audio, lo que lo convierte en la solución adecuada para el requisito dado."
+  },
+  {
+    "id": "69",
+    "type": "multiple-choice",
+    "question": "A company is building an AI application to summarize books of varying lengths. During testing, the application fails to summarize some books.\r\n\r\nWhy does the application fail to summarize some books?",
+    "options": [
+      "The temperature is set too high.",
+      "The selected model does not support fine-tuning.",
+      "The Top P value is too high.",
+      "The input tokens exceed the model’s context size."
+    ],
+    "image": null,
+    "answer": "The input tokens exceed the model’s context size.",
+    "explanation": null,
+    "question_en": "A company is building an AI application to summarize books of varying lengths. During testing, the application fails to summarize some books.\r\n\r\nWhy does the application fail to summarize some books?",
+    "question_es": "A company is building an AI application to summarize books of varying lengths. During testing, the application fails to summarize some books.\r\n\r\nWhy does the application fail to summarize some books?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "70",
+    "type": "multiple-choice",
+    "question": "An airline company wants to build a conversational AI assistant to answer customer questions about flight schedules, booking, and payments. The company wants to use large language models (LLMs) and a knowledge base to create a text-based chatbot interface.\r\n\r\nWhich solution will meet these requirements with the LEAST development effort?",
+    "options": [
+      "Train models on Amazon SageMaker Autopilot.",
+      "Develop a Retrieval Augmented Generation (RAG) agent by using Amazon Bedrock.",
+      "Create a Python application by using Amazon Q Developer.",
+      "Fine-tune models on Amazon SageMaker Jumpstart."
+    ],
+    "image": null,
+    "answer": "Develop a Retrieval Augmented Generation (RAG) agent by using Amazon Bedrock.",
+    "explanation": null,
+    "question_en": "An airline company wants to build a conversational AI assistant to answer customer questions about flight schedules, booking, and payments. The company wants to use large language models (LLMs) and a knowledge base to create a text-based chatbot interface.\r\n\r\nWhich solution will meet these requirements with the LEAST development effort?",
+    "question_es": "An airline company wants to build a conversational AI assistant to answer customer questions about flight schedules, booking, and payments. The company wants to use large language models (LLMs) and a knowledge base to create a text-based chatbot interface.\r\n\r\nWhich solution will meet these requirements with the LEAST development effort?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "71",
+    "type": "multiple-choice",
+    "question": "What is tokenization used for in natural language processing (NLP)?",
+    "options": [
+      "To encrypt text data",
+      "To compress text files",
+      "To break text into smaller units for processing",
+      "To translate text between languages"
+    ],
+    "image": null,
+    "answer": "To break text into smaller units for processing",
+    "explanation": null,
+    "question_en": "What is tokenization used for in natural language processing (NLP)?",
+    "question_es": "What is tokenization used for in natural language processing (NLP)?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "72",
+    "type": "multiple-choice",
+    "question": "Which option is a characteristic of transformer-based language models?",
+    "options": [
+      "Transformer-based language models use convolutional layers to apply filters across an input to capture local patterns through filtered views.",
+      "Transformer-based language models can process only text data.",
+      "Transformer-based language models use self-attention mechanisms to capture contextual relationships.",
+      "Transformer-based language models process data sequences one element at a time in cyclic iterations."
+    ],
+    "image": null,
+    "answer": "Transformer-based language models use self-attention mechanisms to capture contextual relationships.",
+    "explanation": "Autoatención (Self-attention): Esta es una característica clave de los transformadores que les permite sopesar la importancia de diferentes palabras en una secuencia de entrada y determinar su influencia en la salida, independientemente de su posición. Esta capacidad es crucial para comprender el contexto y las relaciones dentro del lenguaje.",
+    "question_en": "Which option is a characteristic of transformer-based language models?",
+    "question_es": "Which option is a characteristic of transformer-based language models?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "Autoatención (Self-attention): Esta es una característica clave de los transformadores que les permite sopesar la importancia de diferentes palabras en una secuencia de entrada y determinar su influencia en la salida, independientemente de su posición. Esta capacidad es crucial para comprender el contexto y las relaciones dentro del lenguaje."
+  },
+  {
+    "id": "73",
+    "type": "multiple-choice",
+    "question": "A financial company is using AI systems to obtain customer credit scores as part of the loan application process. The company wants to expand to a new market in a different geographic area. The company must ensure that it can operate in that geographic area.\r\n\r\nWhich compliance laws should the company review?",
+    "options": [
+      "Local health data protection laws",
+      "Local payment card data protection laws",
+      "Local education privacy laws",
+      "Local algorithm accountability laws"
+    ],
+    "image": null,
+    "answer": "Local algorithm accountability laws",
+    "explanation": null,
+    "question_en": "A financial company is using AI systems to obtain customer credit scores as part of the loan application process. The company wants to expand to a new market in a different geographic area. The company must ensure that it can operate in that geographic area.\r\n\r\nWhich compliance laws should the company review?",
+    "question_es": "A financial company is using AI systems to obtain customer credit scores as part of the loan application process. The company wants to expand to a new market in a different geographic area. The company must ensure that it can operate in that geographic area.\r\n\r\nWhich compliance laws should the company review?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "74",
+    "type": "multiple-choice",
+    "question": "A company uses Amazon Bedrock for its generative AI application. The company wants to use Amazon Bedrock Guardrails to detect and filter harmful user inputs and model-generated outputs.\r\n\r\nWhich content categories can the guardrails filter? (Choose two.)",
+    "options": [
+      "Hate",
+      "Politics",
+      "Violence",
+      "Gambling",
+      "Religion"
+    ],
+    "image": null,
+    "answer": "Hate",
+    "explanation": null,
+    "question_en": "A company uses Amazon Bedrock for its generative AI application. The company wants to use Amazon Bedrock Guardrails to detect and filter harmful user inputs and model-generated outputs.\r\n\r\nWhich content categories can the guardrails filter? (Choose two.)",
+    "question_es": "A company uses Amazon Bedrock for its generative AI application. The company wants to use Amazon Bedrock Guardrails to detect and filter harmful user inputs and model-generated outputs.\r\n\r\nWhich content categories can the guardrails filter? (Choose two.)",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "75",
+    "type": "multiple-choice",
+    "question": "Which scenario describes a potential risk and limitation of prompt engineering in the context of a generative AI model?",
+    "options": [
+      "Prompt engineering does not ensure that the model always produces consistent and deterministic outputs, eliminating the need for validation.",
+      "Prompt engineering could expose the model to vulnerabilities such as prompt injection attacks.",
+      "Properly designed prompts reduce but do not eliminate the risk of data poisoning or model hijacking.",
+      "Prompt engineering does not ensure that the model will consistently generate highly reliable outputs when working with real-world data."
+    ],
+    "image": null,
+    "answer": "Prompt engineering could expose the model to vulnerabilities such as prompt injection attacks.",
+    "explanation": null,
+    "question_en": "Which scenario describes a potential risk and limitation of prompt engineering in the context of a generative AI model?",
+    "question_es": "Which scenario describes a potential risk and limitation of prompt engineering in the context of a generative AI model?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "76",
+    "type": "multiple-choice",
+    "question": "A publishing company built a Retrieval Augmented Generation (RAG) based solution to give its users the ability to interact with published content. New content is published daily. The company wants to provide a near real-time experience to users.\r\n\r\nWhich steps in the RAG pipeline should the company implement by using offline batch processing to meet these requirements? (Choose two.)",
+    "options": [
+      "Generation of content embeddings",
+      "Generation of embeddings for user queries",
+      "Creation of the search index",
+      "Retrieval of relevant content",
+      "Response generation for the user"
+    ],
+    "image": null,
+    "answer": "Generation of content embeddings",
+    "explanation": null,
+    "question_en": "A publishing company built a Retrieval Augmented Generation (RAG) based solution to give its users the ability to interact with published content. New content is published daily. The company wants to provide a near real-time experience to users.\r\n\r\nWhich steps in the RAG pipeline should the company implement by using offline batch processing to meet these requirements? (Choose two.)",
+    "question_es": "A publishing company built a Retrieval Augmented Generation (RAG) based solution to give its users the ability to interact with published content. New content is published daily. The company wants to provide a near real-time experience to users.\r\n\r\nWhich steps in the RAG pipeline should the company implement by using offline batch processing to meet these requirements? (Choose two.)",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "77",
+    "type": "multiple-choice",
+    "question": "Which technique breaks a complex task into smaller subtasks that are sent sequentially to a large language model (LLM)?",
+    "options": [
+      "One-shot prompting",
+      "Prompt chaining",
+      "Tree of thoughts",
+      "Retrieval Augmented Generation (RAG)"
+    ],
+    "image": null,
+    "answer": "Prompt chaining",
+    "explanation": null,
+    "question_en": "Which technique breaks a complex task into smaller subtasks that are sent sequentially to a large language model (LLM)?",
+    "question_es": "Which technique breaks a complex task into smaller subtasks that are sent sequentially to a large language model (LLM)?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "78",
+    "type": "multiple-choice",
+    "question": "An AI practitioner needs to improve the accuracy of a natural language generation model. The model uses rapidly changing inventory data.\r\n\r\nWhich technique will improve the model's accuracy?",
+    "options": [
+      "Transfer learning",
+      "Federated learning",
+      "Retrieval Augmented Generation (RAG)",
+      "One-shot prompting"
+    ],
+    "image": null,
+    "answer": "Retrieval Augmented Generation (RAG)",
+    "explanation": null,
+    "question_en": "An AI practitioner needs to improve the accuracy of a natural language generation model. The model uses rapidly changing inventory data.\r\n\r\nWhich technique will improve the model's accuracy?",
+    "question_es": "An AI practitioner needs to improve the accuracy of a natural language generation model. The model uses rapidly changing inventory data.\r\n\r\nWhich technique will improve the model's accuracy?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "79",
+    "type": "multiple-choice",
+    "question": "A company has petabytes of unlabeled customer data to use for an advertisement campaign. The company wants to classify its customers into tiers to advertise and promote the company's products.\r\n\r\nWhich methodology should the company use to meet these requirements?",
+    "options": [
+      "Supervised learning",
+      "Unsupervised learning",
+      "Reinforcement learning",
+      "Reinforcement learning from human feedback (RLHF)"
+    ],
+    "image": null,
+    "answer": "Unsupervised learning",
+    "explanation": "El aprendizaje no supervisado se utiliza cuando se trabaja con datos no etiquetados, como los datos de clientes descritos en este escenario. Esta metodología permite a la empresa identificar patrones y agrupar clientes similares en clústeres o niveles sin necesidad de etiquetas predefinidas. Técnicas como el agrupamiento (por ejemplo, K-Means o agrupamiento jerárquico) ayudarían a clasificar a los clientes en función de características compartidas para campañas publicitarias específicas.\n\n¿Por qué no las otras opciones?\n\nA: Aprendizaje supervisado:\n\nEl aprendizaje supervisado requiere datos etiquetados, que no están disponibles en este caso. Sería necesario proporcionar etiquetas para cada cliente, lo que hace que este enfoque no sea adecuado para el escenario dado.",
+    "question_en": "A company has petabytes of unlabeled customer data to use for an advertisement campaign. The company wants to classify its customers into tiers to advertise and promote the company's products.\r\n\r\nWhich methodology should the company use to meet these requirements?",
+    "question_es": "A company has petabytes of unlabeled customer data to use for an advertisement campaign. The company wants to classify its customers into tiers to advertise and promote the company's products.\r\n\r\nWhich methodology should the company use to meet these requirements?",
+    "explanation_en": "Explanation available in Spanish.",
+    "explanation_es": "El aprendizaje no supervisado se utiliza cuando se trabaja con datos no etiquetados, como los datos de clientes descritos en este escenario. Esta metodología permite a la empresa identificar patrones y agrupar clientes similares en clústeres o niveles sin necesidad de etiquetas predefinidas. Técnicas como el agrupamiento (por ejemplo, K-Means o agrupamiento jerárquico) ayudarían a clasificar a los clientes en función de características compartidas para campañas publicitarias específicas.\n\n¿Por qué no las otras opciones?\n\nA: Aprendizaje supervisado:\n\nEl aprendizaje supervisado requiere datos etiquetados, que no están disponibles en este caso. Sería necesario proporcionar etiquetas para cada cliente, lo que hace que este enfoque no sea adecuado para el escenario dado."
+  },
+  {
+    "id": "80",
+    "type": "multiple-choice",
+    "question": "A company wants to collaborate with several research institutes to develop an AI model. The company needs standardized documentation of model version tracking and a record of model development.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Track the model changes by using Git.",
+      "Track the model changes by using Amazon Fraud Detector.",
+      "Track the model changes by using Amazon SageMaker Model Cards.",
+      "Track the model changes by using Amazon Comprehend."
+    ],
+    "image": null,
+    "answer": "Track the model changes by using Amazon SageMaker Model Cards.",
+    "explanation": null,
+    "question_en": "A company wants to collaborate with several research institutes to develop an AI model. The company needs standardized documentation of model version tracking and a record of model development.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A company wants to collaborate with several research institutes to develop an AI model. The company needs standardized documentation of model version tracking and a record of model development.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "81",
+    "type": "multiple-choice",
+    "question": "A company that uses multiple ML models wants to identify changes in original model quality so that the company can resolve any issues.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "options": [
+      "Amazon SageMaker JumpStart",
+      "Amazon SageMaker HyperPod",
+      "Amazon SageMaker Data Wrangler",
+      "Amazon SageMaker Model Monitor"
+    ],
+    "image": null,
+    "answer": "Amazon SageMaker Model Monitor",
+    "explanation": null,
+    "question_en": "A company that uses multiple ML models wants to identify changes in original model quality so that the company can resolve any issues.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "question_es": "A company that uses multiple ML models wants to identify changes in original model quality so that the company can resolve any issues.\r\n\r\nWhich AWS service or feature meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "82",
+    "type": "multiple-choice",
+    "question": "What is the purpose of chunking in Retrieval Augmented Generation (RAG)?",
+    "options": [
+      "To avoid database storage limitations for large text documents by storing parts or chunks of the text",
+      "To improve efficiency by avoiding the need to convert large text into vector embeddings",
+      "To improve the contextual relevancy of results retrieved from the vector index",
+      "To decrease the cost of storage by storing parts or chunks of the text"
+    ],
+    "image": null,
+    "answer": "To improve the contextual relevancy of results retrieved from the vector index",
+    "explanation": null,
+    "question_en": "What is the purpose of chunking in Retrieval Augmented Generation (RAG)?",
+    "question_es": "What is the purpose of chunking in Retrieval Augmented Generation (RAG)?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "83",
+    "type": "multiple-choice",
+    "question": "A company is developing an editorial assistant application that uses generative AI. During the pilot phase, usage is low and application performance is not a concern. The company cannot predict application usage after the application is fully deployed and wants to minimize application costs.\r\n\r\nWhich solution will meet these requirements?",
+    "options": [
+      "Use GPU-powered Amazon EC2 instances.",
+      "Use Amazon Bedrock with Provisioned Throughput.",
+      "Use Amazon Bedrock with On-Demand Throughput.",
+      "Use Amazon SageMaker JumpStart."
+    ],
+    "image": null,
+    "answer": "Use Amazon Bedrock with On-Demand Throughput.",
+    "explanation": null,
+    "question_en": "A company is developing an editorial assistant application that uses generative AI. During the pilot phase, usage is low and application performance is not a concern. The company cannot predict application usage after the application is fully deployed and wants to minimize application costs.\r\n\r\nWhich solution will meet these requirements?",
+    "question_es": "A company is developing an editorial assistant application that uses generative AI. During the pilot phase, usage is low and application performance is not a concern. The company cannot predict application usage after the application is fully deployed and wants to minimize application costs.\r\n\r\nWhich solution will meet these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "84",
+    "type": "multiple-choice",
+    "question": "A company deployed a Retrieval Augmented Generation (RAG) application on Amazon Bedrock that gathers financial news to distribute in daily newsletters. Users have recently reported politically influenced ideas in the newsletters.\r\n\r\nWhich Amazon Bedrock guardrail can identify and filter this content?",
+    "options": [
+      "Word filters",
+      "Denied topics",
+      "Sensitive information filters",
+      "Content filters"
+    ],
+    "image": null,
+    "answer": "Denied topics",
+    "explanation": null,
+    "question_en": "A company deployed a Retrieval Augmented Generation (RAG) application on Amazon Bedrock that gathers financial news to distribute in daily newsletters. Users have recently reported politically influenced ideas in the newsletters.\r\n\r\nWhich Amazon Bedrock guardrail can identify and filter this content?",
+    "question_es": "A company deployed a Retrieval Augmented Generation (RAG) application on Amazon Bedrock that gathers financial news to distribute in daily newsletters. Users have recently reported politically influenced ideas in the newsletters.\r\n\r\nWhich Amazon Bedrock guardrail can identify and filter this content?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "85",
+    "type": "multiple-choice",
+    "question": "A financial company is developing a fraud detection system that flags potential fraud cases in credit card transactions. Employees will evaluate the flagged fraud cases. The company wants to minimize the amount of time the employees spend reviewing flagged fraud cases that are not actually fraudulent.\r\n\r\nWhich evaluation metric meets these requirements?",
+    "options": [
+      "Recall",
+      "Accuracy",
+      "Precision",
+      "Lift chart"
+    ],
+    "image": null,
+    "answer": "Precision",
+    "explanation": null,
+    "question_en": "A financial company is developing a fraud detection system that flags potential fraud cases in credit card transactions. Employees will evaluate the flagged fraud cases. The company wants to minimize the amount of time the employees spend reviewing flagged fraud cases that are not actually fraudulent.\r\n\r\nWhich evaluation metric meets these requirements?",
+    "question_es": "A financial company is developing a fraud detection system that flags potential fraud cases in credit card transactions. Employees will evaluate the flagged fraud cases. The company wants to minimize the amount of time the employees spend reviewing flagged fraud cases that are not actually fraudulent.\r\n\r\nWhich evaluation metric meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "86",
+    "type": "multiple-choice",
+    "question": "A company designed an AI-powered agent to answer customer inquiries based on product manuals.\r\n\r\nWhich strategy can improve customer confidence levels in the AI-powered agent's responses?",
+    "options": [
+      "Writing the confidence level in the response",
+      "Including referenced product manual links in the response",
+      "Designing an agent avatar that looks like a computer",
+      "Training the agent to respond in the company's language style"
+    ],
+    "image": null,
+    "answer": "Including referenced product manual links in the response",
+    "explanation": null,
+    "question_en": "A company designed an AI-powered agent to answer customer inquiries based on product manuals.\r\n\r\nWhich strategy can improve customer confidence levels in the AI-powered agent's responses?",
+    "question_es": "A company designed an AI-powered agent to answer customer inquiries based on product manuals.\r\n\r\nWhich strategy can improve customer confidence levels in the AI-powered agent's responses?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "87",
+    "type": "multiple-choice",
+    "question": "A hospital developed an AI system to provide personalized treatment recommendations for patients. The AI system must provide the rationale behind the recommendations and make the insights accessible to doctors and patients.\r\n\r\nWhich human-centered design principle does this scenario present?",
+    "options": [
+      "Explainability",
+      "Privacy and security",
+      "Fairness",
+      "Data governance"
+    ],
+    "image": null,
+    "answer": "Explainability",
+    "explanation": null,
+    "question_en": "A hospital developed an AI system to provide personalized treatment recommendations for patients. The AI system must provide the rationale behind the recommendations and make the insights accessible to doctors and patients.\r\n\r\nWhich human-centered design principle does this scenario present?",
+    "question_es": "A hospital developed an AI system to provide personalized treatment recommendations for patients. The AI system must provide the rationale behind the recommendations and make the insights accessible to doctors and patients.\r\n\r\nWhich human-centered design principle does this scenario present?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "88",
+    "type": "multiple-choice",
+    "question": "Which statement presents an advantage of using Retrieval Augmented Generation (RAG) for natural language processing (NLP) tasks?",
+    "options": [
+      "RAG can use external knowledge sources to generate more accurate and informative responses.",
+      "RAG is designed to improve the speed of language model training.",
+      "RAG is primarily used for speech recognition tasks.",
+      "RAG is a technique for data augmentation in computer vision tasks."
+    ],
+    "image": null,
+    "answer": "RAG can use external knowledge sources to generate more accurate and informative responses.",
+    "explanation": null,
+    "question_en": "Which statement presents an advantage of using Retrieval Augmented Generation (RAG) for natural language processing (NLP) tasks?",
+    "question_es": "Which statement presents an advantage of using Retrieval Augmented Generation (RAG) for natural language processing (NLP) tasks?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "89",
+    "type": "multiple-choice",
+    "question": "A company has created a custom model by fine-tuning an existing large language model (LLM) from Amazon Bedrock. The company wants to deploy the model to production and use the model to handle a steady rate of requests each minute.\r\n\r\nWhich solution meets these requirements MOST cost-effectively?",
+    "options": [
+      "Deploy the model by using an Amazon EC2 compute optimized instance.",
+      "Use the model with on-demand throughput on Amazon Bedrock.",
+      "Store the model in Amazon S3 and host the model by using AWS Lambda.",
+      "Purchase Provisioned Throughput for the model on Amazon Bedrock."
+    ],
+    "image": null,
+    "answer": "Purchase Provisioned Throughput for the model on Amazon Bedrock.",
+    "explanation": null,
+    "question_en": "A company has created a custom model by fine-tuning an existing large language model (LLM) from Amazon Bedrock. The company wants to deploy the model to production and use the model to handle a steady rate of requests each minute.\r\n\r\nWhich solution meets these requirements MOST cost-effectively?",
+    "question_es": "A company has created a custom model by fine-tuning an existing large language model (LLM) from Amazon Bedrock. The company wants to deploy the model to production and use the model to handle a steady rate of requests each minute.\r\n\r\nWhich solution meets these requirements MOST cost-effectively?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "90",
+    "type": "multiple-choice",
+    "question": "An AI practitioner wants to use a foundation model (FM) to design a search application. The search application must handle queries that have text and images.\r\n\r\nWhich type of FM should the AI practitioner use to power the search application?",
+    "options": [
+      "Multi-modal embedding model",
+      "Text embedding model",
+      "Multi-modal generation model",
+      "Image generation model"
+    ],
+    "image": null,
+    "answer": "Multi-modal embedding model",
+    "explanation": null,
+    "question_en": "An AI practitioner wants to use a foundation model (FM) to design a search application. The search application must handle queries that have text and images.\r\n\r\nWhich type of FM should the AI practitioner use to power the search application?",
+    "question_es": "An AI practitioner wants to use a foundation model (FM) to design a search application. The search application must handle queries that have text and images.\r\n\r\nWhich type of FM should the AI practitioner use to power the search application?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "91",
+    "type": "multiple-choice",
+    "question": "Which technique involves training AI models on labeled datasets to adapt the models to specific industry terminology and requirements?",
+    "options": [
+      "Data augmentation",
+      "Fine-tuning",
+      "Model quantization",
+      "Continuous pre-training"
+    ],
+    "image": null,
+    "answer": "Fine-tuning",
+    "explanation": null,
+    "question_en": "Which technique involves training AI models on labeled datasets to adapt the models to specific industry terminology and requirements?",
+    "question_es": "Which technique involves training AI models on labeled datasets to adapt the models to specific industry terminology and requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "92",
+    "type": "multiple-choice",
+    "question": "A company is creating an agent for its application by using Amazon Bedrock Agents. The agent is performing well, but the company wants to improve the agent’s accuracy by providing some specific examples.\r\n\r\nWhich solution meets these requirements?",
+    "options": [
+      "Modify the advanced prompts for the agent to include the examples.",
+      "Create a guardrail for the agent that includes the examples.",
+      "Use Amazon SageMaker Ground Truth to label the examples.",
+      "Run a script in AWS Lambda that adds the examples to the training dataset."
+    ],
+    "image": null,
+    "answer": "Modify the advanced prompts for the agent to include the examples.",
+    "explanation": null,
+    "question_en": "A company is creating an agent for its application by using Amazon Bedrock Agents. The agent is performing well, but the company wants to improve the agent’s accuracy by providing some specific examples.\r\n\r\nWhich solution meets these requirements?",
+    "question_es": "A company is creating an agent for its application by using Amazon Bedrock Agents. The agent is performing well, but the company wants to improve the agent’s accuracy by providing some specific examples.\r\n\r\nWhich solution meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "93",
+    "type": "multiple-choice",
+    "question": "Which option is a benefit of using infrastructure as code (IaC) in machine learning operations (MLOps)?",
+    "options": [
+      "IaC eliminates the need for hyperparameter tuning.",
+      "IaC always provisions powerful compute instances, contributing to the training of more accurate models.",
+      "IaC streamlines the deployment of scalable and consistent ML workloads in cloud environments.",
+      "IaC minimizes overall expenses by deploying only low-cost instances."
+    ],
+    "image": null,
+    "answer": "IaC streamlines the deployment of scalable and consistent ML workloads in cloud environments.",
+    "explanation": null,
+    "question_en": "Which option is a benefit of using infrastructure as code (IaC) in machine learning operations (MLOps)?",
+    "question_es": "Which option is a benefit of using infrastructure as code (IaC) in machine learning operations (MLOps)?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "94",
+    "type": "multiple-choice",
+    "question": "A company wants to fine-tune a foundation model (FM) to answer questions for a specific domain. The company wants to use instruction-based fine-tuning.\r\n\r\nHow should the company prepare the training data?",
+    "options": [
+      "Gather company internal documents and industry-specific materials. Merge the documents and materials into a single file.",
+      "Collect external company reviews from various online sources. Manually label each review as either positive or negative.",
+      "Create pairs of questions and answers that specifically address topics related to the company's industry domain.",
+      "Create few-shot prompts to instruct the model to answer only domain knowledge."
+    ],
+    "image": null,
+    "answer": "Create pairs of questions and answers that specifically address topics related to the company's industry domain.",
+    "explanation": null,
+    "question_en": "A company wants to fine-tune a foundation model (FM) to answer questions for a specific domain. The company wants to use instruction-based fine-tuning.\r\n\r\nHow should the company prepare the training data?",
+    "question_es": "A company wants to fine-tune a foundation model (FM) to answer questions for a specific domain. The company wants to use instruction-based fine-tuning.\r\n\r\nHow should the company prepare the training data?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "95",
+    "type": "multiple-choice",
+    "question": "Which ML technique ensures data compliance and privacy when training AI models on AWS?",
+    "options": [
+      "Reinforcement learning",
+      "Transfer learning",
+      "Federated learning",
+      "Unsupervised learning"
+    ],
+    "image": null,
+    "answer": "Federated learning",
+    "explanation": null,
+    "question_en": "Which ML technique ensures data compliance and privacy when training AI models on AWS?",
+    "question_es": "Which ML technique ensures data compliance and privacy when training AI models on AWS?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "96",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company needs to customize a base model that is hosted on Amazon Bedrock.\r\n\r\nSelect the correct model customization method from the following list of company requirements. Each model customization method should be selected one or more times.\r\n![alt text](image-6.png)\r\nQuestion\r\nCorrect answer:",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company needs to customize a base model that is hosted on Amazon Bedrock.\r\n\r\nSelect the correct model customization method from the following list of company requirements. Each model customization method should be selected one or more times.\r\n![alt text](image-6.png)\r\nQuestion\r\nCorrect answer:",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company needs to customize a base model that is hosted on Amazon Bedrock.\r\n\r\nSelect the correct model customization method from the following list of company requirements. Each model customization method should be selected one or more times.\r\n![alt text](image-6.png)\r\nQuestion\r\nCorrect answer:",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "97",
+    "type": "multiple-choice",
+    "question": "A manufacturing company has an application that ingests consumer complaints from publicly available sources. The application uses complex hard-coded logic to process the complaints. The company wants to scale this logic across markets and product lines.\r\n\r\nWhich advantage do generative AI models offer for this scenario?",
+    "options": [
+      "Predictability of outputs",
+      "Adaptability",
+      "Less sensitivity to changes in inputs",
+      "Explainability"
+    ],
+    "image": null,
+    "answer": "Adaptability",
+    "explanation": null,
+    "question_en": "A manufacturing company has an application that ingests consumer complaints from publicly available sources. The application uses complex hard-coded logic to process the complaints. The company wants to scale this logic across markets and product lines.\r\n\r\nWhich advantage do generative AI models offer for this scenario?",
+    "question_es": "A manufacturing company has an application that ingests consumer complaints from publicly available sources. The application uses complex hard-coded logic to process the complaints. The company wants to scale this logic across markets and product lines.\r\n\r\nWhich advantage do generative AI models offer for this scenario?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "98",
+    "type": "multiple-choice",
+    "question": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on transaction data.\r\n\r\nWhich type of ML model meets these requirements?",
+    "options": [
+      "Regression",
+      "Diffusion",
+      "Binary classification",
+      "Multi-class classification"
+    ],
+    "image": null,
+    "answer": "Binary classification",
+    "explanation": null,
+    "question_en": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on transaction data.\r\n\r\nWhich type of ML model meets these requirements?",
+    "question_es": "A financial company wants to flag all credit card activity as possibly fraudulent or non-fraudulent based on transaction data.\r\n\r\nWhich type of ML model meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "99",
+    "type": "multiple-choice",
+    "question": "HOTSPOT\r\n\r\n-\r\n\r\nA company is designing a customer service chatbot by using a fine-tuned large language model (LLM). The company wants to ensure that the chatbot uses responsible AI characteristics.\r\n\r\nSelect the correct responsible AI characteristic from the following list for each application design action. Each responsible AI characteristic should be selected one time or not at all.\r\n![alt text](image-5.png)\r\nQuestion\r\nCorrect answer:",
+    "options": [],
+    "image": null,
+    "answer": null,
+    "explanation": null,
+    "question_en": "HOTSPOT\r\n\r\n-\r\n\r\nA company is designing a customer service chatbot by using a fine-tuned large language model (LLM). The company wants to ensure that the chatbot uses responsible AI characteristics.\r\n\r\nSelect the correct responsible AI characteristic from the following list for each application design action. Each responsible AI characteristic should be selected one time or not at all.\r\n![alt text](image-5.png)\r\nQuestion\r\nCorrect answer:",
+    "question_es": "HOTSPOT\r\n\r\n-\r\n\r\nA company is designing a customer service chatbot by using a fine-tuned large language model (LLM). The company wants to ensure that the chatbot uses responsible AI characteristics.\r\n\r\nSelect the correct responsible AI characteristic from the following list for each application design action. Each responsible AI characteristic should be selected one time or not at all.\r\n![alt text](image-5.png)\r\nQuestion\r\nCorrect answer:",
+    "explanation_en": null,
+    "explanation_es": null
+  },
+  {
+    "id": "100",
+    "type": "multiple-choice",
+    "question": "A hospital wants to use a generative AI solution with speech-to-text functionality to help improve employee skills in dictating clinical notes.\r\n\r\nWhich AWS service meets these requirements?",
+    "options": [
+      "Amazon Q Developer",
+      "Amazon Polly",
+      "Amazon Rekognition",
+      "AWS HealthScribe"
+    ],
+    "image": null,
+    "answer": "AWS HealthScribe",
+    "explanation": null,
+    "question_en": "A hospital wants to use a generative AI solution with speech-to-text functionality to help improve employee skills in dictating clinical notes.\r\n\r\nWhich AWS service meets these requirements?",
+    "question_es": "A hospital wants to use a generative AI solution with speech-to-text functionality to help improve employee skills in dictating clinical notes.\r\n\r\nWhich AWS service meets these requirements?",
+    "explanation_en": null,
+    "explanation_es": null
+  }
+]

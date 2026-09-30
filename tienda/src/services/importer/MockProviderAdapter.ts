@@ -1,0 +1,1 @@
+export { mockProviderAdapter } from '../providerAdapters/MockProviderAdapter'

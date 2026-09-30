@@ -1,0 +1,17 @@
+{
+  "name": "netlify-functions",
+  "version": "1.0.0",
+  "description": "Netlify Functions for Stripe integration",
+  "main": "index.js",
+  "dependencies": {
+    "stripe": "^14.9.0",
+    "@supabase/supabase-js": "^2.38.4",
+    "dotenv": "^16.4.5",
+    "resend": "^6.0.1",
+    "@react-email/render": "2.0.0",
+    "@react-email/components": "1.0.1",
+    "react": "^19.1.0",
+    "bcryptjs": "^3.0.0",
+    "hash.js": "^1.1.7"
+  }
+}

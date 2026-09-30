@@ -1,0 +1,446 @@
+[
+  {
+    "id": "F1-1024",
+    "customerId": 15,
+    "customerName": "Valeria Mas",
+    "email": "valeria.mas@email.com",
+    "date": "2026-09-18T10:12:00",
+    "items": [
+      { "productId": 22, "name": "Red Bull Racing RB20 Max Verstappen 2024", "price": 45.99, "quantity": 2 }
+    ],
+    "subtotal": 91.98,
+    "discount": 0,
+    "shipping": 6.99,
+    "tax": 19.31,
+    "total": 118.28,
+    "status": "Pendiente",
+    "payment": "Pendiente",
+    "shippingAddress": { "name": "Valeria Mas", "address": "Av. Diagonal 442", "city": "Barcelona", "postalCode": "08006", "country": "España", "phone": "+34 665 666 778" }
+  },
+  {
+    "id": "F1-1023",
+    "customerId": 14,
+    "customerName": "Alejandro Pons",
+    "email": "alejandro.pons@email.com",
+    "date": "2026-09-17T16:40:00",
+    "items": [
+      { "productId": 19, "name": "McLaren MP4/4 Ayrton Senna", "price": 169.99, "quantity": 1 },
+      { "productId": 20, "name": "Williams FW14B Nigel Mansell", "price": 49.99, "quantity": 1 }
+    ],
+    "subtotal": 219.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 46.2,
+    "total": 266.18,
+    "status": "Confirmado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Alejandro Pons", "address": "Gran Vía 28", "city": "Madrid", "postalCode": "28013", "country": "España", "phone": "+34 654 555 667" }
+  },
+  {
+    "id": "F1-1022",
+    "customerId": 13,
+    "customerName": "Lucía Ramírez",
+    "email": "lucia.ramirez@email.com",
+    "date": "2026-09-15T09:05:00",
+    "items": [
+      { "productId": 3, "name": "Ferrari SF-24 Charles Leclerc", "price": 139.99, "quantity": 1 }
+    ],
+    "subtotal": 139.99,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 29.4,
+    "total": 169.39,
+    "status": "Preparando",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Lucía Ramírez", "address": "Paseo de Gracia 89", "city": "Barcelona", "postalCode": "08008", "country": "España", "phone": "+34 643 444 556" }
+  },
+  {
+    "id": "F1-1021",
+    "customerId": 12,
+    "customerName": "Iván Castillo",
+    "email": "ivan.castillo@email.com",
+    "date": "2026-09-13T18:30:00",
+    "items": [
+      { "productId": 7, "name": "McLaren MCL38 Lando Norris", "price": 134.99, "quantity": 1 },
+      { "productId": 8, "name": "McLaren MCL38 Oscar Piastri", "price": 79.99, "quantity": 1 }
+    ],
+    "subtotal": 214.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 45.15,
+    "total": 260.13,
+    "status": "Enviado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Iván Castillo", "address": "Calle Serrano 12", "city": "Madrid", "postalCode": "28001", "country": "España", "phone": "+34 632 333 445" }
+  },
+  {
+    "id": "F1-1020",
+    "customerId": 11,
+    "customerName": "Noa Ferrer",
+    "email": "noa.ferrer@email.com",
+    "date": "2026-09-11T11:25:00",
+    "items": [
+      { "productId": 5, "name": "Mercedes-AMG W14 Lewis Hamilton", "price": 139.99, "quantity": 1 }
+    ],
+    "subtotal": 139.99,
+    "discount": 18.2,
+    "shipping": 0,
+    "tax": 29.4,
+    "total": 151.19,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Noa Ferrer", "address": "Calle Atocha 45", "city": "Valencia", "postalCode": "46001", "country": "España", "phone": "+34 621 222 334" }
+  },
+  {
+    "id": "F1-1019",
+    "customerId": 10,
+    "customerName": "Hugo Roldán",
+    "email": "hugo.roldan@email.com",
+    "date": "2026-09-08T15:55:00",
+    "items": [
+      { "productId": 1, "name": "Red Bull Racing RB19 Max Verstappen", "price": 149.99, "quantity": 1 },
+      { "productId": 2, "name": "Red Bull Racing RB16B Max Verstappen 2021", "price": 49.99, "quantity": 1 }
+    ],
+    "subtotal": 199.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 42.0,
+    "total": 241.98,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Hugo Roldán", "address": "Av. de América 6", "city": "Sevilla", "postalCode": "41002", "country": "España", "phone": "+34 610 111 223" }
+  },
+  {
+    "id": "F1-1018",
+    "customerId": 9,
+    "customerName": "Carmen Vidal",
+    "email": "carmen.vidal@email.com",
+    "date": "2026-09-05T10:48:00",
+    "items": [
+      { "productId": 21, "name": "Ferrari F2004 Michael Schumacher", "price": 164.99, "quantity": 1 }
+    ],
+    "subtotal": 164.99,
+    "discount": 18.15,
+    "shipping": 0,
+    "tax": 34.65,
+    "total": 181.49,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Carmen Vidal", "address": "Calle Hermanos Machado 3", "city": "Zaragoza", "postalCode": "50008", "country": "España", "phone": "+34 699 000 112" }
+  },
+  {
+    "id": "F1-1017",
+    "customerId": 8,
+    "customerName": "Adrián Molina",
+    "email": "adrian.molina@email.com",
+    "date": "2026-09-02T12:37:00",
+    "items": [
+      { "productId": 16, "name": "Ferrari SF70H Sebastian Vettel", "price": 159.99, "quantity": 1 }
+    ],
+    "subtotal": 159.99,
+    "discount": 17.6,
+    "shipping": 0,
+    "tax": 33.6,
+    "total": 175.99,
+    "status": "Cancelado",
+    "payment": "Reembolsado",
+    "shippingAddress": { "name": "Adrián Molina", "address": "Calle Mayor 22", "city": "Bilbao", "postalCode": "48001", "country": "España", "phone": "+34 688 999 001" }
+  },
+  {
+    "id": "F1-1016",
+    "customerId": 7,
+    "customerName": "Marta Serra",
+    "email": "marta.serra@email.com",
+    "date": "2026-08-28T09:14:00",
+    "items": [
+      { "productId": 4, "name": "Ferrari SF-24 Carlos Sainz", "price": 44.99, "quantity": 2 }
+    ],
+    "subtotal": 89.98,
+    "discount": 0,
+    "shipping": 6.99,
+    "tax": 18.9,
+    "total": 115.87,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Marta Serra", "address": "Calle Sants 150", "city": "Barcelona", "postalCode": "08028", "country": "España", "phone": "+34 677 888 990" }
+  },
+  {
+    "id": "F1-1015",
+    "customerId": 6,
+    "customerName": "Pablo Ortega",
+    "email": "pablo.ortega@email.com",
+    "date": "2026-08-24T17:33:00",
+    "items": [
+      { "productId": 9, "name": "Aston Martin AMR23 Fernando Alonso", "price": 42.99, "quantity": 1 },
+      { "productId": 10, "name": "Aston Martin AMR24 Fernando Alonso", "price": 129.99, "quantity": 1 }
+    ],
+    "subtotal": 172.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 36.33,
+    "total": 209.31,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Pablo Ortega", "address": "Gran Vía 55", "city": "Madrid", "postalCode": "28013", "country": "España", "phone": "+34 666 777 889" }
+  },
+  {
+    "id": "F1-1014",
+    "customerId": 5,
+    "customerName": "Sofía Navarro",
+    "email": "sofia.navarro@email.com",
+    "date": "2026-08-20T13:40:00",
+    "items": [
+      { "productId": 17, "name": "Mercedes-AMG W11 Lewis Hamilton", "price": 149.99, "quantity": 1 }
+    ],
+    "subtotal": 149.99,
+    "discount": 18.0,
+    "shipping": 0,
+    "tax": 31.5,
+    "total": 163.49,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Sofía Navarro", "address": "Calle Goya 10", "city": "Madrid", "postalCode": "28001", "country": "España", "phone": "+34 655 666 778" }
+  },
+  {
+    "id": "F1-1013",
+    "customerId": 4,
+    "customerName": "Diego Torres",
+    "email": "diego.torres@email.com",
+    "date": "2026-08-15T08:20:00",
+    "items": [
+      { "productId": 3, "name": "Ferrari SF-24 Charles Leclerc", "price": 139.99, "quantity": 1 },
+      { "productId": 11, "name": "Alpine A524 Pierre Gasly", "price": 59.99, "quantity": 1 }
+    ],
+    "subtotal": 199.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 42.0,
+    "total": 241.98,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Diego Torres", "address": "Calle Navas de Tolosa 8", "city": "Granada", "postalCode": "18002", "country": "España", "phone": "+34 644 555 667" }
+  },
+  {
+    "id": "F1-1012",
+    "customerId": 3,
+    "customerName": "Elena Fernández",
+    "email": "elena.fernandez@email.com",
+    "date": "2026-08-09T19:05:00",
+    "items": [
+      { "productId": 12, "name": "Williams Racing FW46 Alexander Albon", "price": 39.99, "quantity": 1 },
+      { "productId": 13, "name": "Racing Bulls VCARB 01 Daniel Ricciardo", "price": 37.99, "quantity": 1 },
+      { "productId": 14, "name": "Kick Sauber C44 Valtteri Bottas", "price": 36.99, "quantity": 1 }
+    ],
+    "subtotal": 114.97,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 24.14,
+    "total": 139.11,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Elena Fernández", "address": "Calle Preciados 5", "city": "Madrid", "postalCode": "28013", "country": "España", "phone": "+34 633 444 556" }
+  },
+  {
+    "id": "F1-1011",
+    "customerId": 2,
+    "customerName": "Marcos Ruiz",
+    "email": "marcos.ruiz@email.com",
+    "date": "2026-08-03T14:55:00",
+    "items": [
+      { "productId": 6, "name": "Mercedes-AMG W15 George Russell", "price": 44.99, "quantity": 1 },
+      { "productId": 15, "name": "Haas VF-24 Kevin Magnussen", "price": 54.99, "quantity": 1 },
+      { "productId": 23, "name": "Mercedes-AMG W12 Lewis Hamilton", "price": 69.99, "quantity": 1 }
+    ],
+    "subtotal": 169.97,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 35.69,
+    "total": 205.66,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Marcos Ruiz", "address": "Calle Arenal 18", "city": "Madrid", "postalCode": "28005", "country": "España", "phone": "+34 622 333 445" }
+  },
+  {
+    "id": "F1-1010",
+    "customerId": 1,
+    "customerName": "Laura Gómez",
+    "email": "laura.gomez@email.com",
+    "date": "2026-07-28T10:00:00",
+    "items": [
+      { "productId": 24, "name": "Alpine A522 Esteban Ocon", "price": 39.99, "quantity": 1 },
+      { "productId": 18, "name": "Red Bull Racing RB18 Max Verstappen", "price": 44.99, "quantity": 1 }
+    ],
+    "subtotal": 84.98,
+    "discount": 0,
+    "shipping": 6.99,
+    "tax": 17.85,
+    "total": 109.82,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Laura Gómez", "address": "Calle Alcalá 120", "city": "Madrid", "postalCode": "28009", "country": "España", "phone": "+34 611 222 334" }
+  },
+  {
+    "id": "F1-1009",
+    "customerId": 9,
+    "customerName": "Carmen Vidal",
+    "email": "carmen.vidal@email.com",
+    "date": "2026-07-19T12:30:00",
+    "items": [
+      { "productId": 7, "name": "McLaren MCL38 Lando Norris", "price": 134.99, "quantity": 1 }
+    ],
+    "subtotal": 134.99,
+    "discount": 13.5,
+    "shipping": 0,
+    "tax": 28.35,
+    "total": 149.84,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Carmen Vidal", "address": "Calle Hermanos Machado 3", "city": "Zaragoza", "postalCode": "50008", "country": "España", "phone": "+34 699 000 112" }
+  },
+  {
+    "id": "F1-1008",
+    "customerId": 7,
+    "customerName": "Marta Serra",
+    "email": "marta.serra@email.com",
+    "date": "2026-07-08T16:45:00",
+    "items": [
+      { "productId": 1, "name": "Red Bull Racing RB19 Max Verstappen", "price": 149.99, "quantity": 1 }
+    ],
+    "subtotal": 149.99,
+    "discount": 18.0,
+    "shipping": 0,
+    "tax": 31.5,
+    "total": 163.49,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Marta Serra", "address": "Calle Sants 150", "city": "Barcelona", "postalCode": "08028", "country": "España", "phone": "+34 677 888 990" }
+  },
+  {
+    "id": "F1-1007",
+    "customerId": 3,
+    "customerName": "Elena Fernández",
+    "email": "elena.fernandez@email.com",
+    "date": "2026-06-24T09:50:00",
+    "items": [
+      { "productId": 5, "name": "Mercedes-AMG W14 Lewis Hamilton", "price": 139.99, "quantity": 1 },
+      { "productId": 9, "name": "Aston Martin AMR23 Fernando Alonso", "price": 42.99, "quantity": 1 }
+    ],
+    "subtotal": 182.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 38.43,
+    "total": 221.41,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Elena Fernández", "address": "Calle Preciados 5", "city": "Madrid", "postalCode": "28013", "country": "España", "phone": "+34 633 444 556" }
+  },
+  {
+    "id": "F1-1006",
+    "customerId": 10,
+    "customerName": "Hugo Roldán",
+    "email": "hugo.roldan@email.com",
+    "date": "2026-06-11T13:15:00",
+    "items": [
+      { "productId": 15, "name": "Haas VF-24 Kevin Magnussen", "price": 54.99, "quantity": 2 }
+    ],
+    "subtotal": 109.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 23.1,
+    "total": 133.08,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Hugo Roldán", "address": "Av. de América 6", "city": "Sevilla", "postalCode": "41002", "country": "España", "phone": "+34 610 111 223" }
+  },
+  {
+    "id": "F1-1005",
+    "customerId": 8,
+    "customerName": "Adrián Molina",
+    "email": "adrian.molina@email.com",
+    "date": "2026-05-29T11:20:00",
+    "items": [
+      { "productId": 10, "name": "Aston Martin AMR24 Fernando Alonso", "price": 129.99, "quantity": 1 }
+    ],
+    "subtotal": 129.99,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 27.3,
+    "total": 157.29,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Adrián Molina", "address": "Calle Mayor 22", "city": "Bilbao", "postalCode": "48001", "country": "España", "phone": "+34 688 999 001" }
+  },
+  {
+    "id": "F1-1004",
+    "customerId": 2,
+    "customerName": "Marcos Ruiz",
+    "email": "marcos.ruiz@email.com",
+    "date": "2026-05-11T18:05:00",
+    "items": [
+      { "productId": 1, "name": "Red Bull Racing RB19 Max Verstappen", "price": 149.99, "quantity": 2 }
+    ],
+    "subtotal": 299.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 63.0,
+    "total": 362.98,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Marcos Ruiz", "address": "Calle Arenal 18", "city": "Madrid", "postalCode": "28005", "country": "España", "phone": "+34 622 333 445" }
+  },
+  {
+    "id": "F1-1003",
+    "customerId": 12,
+    "customerName": "Iván Castillo",
+    "email": "ivan.castillo@email.com",
+    "date": "2026-04-17T09:35:00",
+    "items": [
+      { "productId": 21, "name": "Ferrari F2004 Michael Schumacher", "price": 164.99, "quantity": 1 },
+      { "productId": 3, "name": "Ferrari SF-24 Charles Leclerc", "price": 139.99, "quantity": 1 }
+    ],
+    "subtotal": 304.98,
+    "discount": 0,
+    "shipping": 0,
+    "tax": 64.05,
+    "total": 369.03,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Iván Castillo", "address": "Calle Serrano 12", "city": "Madrid", "postalCode": "28001", "country": "España", "phone": "+34 632 333 445" }
+  },
+  {
+    "id": "F1-1002",
+    "customerId": 5,
+    "customerName": "Sofía Navarro",
+    "email": "sofia.navarro@email.com",
+    "date": "2026-03-22T10:25:00",
+    "items": [
+      { "productId": 16, "name": "Ferrari SF70H Sebastian Vettel", "price": 159.99, "quantity": 1 }
+    ],
+    "subtotal": 159.99,
+    "discount": 17.6,
+    "shipping": 0,
+    "tax": 33.6,
+    "total": 175.99,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Sofía Navarro", "address": "Calle Goya 10", "city": "Madrid", "postalCode": "28001", "country": "España", "phone": "+34 655 666 778" }
+  },
+  {
+    "id": "F1-1001",
+    "customerId": 1,
+    "customerName": "Laura Gómez",
+    "email": "laura.gomez@email.com",
+    "date": "2026-02-14T08:50:00",
+    "items": [
+      { "productId": 19, "name": "McLaren MP4/4 Ayrton Senna", "price": 169.99, "quantity": 1 }
+    ],
+    "subtotal": 169.99,
+    "discount": 18.7,
+    "shipping": 0,
+    "tax": 35.7,
+    "total": 186.99,
+    "status": "Entregado",
+    "payment": "Pagado",
+    "shippingAddress": { "name": "Laura Gómez", "address": "Calle Alcalá 120", "city": "Madrid", "postalCode": "28009", "country": "España", "phone": "+34 611 222 334" }
+  }
+]

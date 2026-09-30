@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400">
+
+  <defs>
+    <linearGradient id="tlg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1a1a22"/>
+      <stop offset="100%" stop-color="#0a0a10"/>
+    </linearGradient>
+  </defs>
+  <rect width="400" height="400" rx="24" fill="url(#tlg)"/>
+  <rect x="0" y="360" width="400" height="40" rx="0 0 24 24" fill="#1e5aa8" opacity="0.3"/>
+  <rect x="0" y="375" width="400" height="25" fill="#1e5aa8" opacity="0.12"/>
+  <text x="200" y="185" font-family="Oswald, sans-serif" font-size="88" font-weight="700" fill="white" text-anchor="middle">RBR</text>
+  <text x="200" y="225" font-family="Oswald, sans-serif" font-size="18" font-weight="400" fill="rgba(255,255,255,0.45)" text-anchor="middle" letter-spacing="4">FORMULA 1</text>
+  <circle cx="200" cy="280" r="4" fill="#1e5aa8"/>
+  <text x="200" y="325" font-family="Inter, sans-serif" font-size="13" fill="rgba(255,255,255,0.55)" text-anchor="middle">Austria · 6 titles</text>
+  
+</svg>

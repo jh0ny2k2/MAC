@@ -1,0 +1,1 @@
+export { aliExpressAdapter } from '../providerAdapters/AliExpressAdapter'

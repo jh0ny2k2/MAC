@@ -1,0 +1,26 @@
+[
+  {
+    "id": "1:18",
+    "name": "1:18",
+    "label": "Escala 1:18",
+    "description": "La gran escala de colección. Máximo detalle, piezas premium y la fidelidad más absoluta para vitrinas y exhibición."
+  },
+  {
+    "id": "1:24",
+    "name": "1:24",
+    "label": "Escala 1:24",
+    "description": "El equilibrio perfecto entre tamaño, detalle y precio. Ideal para mesas de trabajo y escritorios de aficionados."
+  },
+  {
+    "id": "1:43",
+    "name": "1:43",
+    "label": "Escala 1:43",
+    "description": "La escala clásica del coleccionismo de bolsillo. Formatos compactos para construir colecciones temáticas completas."
+  },
+  {
+    "id": "1:64",
+    "name": "1:64",
+    "label": "Escala 1:64",
+    "description": "Miniaturas de bolsillo sorprendentemente detalladas. El formato perfecto para empezar a coleccionar."
+  }
+]

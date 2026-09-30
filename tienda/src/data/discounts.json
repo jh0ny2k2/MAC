@@ -1,0 +1,68 @@
+[
+  {
+    "id": 1,
+    "code": "F1WELCOME10",
+    "type": "percent",
+    "value": 10,
+    "startDate": "2026-01-01",
+    "endDate": "2026-12-31",
+    "maxUses": 500,
+    "uses": 312,
+    "status": "activo"
+  },
+  {
+    "id": 2,
+    "code": "MONACO20",
+    "type": "percent",
+    "value": 20,
+    "startDate": "2026-05-18",
+    "endDate": "2026-05-31",
+    "maxUses": 150,
+    "uses": 128,
+    "status": "expirado"
+  },
+  {
+    "id": 3,
+    "code": "SUMMER15",
+    "type": "percent",
+    "value": 15,
+    "startDate": "2026-06-01",
+    "endDate": "2026-08-31",
+    "maxUses": 300,
+    "uses": 197,
+    "status": "expirado"
+  },
+  {
+    "id": 4,
+    "code": "GRAND10",
+    "type": "fixed",
+    "value": 10,
+    "startDate": "2026-09-20",
+    "endDate": "2026-09-28",
+    "maxUses": 200,
+    "uses": 12,
+    "status": "programado"
+  },
+  {
+    "id": 5,
+    "code": "VIP25",
+    "type": "percent",
+    "value": 25,
+    "startDate": "2026-07-01",
+    "endDate": "2026-09-30",
+    "maxUses": 100,
+    "uses": 34,
+    "status": "activo"
+  },
+  {
+    "id": 6,
+    "code": "PAUSE10",
+    "type": "percent",
+    "value": 10,
+    "startDate": "2026-03-01",
+    "endDate": "2026-10-31",
+    "maxUses": 400,
+    "uses": 89,
+    "status": "desactivado"
+  }
+]

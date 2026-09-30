@@ -1,0 +1,90 @@
+{
+  "1005013099421482": {
+    "title": "Modelo de coche a escala 1:18 Red Bull Racing RB19 Max Verstappen 2023 Champ",
+    "descriptionHtml": "<p>Modelo de colección de la escudería Red Bull Racing que dominó la temporada 2023. <b>Reproducción oficial RB19</b> con el número 1 del campeón Max Verstappen.</p><p>\u2022 Ruedas giratorias y dirección delantera<br/>\u2022 Detalle interior completo de la cabina<br/>\u2022 Decoración Red Bull en su totalidad<br/>\u2022 Material: cuerpo de aleación (die-cast)</p><p><b>Edición limitada</b> de colección.</p><p>Envío rápido y seguimiento completo. Esta promoción solo es válida en algunos países/regiones, así que el precio puede variar.</p><p>El color y la textura pueden diferir de la imagen mostrada.</p>",
+    "price": 29.99,
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "currencyCode": "€",
+    "available": true,
+    "stock": 36,
+    "sku": "RB19-2023-V12",
+    "brand": "SOLIDO",
+    "rating": 4.7,
+    "ratingCount": 213,
+    "images": [
+      "/images/products/p1-1.svg",
+      "/images/products/p1-2.svg",
+      "/images/products/placeholder.svg"
+    ],
+    "variants": [
+      { "name": "Escala", "value": "1:18" },
+      { "name": "Color", "value": "Azul" }
+    ],
+    "specifications": [
+      { "label": "Marca", "value": "SOLIDO" },
+      { "label": "Escala", "value": "1:18" },
+      { "label": "Material", "value": "Cuerpo de aleación, chasis de zamak" },
+      { "label": "Dimensiones", "value": "27 × 11 × 6 cm" },
+      { "label": "Peso", "value": "720 g" },
+      { "label": "Temporada", "value": "2023" },
+      { "label": "Piloto", "value": "Max Verstappen" }
+    ]
+  },
+  "noMatch": {
+    "title": "Ferrari SF-23 Charles Leclerc 2023 a escala 1:43",
+    "descriptionHtml": "<p>Miniatura a escala <b>1:43</b> del Ferrari SF-23 pilotado por Charles Leclerc en la temporada 2023.</p><p>\u2022 Cuerpo en metal fundido<br/>\u2022 Detalle de alerones y decoración oficial<br/>\u2022 Lleva el número 16 del piloto de Mónaco</p><p>Material: Cuerpo de aleación (die-cast)<br/>Dimensiones: 10 × 4 × 3 cm<br/>Peso: 85 g</p><p>Envío gratuito en pedidos superiores a 49 euros. El paquete puede tardar 2-3 semanas en llegar.</p>",
+    "price": 12.49,
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "currencyCode": "€",
+    "available": true,
+    "stock": 120,
+    "sku": null,
+    "brand": null,
+    "rating": 4.3,
+    "ratingCount": 87,
+    "images": [
+      "/images/products/p3-1.svg",
+      "/images/products/p3-2.svg"
+    ],
+    "variants": [],
+    "specifications": [
+      { "label": "Escala", "value": "1:43" },
+      { "label": "Material", "value": "Cuerpo de aleación (die-cast)" },
+      { "label": "Dimensiones", "value": "10 × 4 × 3 cm" },
+      { "label": "Peso", "value": "85 g" }
+    ]
+  },
+  "1005013102CHANGE": {
+    "title": "Modelo a escala 1:18 Ferrari SF-23 Charles Leclerc 2023 Edición Especial (Versión actualizada)",
+    "descriptionHtml": "<p>Edición <b>especial</b> y <b>limitada</b> del monoplaza Ferrari SF-23 de la temporada 2023 pilotado por Charles Leclerc.</p><p>\u2022 Cuerpo de aleación y chasis de zamak<br/>\u2022 Interior detallado con jaula de seguridad<br/>\u2022 Neumáticos de goma con llantas pintadas<br/>\u2022 Base de exposición con placa de temporada 2023</p><p>La versión actualizada del vendedor incluye ahora la placa conmemorativa del GP de Monza y la caja exterior mejorada.</p>",
+    "price": 32.49,
+    "currency": "EUR",
+    "currencyName": "Euro",
+    "currencyCode": "€",
+    "available": true,
+    "stock": 28,
+    "sku": "F1-2023-LEC16-SP",
+    "brand": "SPARK MODEL",
+    "rating": 4.6,
+    "ratingCount": 178,
+    "images": [
+      "/images/products/p3-1.svg",
+      "/images/products/p3-2.svg",
+      "/images/products/p1-2.svg",
+      "/images/products/p13-1.svg"
+    ],
+    "variants": [
+      { "name": "Escala", "value": "1:18" },
+      { "name": "Edición", "value": "Especial" }
+    ],
+    "specifications": [
+      { "label": "Material", "value": "Cuerpo de aleación (die-cast), chasis de zamak" },
+      { "label": "Dimensiones", "value": "27 × 11 × 6 cm" },
+      { "label": "Peso", "value": "720 g" },
+      { "label": "Temporada", "value": "2023" },
+      { "label": "Edición especial", "value": "Sí" }
+    ]
+  }
+}

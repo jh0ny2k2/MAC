@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="es" class="h-full">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Apuntes AZ-900 • Certification Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="../theme.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            100: '#e0f2fe',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        dark: {
+                            bg: '#0f172a',
+                            card: '#1e293b',
+                            border: '#334155',
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+        }
+        .dark .glass-effect {
+            background: rgba(15, 23, 42, 0.8);
+        }
+        
+        .note-card {
+            transition: all 0.2s ease;
+        }
+        .note-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px -4px rgba(0, 0, 0, 0.1);
+        }
+
+        .prose-custom {
+            line-height: 1.7;
+        }
+        .prose-custom p { margin-bottom: 1rem; }
+        .prose-custom ul { list-style-type: disc; padding-left: 1.25rem; margin-bottom: 1rem; }
+        .prose-custom li { margin-bottom: 0.5rem; }
+        .prose-custom strong { font-weight: 600; color: #0284c7; }
+        .dark .prose-custom strong { color: #38bdf8; }
+
+        /* Custom Scrollbar for TOC */
+        .toc-scroll::-webkit-scrollbar { width: 4px; }
+        .toc-scroll::-webkit-scrollbar-track { background: transparent; }
+        .toc-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 2px; }
+        .dark .toc-scroll::-webkit-scrollbar-thumb { background: #475569; }
+
+        .active-toc {
+            background-color: #f0f9ff;
+            color: #0284c7;
+            border-right: 3px solid #0284c7;
+        }
+        .dark .active-toc {
+            background-color: rgba(56, 189, 248, 0.1);
+            color: #38bdf8;
+            border-right: 3px solid #38bdf8;
+        }
+    </style>
+</head>
+<body class="h-full bg-slate-50 text-slate-900 dark:bg-dark-bg dark:text-slate-100 transition-colors duration-200">
+
+    <!-- Navbar -->
+    <nav class="sticky top-0 z-50 border-b border-slate-200 dark:border-slate-800 glass-effect">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between h-16">
+                <div class="flex items-center gap-4">
+                    <a href="../index.html" class="w-8 h-8 rounded-lg bg-slate-100 dark:bg-slate-800 flex items-center justify-center text-slate-500 hover:text-brand-600 transition-colors">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
+                    <div class="h-6 w-px bg-slate-200 dark:bg-slate-700"></div>
+                    <div class="flex items-center gap-3">
+                        <div class="w-8 h-8 rounded-lg bg-[#0078d4]/10 text-[#0078d4] flex items-center justify-center text-lg">
+                            <i class="fa-brands fa-microsoft"></i>
+                        </div>
+                        <div>
+                            <h1 class="font-bold text-sm md:text-base leading-tight">AZ-900: Microsoft Azure Fundamentals</h1>
+                            <p class="text-xs text-slate-500 dark:text-slate-400">Guía de Estudio Completa</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="flex items-center gap-3">
+                    <div class="hidden md:flex items-center gap-2 text-xs font-medium text-slate-500 bg-slate-100 dark:bg-slate-800 px-3 py-1.5 rounded-full">
+                        <span id="progressText">0% Completado</span>
+                    </div>
+                    <button id="themeToggle" class="p-2 rounded-lg text-slate-500 hover:bg-slate-100 dark:text-slate-400 dark:hover:bg-slate-800 transition-colors">
+                        <i class="fa-solid fa-moon dark:hidden"></i>
+                        <i class="fa-solid fa-sun hidden dark:block"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        <div class="flex flex-col lg:flex-row gap-8 lg:gap-12">
+            
+            <!-- Sidebar (TOC) -->
+            <aside class="hidden lg:block w-64 flex-shrink-0 sticky top-24 self-start max-h-[calc(100vh-8rem)] overflow-y-auto toc-scroll pr-4">
+                <div class="mb-4">
+                    <h3 class="text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">Contenido</h3>
+                    <div class="relative">
+                        <i class="fa-solid fa-search absolute left-3 top-1/2 -translate-y-1/2 text-slate-400 text-xs"></i>
+                        <input type="text" id="searchInput" placeholder="Filtrar temas..." class="w-full pl-8 pr-3 py-1.5 text-sm bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg focus:ring-2 focus:ring-brand-500 outline-none">
+                    </div>
+                </div>
+                <nav id="toc" class="space-y-1 border-l border-slate-200 dark:border-slate-700">
+                    <!-- TOC items injected here -->
+                </nav>
+            </aside>
+
+            <!-- Content Area -->
+            <div class="flex-1 min-w-0">
+                <!-- Hero / Intro -->
+                <div class="mb-10 pb-8 border-b border-slate-200 dark:border-slate-800">
+                    <h1 class="text-3xl md:text-4xl font-bold text-slate-900 dark:text-white mb-4">Apuntes de Estudio</h1>
+                    <p class="text-lg text-slate-600 dark:text-slate-300 leading-relaxed max-w-3xl">
+                        Guía exhaustiva cubriendo conceptos de nube, arquitectura de Azure, servicios y herramientas de gestión. Actualizado para la última versión del examen.
+                    </p>
+                    <div class="flex gap-4 mt-6">
+                        <button onclick="window.print()" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <i class="fa-solid fa-print"></i> Imprimir PDF
+                        </button>
+                        <button id="markAllBtn" class="flex items-center gap-2 px-4 py-2 rounded-lg border border-slate-200 dark:border-slate-700 text-sm font-medium hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
+                            <i class="fa-regular fa-check-circle"></i> Marcar todo leído
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Notes Container -->
+                <div id="notesContainer" class="space-y-16">
+                    <!-- Content injected here -->
+                </div>
+                
+                <!-- Footer -->
+                <div class="mt-20 pt-10 border-t border-slate-200 dark:border-slate-800 flex justify-between items-center text-sm text-slate-500">
+                    <p>Última actualización: 2025</p>
+                    <a href="#" class="hover:text-brand-600">Reportar un problema</a>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+
+    <script>
+        // Data & State - Full Content Restored
+        const SECTIONS = [
+            {
+                id: 'cloud',
+                title: 'Conceptos de Nube',
+                icon: 'fa-cloud',
+                items: [
+                    {
+                        title: 'CapEx vs OpEx: diferencias, implicaciones contables y decisiones de migración',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Concepto: <strong>CapEx</strong> son gastos de capital: desembolsos iniciales para adquirir activos (servidores, hardware, edificio). <strong>OpEx</strong> son gastos operativos: pagos periódicos por servicios que permiten operar sin comprar activos (suscripciones, consumo).</p>
+                                <p>Implicaciones: CapEx aparece como activo en el balance y se deprecia; OpEx afecta a la cuenta de resultados mensual. Migrar a la nube suele convertir CapEx en OpEx, lo que puede mejorar liquidez y permitir escalado rápido.</p>
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500 text-sm">
+                                    <strong>Ejemplo práctico:</strong> Una empresa que necesita capacidad variable beneficiará de <em>Pay-As-You-Go</em> porque evita pagar por capacidad ociosa. Una empresa con carga estable a largo plazo podría usar <em>reservas</em> para reducir costes.
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Modelos de servicio: IaaS, PaaS y SaaS',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>IaaS (Infrastructure as a Service):</strong> proveedor gestiona la infraestructura física; el cliente gestiona SO, middleware y aplicaciones. Ej.: VM en Azure, discos gestionados.</p>
+                                <p><strong>PaaS (Platform as a Service):</strong> proveedor gestiona el SO y la plataforma; el cliente despliega la aplicación. Ej.: Azure App Service, Azure SQL como PaaS.</p>
+                                <p><strong>SaaS (Software as a Service):</strong> software completo gestionado por el proveedor; el cliente solo consume la aplicación. Ej.: Microsoft 365.</p>
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500 text-sm">
+                                    <strong>Regla práctica:</strong> A menor responsabilidad operacional del cliente, más se aproxima el servicio a SaaS. Elegir según control vs conveniencia.
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Serverless: modelo, ventajas y casos de uso',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Serverless significa ejecución de código sin gestión de servidores por parte del usuario. El proveedor abstrae provisionamiento y escalado (pago por ejecución/eventos).</p>
+                                <p>Ventajas: escalado automático, coste por uso, despliegue rápido. Limitaciones: tiempos de cold start, límites de ejecución y potencial mayor complejidad para estado mantenido.</p>
+                                <p><strong>Casos de uso:</strong> tareas event-driven, ingestión de datos, microservicios con baja latencia y jobs periódicos.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Contenedores y orquestación: ACI vs AKS',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Contenedores empaquetan aplicación y dependencias. ACI permite ejecutar contenedores sin clúster (ideal para tareas puntuales). AKS es Kubernetes gestionado para cargas con necesidad de orquestación, escalado, y redes avanzadas.</p>
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500 text-sm">
+                                    <strong>Comparativa:</strong> ACI = simple, rápido, costes por ejecución. AKS = complejo, gestión de nodos, adecuada para producción con alta disponibilidad.
+                                </div>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'governance',
+                title: 'Gestión y Gobernanza',
+                icon: 'fa-sitemap',
+                items: [
+                    {
+                        title: 'Grupos de recursos (RG): concepto y límites',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Un Resource Group (RG) es un contenedor lógico para recursos Azure relacionados. No es una unidad de facturación ni una VNet; sirve para agrupar recursos con ciclo de vida similar.</p>
+                                <p>Puntos clave: no se pueden anidar; cada recurso pertenece a un único RG; un RG puede contener recursos en distintas regiones.</p>
+                                <p><strong>Diseño recomendado:</strong> agrupa por aplicación o por ciclo de vida (ej.: todos los recursos de una aplicación o de un entorno: dev/stage/prod).</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Etiquetas (tags) y políticas',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Las etiquetas son pares clave/valor aplicables a la mayoría de recursos. Son esenciales para agrupar costes, automatizaciones y cumplir requisitos de gobernanza.</p>
+                                <p>Importante: las etiquetas en un RG no se aplican automáticamente a recursos; requieren aplicación explícita o automatización para propagarlas.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Bloqueos (locks) y herencia',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Los bloqueos (CanNotDelete / ReadOnly) se aplican a suscripciones, RG o recursos; bloqueos aplicados a RG se heredan a recursos dentro del RG.</p>
+                                <p>Uso: proteger entornos productivos ante cambios accidentales o eliminación.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Plantillas ARM y automatización (IaC)',
+                        content: `
+                            <div class="space-y-2">
+                                <p>ARM templates (o Bicep/Terraform) permiten describir infraestructura como código. Beneficios: reproducibilidad, revisión en control de versiones y despliegues consistentes.</p>
+                                <p>Tip de examen: distinguir entre plantillas declarativas (ARM, Bicep) y herramientas imperativas.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'identity',
+                title: 'Identidad y Seguridad',
+                icon: 'fa-shield-halved',
+                items: [
+                    {
+                        title: 'Azure Active Directory (Entra ID)',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Azure AD es un servicio gestionado de identidad y acceso. Proporciona autenticación y autorización para recursos en Azure, Microsoft 365 y apps integradas.</p>
+                                <p>No es un controlador de dominio tradicional — aunque se puede integrar con AD local mediante Azure AD Connect para sincronización de identidades.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'MFA y acceso condicional',
+                        content: `
+                            <div class="space-y-2">
+                                <p>MFA añade una segunda capa de autenticación (algo que sabes + algo que tienes). Acceso Condicional permite aplicar políticas dinámicas (por riesgo, ubicación, dispositivo).</p>
+                                <p><strong>Caso práctico:</strong> exigir MFA desde ubicaciones no confiables o para cuentas administrativas reduce riesgo de acceso no autorizado.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Roles y RBAC',
+                        content: `
+                            <div class="space-y-2">
+                                <p>RBAC (Role-Based Access Control) permite asignar permisos según roles predefinidos o personalizados. Recomendación: aplicar el principio de menor privilegio y usar grupos en lugar de asignaciones directas a usuarios.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Defender for Cloud',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Defender for Cloud ofrece evaluación continua, recomendaciones y alertas de seguridad. Su uso ayuda a mejorar el Secure Score y priorizar mitigaciones.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'network',
+                title: 'Redes',
+                icon: 'fa-network-wired',
+                items: [
+                    {
+                        title: 'Virtual Network (VNet) y subredes',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Una VNet es el espacio de red privada en Azure; se divide en subredes para segmentar servicios. Las VNets pueden conectarse entre sí (peering) o mediante VPN/ExpressRoute a on-premises.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'NSG vs Azure Firewall',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>NSG:</strong> reglas de filtrado a nivel de subred o NIC (stateful). <strong>Azure Firewall:</strong> servicio gestionado que ofrece inspección de capa 3-7, NAT y logging centralizado.</p>
+                                <div class="bg-blue-50 dark:bg-blue-900/20 p-3 rounded-lg border-l-4 border-blue-500 text-sm">
+                                    <strong>Regla importante:</strong> NSG no se asocia a VNet entera; se asocia a subredes o NICs. Para inspección avanzada y políticas centralizadas usa Azure Firewall.
+                                </div>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Cifrado en tránsito: TLS/IPsec',
+                        content: `
+                            <div class="space-y-2">
+                                <p>El cifrado de tráfico depende de la capa: TLS cifra a nivel de aplicación (HTTPS), IPsec cifra a nivel de red (túneles VPN). Elegir según requerimiento de seguridad y compatibilidad.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'storage',
+                title: 'Almacenamiento',
+                icon: 'fa-database',
+                items: [
+                    {
+                        title: 'Azure Blob Storage: niveles de acceso',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>Hot:</strong> acceso frecuente, coste de almacenamiento alto y baja latencia.</p>
+                                <p><strong>Cool:</strong> acceso menos frecuente, menor coste de almacenamiento y mayor coste de acceso.</p>
+                                <p><strong>Archive:</strong> coste de almacenamiento muy bajo, pero requiere rehidratación para lectura y tiene tiempos de recuperación largos.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Consistencia y replicación',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Azure ofrece distintas opciones de replicación (LRS, ZRS, GRS, RA-GRS) que equilibran durabilidad y disponibilidad geográfica. Elegir según RPO/RTO y requisitos de cumplimiento.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'monitor',
+                title: 'Supervisión y Observabilidad',
+                icon: 'fa-chart-line',
+                items: [
+                    {
+                        title: 'Azure Monitor, Log Analytics y Application Insights',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>Azure Monitor</strong> es la plataforma general de observabilidad; <strong>Log Analytics</strong> es el repositorio para consultas (Kusto); <strong>Application Insights</strong> se enfoca en telemetría de aplicaciones (requests, exceptions, performance).</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Activity Log y Service Health',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>Activity Log</strong> registra operaciones de gestión en la suscripción (quién hizo qué). <strong>Service Health</strong> informa sobre incidencias en los servicios Azure y mantenimiento programado.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Alertas y respuesta',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Las alertas pueden activarse por métricas (uso CPU, latencia) o por consultas de logs; integrarlas con runbooks/automations permite respuesta automatizada.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'continuity',
+                title: 'Continuidad y Recuperación',
+                icon: 'fa-rotate',
+                items: [
+                    {
+                        title: 'Azure Backup',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Azure Backup permite copias periódicas de VM, archivos y bases de datos. Definir políticas de retención según requisitos legales y RPO.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Azure Site Recovery (ASR)',
+                        content: `
+                            <div class="space-y-2">
+                                <p>ASR replica máquinas a otra región o sitio y permite orquestar failover. No es alta disponibilidad instantánea: está pensado para recuperación ante desastre con RTO planificado.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'compute',
+                title: 'Compute y Plataformas',
+                icon: 'fa-server',
+                items: [
+                    {
+                        title: 'Máquinas virtuales (VM)',
+                        content: `
+                            <div class="space-y-2">
+                                <p>VMs dan control total sobre SO y configuraciones, pero implican gestión de parches, dimensionamiento y seguridad. Considerar Azure VM Scale Sets para escalado automático de VMs.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'App Service',
+                        content: `
+                            <div class="space-y-2">
+                                <p>App Service ofrece plataforma gestionada para web apps con despliegue continuo, slots de staging y escalado automático. Reduce carga operativa respecto a VMs.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Databricks',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Servicios como Azure Databricks están orientados a procesamiento distribuido y ML. Elegir según volumen de datos y necesidad de procesamiento en cluster.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Azure Functions',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Diseñar funciones para ser idempotentes y sin estado cuando sea posible; externalizar estado a servicios gestionados (cosmosdb, storage) para escalado seguro.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'cost',
+                title: 'Costos y Suscripciones',
+                icon: 'fa-coins',
+                items: [
+                    {
+                        title: 'Modelo de precios',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>Pay-as-you-go</strong> = pago por consumo (flexible), <strong>Reservas</strong> = compromiso por periodo a menor coste (útil para cargas predecibles). Evaluar TCO y horizonte temporal.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Facturación y tagging',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Etiquetado consistente y alertas de presupuesto permiten identificar desviaciones. Azure Cost Management ofrece informes y recomendaciones para optimizar gasto.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Costes operativos importantes',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Detener una VM no elimina coste de disco. El egreso de datos suele tener coste; planificar arquitectura de datos para minimizar transferencias innecesarias.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'sla',
+                title: 'SLA y Disponibilidad',
+                icon: 'fa-check-double',
+                items: [
+                    {
+                        title: 'Concepto de SLA',
+                        content: `
+                            <div class="space-y-2">
+                                <p>SLA (Service Level Agreement) establece la disponibilidad garantizada. Para sistemas compuestos, el SLA global se aproxima multiplicando SLAs de componentes (ej.: 99.95% × 99.99%).</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Mejorar disponibilidad',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Usar Availability Zones y replicación entre regiones reduce riesgo de caída por fallo de infraestructura. Diseñar arquitectura para tolerar fallos parciales.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Créditos y reclamaciones',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Si un servicio no cumple SLA, los clientes de pago pueden reclamar créditos según términos del SLA. Revisar condiciones y límites del contrato.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'preview',
+                title: 'Vista previa y Ciclo de Vida',
+                icon: 'fa-flask',
+                items: [
+                    {
+                        title: 'Fases de ciclo de vida',
+                        content: `
+                            <div class="space-y-2">
+                                <p>En <strong>private preview</strong> el acceso es restringido; en <strong>public preview</strong> la funcionalidad puede cambiar y no suele tener SLA. <strong>GA (General Availability)</strong> es la fase estable con soporte y SLA.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Mejores prácticas',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Evitar usar previews en producción para cargas críticas; si se usan, realizar pruebas y tener planes de rollback y mitigación ante cambios inesperados.</p>
+                            </div>
+                        `
+                    }
+                ]
+            },
+            {
+                id: 'regions',
+                title: 'Regiones y Cumplimiento',
+                icon: 'fa-globe',
+                items: [
+                    {
+                        title: 'Selección de región',
+                        content: `
+                            <div class="space-y-2">
+                                <p>Elegir región según cercanía a usuarios (latencia), requisitos legales (residencia de datos) y disponibilidad del servicio. Algunos servicios no están en todas las regiones.</p>
+                            </div>
+                        `
+                    },
+                    {
+                        title: 'Entornos especiales',
+                        content: `
+                            <div class="space-y-2">
+                                <p><strong>Azure Government</strong> es para agencias US con requisitos específicos de cumplimiento. <strong>Azure China</strong> está operado por socios locales (21Vianet) y tiene diferencias en operativa y datos.</p>
+                            </div>
+                        `
+                    }
+                ]
+            }
+        ];
+
+        // Init
+        (function() {
+            const container = document.getElementById('notesContainer');
+            const toc = document.getElementById('toc');
+            const themeToggle = document.getElementById('themeToggle');
+            const searchInput = document.getElementById('searchInput');
+            const progressText = document.getElementById('progressText');
+            
+            // Render Content
+            let totalItems = 0;
+            SECTIONS.forEach(sec => {
+                // TOC Item
+                const tocLink = document.createElement('a');
+                tocLink.href = `#${sec.id}`;
+                tocLink.className = 'block py-2 px-4 text-sm text-slate-500 hover:text-slate-900 dark:hover:text-white border-l-2 border-transparent hover:border-slate-300 transition-all';
+                tocLink.innerHTML = `<i class="fa-solid ${sec.icon} w-5"></i> ${sec.title}`;
+                toc.appendChild(tocLink);
+
+                // Section Content
+                const sectionEl = document.createElement('section');
+                sectionEl.id = sec.id;
+                sectionEl.className = 'scroll-mt-28';
+                
+                let itemsHtml = '';
+                sec.items.forEach((item, idx) => {
+                    totalItems++;
+                    itemsHtml += `
+                        <div class="note-card bg-white dark:bg-dark-card rounded-xl p-6 md:p-8 border border-slate-200 dark:border-slate-700 mb-6">
+                            <div class="flex justify-between items-start mb-4">
+                                <h3 class="text-xl font-bold text-slate-800 dark:text-slate-100">${item.title}</h3>
+                                <label class="cursor-pointer">
+                                    <input type="checkbox" class="read-check w-5 h-5 rounded border-slate-300 text-brand-600 focus:ring-brand-500" data-id="${sec.id}-${idx}">
+                                </label>
+                            </div>
+                            <div class="prose-custom text-slate-600 dark:text-slate-400 text-sm md:text-base">
+                                ${item.content}
+                            </div>
+                        </div>
+                    `;
+                });
+
+                sectionEl.innerHTML = `
+                    <div class="flex items-center gap-3 mb-6">
+                        <span class="w-10 h-10 rounded-lg bg-brand-50 dark:bg-brand-900/30 text-brand-600 flex items-center justify-center text-xl">
+                            <i class="fa-solid ${sec.icon}"></i>
+                        </span>
+                        <h2 class="text-2xl font-bold text-slate-900 dark:text-white">${sec.title}</h2>
+                    </div>
+                    ${itemsHtml}
+                `;
+                container.appendChild(sectionEl);
+            });
+
+            // Theme Toggle
+            themeToggle.addEventListener('click', () => {
+                document.documentElement.classList.toggle('dark');
+                localStorage.setItem('theme:dark', document.documentElement.classList.contains('dark') ? '1' : '0');
+            });
+
+            // Scroll Spy & Progress
+            const sections = document.querySelectorAll('section');
+            const navLinks = document.querySelectorAll('#toc a');
+            
+            window.addEventListener('scroll', () => {
+                let current = '';
+                const scrollY = window.scrollY;
+                const totalHeight = document.body.scrollHeight - window.innerHeight;
+                
+                // Progress Bar
+                const progress = (scrollY / totalHeight) * 100;
+                document.getElementById('scrollProgress').style.width = `${progress}%`;
+
+                // Spy
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    if (scrollY >= (sectionTop - 150)) {
+                        current = '#' + section.id;
+                    }
+                });
+
+                navLinks.forEach(link => {
+                    link.classList.remove('active-toc');
+                    if(link.getAttribute('href') === current) {
+                        link.classList.add('active-toc');
+                    }
+                });
+            });
+
+            // Search Filter
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                document.querySelectorAll('.note-card').forEach(card => {
+                    const text = card.textContent.toLowerCase();
+                    card.style.display = text.includes(term) ? 'block' : 'none';
+                });
+            });
+
+            // Progress Tracking
+            const checks = document.querySelectorAll('.read-check');
+            function updateReadProgress() {
+                const checked = document.querySelectorAll('.read-check:checked').length;
+                const pct = Math.round((checked / totalItems) * 100);
+                progressText.textContent = `${pct}% Completado`;
+            }
+            checks.forEach(c => c.addEventListener('change', updateReadProgress));
+        })();
+    </script>
+</body>
+</html>

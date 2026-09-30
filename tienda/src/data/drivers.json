@@ -1,0 +1,192 @@
+[
+  {
+    "id": 1,
+    "name": "Max Verstappen",
+    "number": 1,
+    "nationality": "Países Bajos",
+    "countryCode": "NL",
+    "team": "Red Bull Racing",
+    "image": "/images/drivers/max-verstappen.svg",
+    "description": "Cuatro títulos mundiales consecutivos desde 2021. El neerlandés más rápido de la historia reescribió los récords con el dominio absoluto de Red Bull."
+  },
+  {
+    "id": 2,
+    "name": "Lewis Hamilton",
+    "number": 44,
+    "nationality": "Reino Unido",
+    "countryCode": "GB",
+    "team": "Ferrari",
+    "image": "/images/drivers/lewis-hamilton.svg",
+    "description": "Siete títulos mundiales y 100+ victorias. La leyenda británica que igualó a Schumacher y define una era dorada del motorsport."
+  },
+  {
+    "id": 3,
+    "name": "Charles Leclerc",
+    "number": 16,
+    "nationality": "Mónaco",
+    "countryCode": "MC",
+    "team": "Ferrari",
+    "image": "/images/drivers/charles-leclerc.svg",
+    "description": "El hijo de Mónaco, formado en la academia Ferrari, pelea cada domingo por devolver al Cavallino Rampante a lo más alto."
+  },
+  {
+    "id": 4,
+    "name": "Carlos Sainz",
+    "number": 55,
+    "nationality": "España",
+    "countryCode": "ES",
+    "team": "Ferrari",
+    "image": "/images/drivers/carlos-sainz.svg",
+    "description": "El Smooth Operator, ganador del GP de Australia y Monza con Ferrari, uno de los pilotos más sólidos de la parrilla actual."
+  },
+  {
+    "id": 5,
+    "name": "Lando Norris",
+    "number": 4,
+    "nationality": "Reino Unido",
+    "countryCode": "GB",
+    "team": "McLaren",
+    "image": "/images/drivers/lando-norris.svg",
+    "description": "La sonrisa de la F1 moderna y el piloto que llevó a McLaren de vuelta a lo más alto tras 26 años sin título de equipos."
+  },
+  {
+    "id": 6,
+    "name": "Oscar Piastri",
+    "number": 81,
+    "nationality": "Australia",
+    "countryCode": "AU",
+    "team": "McLaren",
+    "image": "/images/drivers/oscar-piastri.svg",
+    "description": "Campeón de F2 a la primera y doble ganador en Grandes Premios en 2024. El talento australiano promete marcar época."
+  },
+  {
+    "id": 7,
+    "name": "Fernando Alonso",
+    "number": 14,
+    "nationality": "España",
+    "countryCode": "ES",
+    "team": "Aston Martin",
+    "image": "/images/drivers/fernando-alonso.svg",
+    "description": "Dos títulos mundiales, más de 400 grandes premios y una longevidad admirable. El asturiano es un mito vivo del deporte."
+  },
+  {
+    "id": 8,
+    "name": "George Russell",
+    "number": 63,
+    "nationality": "Reino Unido",
+    "countryCode": "GB",
+    "team": "Mercedes-AMG",
+    "image": "/images/drivers/george-russell.svg",
+    "description": "La nueva generación de Brackley. Riguroso, rápido y capitán del resurgir de Mercedes en la era del efecto suelo."
+  },
+  {
+    "id": 9,
+    "name": "Lance Stroll",
+    "number": 18,
+    "nationality": "Canadá",
+    "countryCode": "CA",
+    "team": "Aston Martin",
+    "image": "/images/drivers/lance-stroll.svg",
+    "description": "Podio en Montmeló con solo 18 años, el piloto más joven en lograrlo. Pole en Turquía 2020 y parte del proyecto Aston Martin."
+  },
+  {
+    "id": 10,
+    "name": "Pierre Gasly",
+    "number": 10,
+    "nationality": "Francia",
+    "countryCode": "FR",
+    "team": "Alpine",
+    "image": "/images/drivers/pierre-gasly.svg",
+    "description": "El francés que venció en Monza 2020 con AlphaTauri. Desde 2023 defiende los colores de Alpine con garra."
+  },
+  {
+    "id": 11,
+    "name": "Esteban Ocon",
+    "number": 31,
+    "nationality": "Francia",
+    "countryCode": "FR",
+    "team": "Alpine",
+    "image": "/images/drivers/esteban-ocon.svg",
+    "description": "Vencedor en Hungría 2021 y competidor incansable desde su etapa en Force India. Uno de los talentos galos estables de la parrilla."
+  },
+  {
+    "id": 12,
+    "name": "Alexander Albon",
+    "number": 23,
+    "nationality": "Tailandia",
+    "countryCode": "TH",
+    "team": "Williams",
+    "image": "/images/drivers/alexander-albon.svg",
+    "description": "Desde Bangkok a Grove. El piloto de Williams destaca por su talento, consistencia y una sonrisa imposible de borrar."
+  },
+  {
+    "id": 13,
+    "name": "Daniel Ricciardo",
+    "number": 3,
+    "nationality": "Australia",
+    "countryCode": "AU",
+    "team": "Racing Bulls",
+    "image": "/images/drivers/daniel-ricciardo.svg",
+    "description": "El showman del paddock, ocho veces ganador, regresó para aportar experiencia y sonrisas a la casa multicolor de Faenza."
+  },
+  {
+    "id": 14,
+    "name": "Valtteri Bottas",
+    "number": 77,
+    "nationality": "Finlandia",
+    "countryCode": "FI",
+    "team": "Kick Sauber",
+    "image": "/images/drivers/valtteri-bottas.svg",
+    "description": "El finlandés que dominó su época en Mercedes y ahora ejerce de veterano en el proyecto suizo hacia Audi."
+  },
+  {
+    "id": 15,
+    "name": "Kevin Magnussen",
+    "number": 20,
+    "nationality": "Dinamarca",
+    "countryCode": "DK",
+    "team": "Haas",
+    "image": "/images/drivers/kevin-magnussen.svg",
+    "description": "El danés del norte, duro, honesto y combativo. Protagonista de la resistencia americana de Haas desde 2017."
+  },
+  {
+    "id": 16,
+    "name": "Ayrton Senna",
+    "number": 12,
+    "nationality": "Brasil",
+    "countryCode": "BR",
+    "team": "McLaren",
+    "image": "/images/drivers/ayrton-senna.svg",
+    "description": "Tres títulos mundiales y el mejor piloto sobre mojado de la historia. Senna, el maestro de la lluvia, sigue siendo eterno."
+  },
+  {
+    "id": 17,
+    "name": "Nigel Mansell",
+    "number": 5,
+    "nationality": "Reino Unido",
+    "countryCode": "GB",
+    "team": "Williams",
+    "image": "/images/drivers/nigel-mansell.svg",
+    "description": "El león británico que conquistó el título de 1992 con el inolvidable FW14B. La afición de Silverstone lo bautizó como Our Nige."
+  },
+  {
+    "id": 18,
+    "name": "Michael Schumacher",
+    "number": 1,
+    "nationality": "Alemania",
+    "countryCode": "DE",
+    "team": "Ferrari",
+    "image": "/images/drivers/michael-schumacher.svg",
+    "description": "Siete títulos mundiales, 91 victorias y el hombre que convirtió Ferrari en un imperio. El Káiser marcó una era irreversible."
+  },
+  {
+    "id": 19,
+    "name": "Sebastian Vettel",
+    "number": 5,
+    "nationality": "Alemania",
+    "countryCode": "DE",
+    "team": "Ferrari",
+    "image": "/images/drivers/sebastian-vettel.svg",
+    "description": "Cuatro títulos consecutivos con Red Bull y el récord de precocidad en la historia del campeonato. Un piloto de otra época."
+  }
+]

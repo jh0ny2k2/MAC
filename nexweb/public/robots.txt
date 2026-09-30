@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /panel/
+Disallow: /login
+Disallow: /api/
+
+Sitemap: https://newwebdesing.netlify.app/sitemap.xml

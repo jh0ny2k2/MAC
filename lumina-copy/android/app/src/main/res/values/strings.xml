@@ -1,0 +1,7 @@
+<?xml version='1.0' encoding='utf-8'?>
+<resources>
+    <string name="app_name">Keptra</string>
+    <string name="title_activity_main">Keptra</string>
+    <string name="package_name">com.keptra.memories</string>
+    <string name="custom_url_scheme">com.keptra.memories</string>
+</resources>
