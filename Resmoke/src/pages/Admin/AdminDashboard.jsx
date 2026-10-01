@@ -8,7 +8,6 @@ import stripeAdminService from '../../services/stripeAdminService';
 import supabaseAdminService from '../../services/supabaseAdminService';
 import netlifyAdminService from '../../services/netlifyAdminService';
 import { useAuth } from '../../contexts/AuthContext';
-import { sendAnnouncementViaResend } from '../../utils/emailNotifications';
 
 ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Tooltip, Legend, Filler, ArcElement);
 
@@ -125,21 +124,9 @@ const AdminDashboard = () => {
       alert(`Correos inválidos:\n${invalids.join('\n')}`);
       return;
     }
-    try {
-      setSendingAnnouncement(true);
-      const nameMap = Object.fromEntries(usersList.map(u => [u.email, u.nombre]));
-      const ok = await sendAnnouncementViaResend(to, announcementSubject, announcementMessage, user?.nombre || 'Resmoke', nameMap);
-      if (ok) {
-        alert('Anuncio enviado correctamente');
-        closeAnnouncementModal();
-      } else {
-        alert('No se pudo enviar el anuncio');
-      }
-    } catch (e) {
-      alert(`Error enviando anuncio: ${e.message}`);
-    } finally {
-      setSendingAnnouncement(false);
-    }
+    // El canal de correo fue eliminado: el boton queda visible pero no envia nada.
+    alert('El envio de anuncios por email no esta disponible (canal de correo eliminado).');
+    setSendingAnnouncement(false);
   };
 
   useEffect(() => {

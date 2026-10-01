@@ -15,37 +15,7 @@ CREATE TABLE IF NOT EXISTS conversations (
 
 ALTER TABLE conversations DISABLE ROW LEVEL SECURITY;
 
--- Enable pg_net extension
-CREATE EXTENSION IF NOT EXISTS pg_net;
-
--- Function to send email via Resend
-CREATE OR REPLACE FUNCTION send_reply_email(
-  to_email text,
-  subject text,
-  message_text text
-) RETURNS void AS $$
-DECLARE
-  api_key text := 'REPLACE_WITH_RESEND_API_KEY';
-BEGIN
-  PERFORM net.http_post(
-    url := 'https://api.resend.com/emails',
-    headers := jsonb_build_object(
-      'Authorization', concat('Bearer ', api_key),
-      'Content-Type', 'application/json'
-    ),
-    body := jsonb_build_object(
-      'from', 'NexWeb <onboarding@resend.dev>',
-      'to', to_email,
-      'subject', subject,
-      'text', message_text
-    )
-  );
-END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
-
-GRANT EXECUTE ON FUNCTION send_reply_email TO anon;
-
--- Function to add reply + send email
+-- Function to add reply
 CREATE OR REPLACE FUNCTION add_admin_reply(
   p_request_id uuid,
   p_message text,
@@ -58,16 +28,6 @@ BEGIN
   INSERT INTO conversations (request_id, sender, message)
   VALUES (p_request_id, 'admin', p_message)
   RETURNING * INTO new_msg;
-
-  BEGIN
-    PERFORM send_reply_email(
-      p_client_email,
-      concat('Respuesta de NexWeb - ', p_client_name),
-      concat('Hola ', p_client_name, ',\n\n', p_message, '\n\nUn saludo,\nEquipo NexWeb')
-    );
-  EXCEPTION WHEN OTHERS THEN
-    NULL;
-  END;
 
   RETURN row_to_json(new_msg);
 END;

@@ -201,36 +201,3 @@ export const sendPasswordResetEmail = async (userEmail, userName, resetLink) => 
     return false;
   }
 };
-
-export const sendAnnouncementViaResend = async (toEmails, subject, message, senderName, nameMap = {}) => {
-  try {
-    const emails = Array.isArray(toEmails) ? toEmails : [toEmails];
-    const isDev = typeof window !== 'undefined' && window.location && window.location.hostname.includes('localhost');
-    const endpoint = isDev ? 'http://localhost:3001/api/email/send' : '/.netlify/functions/email-send';
-    const recipients = emails.map((email) => ({
-      email,
-      recipientName: nameMap[email] || (String(email).split('@')[0]) || ''
-    }));
-    const res = await fetch(endpoint, {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({
-        template: 'announcement',
-        subject,
-        recipients,
-        props: { title: subject, message, senderName }
-      })
-    });
-    const text = await res.text();
-    let data = {};
-    try { data = JSON.parse(text || '{}'); } catch { data = {}; }
-    if (!res.ok) {
-      const errMsg = (data && (data.error || data.errors)) ? JSON.stringify(data.error || data.errors) : `HTTP ${res.status}`;
-      throw new Error(errMsg);
-    }
-    return Boolean(data && (data.success || data.id || (Array.isArray(data.ids) && data.ids.length)));
-  } catch (e) {
-    console.error('Error enviando anuncio via Resend:', e);
-    return false;
-  }
-};

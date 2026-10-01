@@ -6,7 +6,6 @@
 [![Vite](https://img.shields.io/badge/Vite-7.0.4-646CFF?style=for-the-badge&logo=vite&logoColor=white)](https://vitejs.dev/)
 [![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white)](https://supabase.com/)
 [![TailwindCSS](https://img.shields.io/badge/Tailwind_CSS-4.1.11-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
-[![Resend](https://img.shields.io/badge/Resend-Email_API-FF4A4A?style=for-the-badge&logo=resend&logoColor=white)](https://resend.com/)
 [![React Email](https://img.shields.io/badge/React_Email-Components-000000?style=for-the-badge)](https://react.email/)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg?style=for-the-badge)](https://opensource.org/licenses/MIT)
 
@@ -103,7 +102,6 @@
 - **Google Analytics 4** - Análisis de comportamiento
 - **Google AdSense** - Monetización
 - **Google OAuth** - Autenticación social
-- **Resend + React Email** - Emails transaccionales y plantillas
 - **Leaflet** - Mapas interactivos
 
 ### **Development & Quality**
@@ -167,10 +165,6 @@ VITE_SUPABASE_ANON_KEY=tu_supabase_anon_key
 # Google Services
 VITE_GA_MEASUREMENT_ID=G-XXXXXXXXXX
 VITE_GOOGLE_CLIENT_ID=tu_google_client_id.apps.googleusercontent.com
-
-# Email (Resend)
-RESEND_API_KEY=tu_resend_api_key
-EMAIL_FROM="Resmoke <no-reply@resmoke.es>"
 
 # Google AdSense
 VITE_GOOGLE_ADSENSE_CLIENT=ca-pub-xxxxxxxxxx

@@ -19,7 +19,6 @@ export default function ContactForm() {
 
     const today = new Date().toLocaleDateString('es-ES')
     const subject = `[${form.type}] ${form.company || form.name} — ${form.message.slice(0, 60)}${form.message.length > 60 ? '...' : ''}`
-    const fullMessage = `Tipo: ${form.type}\nEmpresa: ${form.company || '—'}\nTeléfono: ${form.phone || '—'}\n\nMensaje:\n${form.message}`
 
     try {
       const { error: msgErr } = await supabase.from('messages').insert({
@@ -43,16 +42,6 @@ export default function ContactForm() {
 
       if (reqErr) {
         console.warn('requests insert failed (non-critical):', reqErr.message)
-      }
-
-      try {
-        await supabase.rpc('send_reply_email', {
-          to_email: 'info@nexweb.com',
-          subject: `Nuevo lead: ${form.name} — ${form.company || form.type}`,
-          message_text: fullMessage,
-        })
-      } catch {
-        console.log('Email notification not configured (optional)')
       }
 
       setStatus('sent')

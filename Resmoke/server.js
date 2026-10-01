@@ -3,15 +3,11 @@ import cors from 'cors';
 import dotenv from 'dotenv';
 import Stripe from 'stripe';
 import { createClient } from '@supabase/supabase-js';
-import React from 'react';
-import { Resend } from 'resend';
-import { render } from '@react-email/render';
 import bcrypt from 'bcryptjs';
 import CounterOfferAccepted from './src/emails/CounterOfferAccepted.js';
 import CounterOfferReceived from './src/emails/CounterOfferReceived.js';
 import ProductAdded from './src/emails/ProductAdded.js';
 import UnreadMessageNotification from './src/emails/UnreadMessageNotification.js';
-import Announcement from './src/emails/Announcement.js';
 import { BetaAnalyticsDataClient } from '@google-analytics/data';
 
 // Cargar variables de entorno
@@ -44,8 +40,6 @@ const port = process.env.PORT || 3001;
 
 // Inicializar Stripe con la clave secreta
 const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
-const resendApiKey = process.env.RESEND_API_KEY;
-const resend = resendApiKey ? new Resend(resendApiKey) : null;
 
 // Middleware
 app.use(cors());
@@ -259,15 +253,7 @@ app.post('/api/verify-email-start', async (req, res) => {
       .eq('id', user.id);
     if (saveError) return res.status(500).json({ success: false, error: saveError.message });
 
-    const verifyUrl = `${process.env.APP_BASE_URL || 'http://localhost:5173'}/verificacion-identidad`;
-    const resendApiKey = process.env.RESEND_API_KEY;
-    if (!resendApiKey) return res.status(500).json({ success: false, error: 'RESEND_API_KEY no configurada' });
-    const { Resend } = await import('resend');
-    const resend = new Resend(resendApiKey);
-    const from = process.env.EMAIL_FROM || 'Resmoke <onboarding@resend.dev>';
-    const html = `<!DOCTYPE html><html><body style="font-family:Arial"><div style="max-width:560px;margin:24px auto;padding:24px;border:1px solid #e5e7eb;border-radius:12px"><h1 style="font-size:20px;margin:0 0 12px 0">Código de verificación</h1><p>Hola ${nombre || ''}, tu código es:</p><div style="font-size:24px;font-weight:700;letter-spacing:3px">${code}</div><p>Este código caduca en 1 hora.</p><p>Vuelve a Resmoke y pégalo en el modal para finalizar.</p><p><a href="${verifyUrl}" style="display:inline-block;background:#111111;color:#fff;padding:12px 18px;border-radius:8px;text-decoration:none">Abrir Resmoke</a></p></div></body></html>`;
-    await resend.emails.send({ from, to: [email], subject: 'Tu código de verificación', html });
-    res.json({ success: true, token });
+    return res.status(501).json({ success: false, error: 'Verificacion por email no disponible: canal de correo eliminado' });
   } catch (err) {
     res.status(500).json({ success: false, error: err.message });
   }
@@ -1003,7 +989,6 @@ app.listen(port, () => {
   console.log(`🚀 Servidor backend ejecutándose en http://localhost:${port}`);
   console.log(`📊 Endpoint de salud: http://localhost:${port}/health`);
   console.log(`💳 Stripe configurado con clave: ${process.env.STRIPE_SECRET_KEY ? '✅' : '❌'}`);
-  console.log(`✉️ Resend configurado: ${process.env.RESEND_API_KEY ? '✅' : '❌'}`);
   console.log(`📈 GA property: ${gaPropertyId ? '✅' : '❌'}`);
   console.log(`📈 GA client email: ${gaClientEmail ? '✅' : '❌'}`);
   console.log(`📈 GA private key: ${gaPrivateKey ? '✅' : '❌'}`);
@@ -1245,96 +1230,4 @@ app.get('/api/ga/status', (req, res) => {
     clientEmailPresent: !!gaClientEmail,
     privateKeyPresent: !!gaPrivateKey
   });
-});
-// Endpoint de envío de emails (Resend) para desarrollo
-app.post('/api/email/send', async (req, res) => {
-  try {
-    if (!resend) {
-      return res.status(500).json({ success: false, error: 'RESEND_API_KEY no configurada' });
-    }
-
-    const body = req.body || {};
-    const toRaw = body.to;
-    const template = body.template;
-    const props = body.props || {};
-    const subject = body.subject || 'Notificación Resmoke';
-    const recipients = Array.isArray(body.recipients) ? body.recipients.filter(r => r && r.email) : [];
-
-    const toList = Array.isArray(toRaw) ? toRaw.filter(Boolean) : (typeof toRaw === 'string' ? [toRaw] : []);
-    const hasRecipients = recipients.length > 0;
-    const hasToList = toList.length > 0;
-    if (!template || (!hasRecipients && !hasToList)) {
-      return res.status(400).json({ success: false, error: 'Destinatarios o plantilla inválidos' });
-    }
-
-    const from = process.env.EMAIL_FROM || 'Resmoke <no-reply@resmoke.es>';
-
-    // Personalizado por destinatario (announcement)
-    if (template === 'announcement' && hasRecipients) {
-      if (!Announcement) {
-        return res.status(400).json({ success: false, error: 'Plantilla no disponible' });
-      }
-      const ids = [];
-      const errors = [];
-      for (const r of recipients) {
-        try {
-          const component = React.createElement(Announcement, {
-            ...(props || {}),
-            title: subject,
-            recipientName: r.recipientName || '',
-            senderName: props.senderName || '',
-          });
-          const html = await render(component);
-          const result = await resend.emails.send({ from, to: [r.email], subject, html });
-          const id = result?.id || result?.data?.id || null;
-          if (id) ids.push(id);
-          if (result?.error) errors.push({ email: r.email, error: result.error });
-          // Pequeña pausa para evitar rate limit agresivo
-          await new Promise(resolve => setTimeout(resolve, 150));
-        } catch (e) {
-          errors.push({ email: r.email, error: e.message });
-        }
-      }
-      if (errors.length > 0 && ids.length === 0) {
-        return res.status(500).json({ success: false, errors });
-      }
-      return res.json({ success: errors.length === 0, ids, errors });
-    }
-
-    // Envío no personalizado (una sola renderización)
-    let component = null;
-    switch (template) {
-      case 'unread_message_notification':
-        component = UnreadMessageNotification ? React.createElement(UnreadMessageNotification, props || {}) : null;
-        break;
-      case 'counter_offer_received':
-        component = CounterOfferReceived ? React.createElement(CounterOfferReceived, props || {}) : null;
-        break;
-      case 'product_added':
-        component = React.createElement(ProductAdded, props || {});
-        break;
-      case 'counter_offer_accepted':
-        component = CounterOfferAccepted ? React.createElement(CounterOfferAccepted, props || {}) : null;
-        break;
-      case 'announcement':
-        component = Announcement ? React.createElement(Announcement, props || {}) : null;
-        break;
-      default:
-        return res.status(400).json({ success: false, error: 'Plantilla no encontrada' });
-    }
-    if (!component) {
-      return res.status(400).json({ success: false, error: 'Plantilla no disponible' });
-    }
-    const html = await render(component);
-    const result = await resend.emails.send({ from, to: hasToList ? toList : recipients.map(r => r.email), subject, html });
-    const id = result?.id || result?.data?.id || null;
-    const error = result?.error || null;
-    if (error) {
-      return res.status(500).json({ success: false, error });
-    }
-    return res.json({ success: true, id });
-  } catch (err) {
-    console.error('❌ Error enviando email:', err);
-    return res.status(500).json({ success: false, error: err.message });
-  }
 });

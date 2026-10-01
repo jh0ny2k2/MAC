@@ -16,7 +16,7 @@
 - Soporte **EN/ES** con selector de idioma persistido.
 - Instalable como PWA y preparada (deps instaladas) para Capacitor/Android.
 
-El backend es **Supabase** (PostgreSQL + Auth + Storage + Edge Functions) y los correos transaccionales usan **Resend**.
+El backend es **Supabase** (PostgreSQL + Auth + Storage + Edge Functions).
 
 ---
 
@@ -32,7 +32,6 @@ El backend es **Supabase** (PostgreSQL + Auth + Storage + Edge Functions) y los 
 | Backend | Supabase (@supabase/supabase-js) |
 | Formularios | react-hook-form + zod |
 | Pagos | Lemon Squeezy (checkout externo + webhook) |
-| Emails | Resend (Edge Functions) |
 | Extras | browser-image-compression, jszip, file-saver, react-qr-code, react-helmet-async, vite-plugin-pwa, lucide-react, Capacitor (deps instaladas) |
 
 ---
@@ -80,7 +79,6 @@ El backend es **Supabase** (PostgreSQL + Auth + Storage + Edge Functions) y los 
 ├── supabase/
 │   ├── migrations/               # SQL versionado (schema, RLS, funciones, storage)
 │   └── functions/
-│       ├── send-email/index.ts          # Envío de correos vía Resend
 │       └── lemon-squeezy-webhook/index.ts # Webhook de pagos
 ├── public/                       # favicon.svg, logo.png, LogoNegro.png, logoBlanco.png, _redirects, robots.txt, sitemap.xml
 ├── vite.config.ts                # Plugins + PWA manifest
@@ -116,7 +114,6 @@ Si faltan variables, `src/lib/supabase.ts` lanza un error al arrancar.
 
 ```bash
 npx supabase login
-npx supabase secrets set RESEND_API_KEY=re_...
 npx supabase secrets set LEMON_SQUEEZY_WEBHOOK_SECRET=...
 ```
 
@@ -232,15 +229,11 @@ Flujo para invitados sin cuenta:
   - Detecta el plan por el `total` en céntimos.
   - Localiza el usuario por email (profiles o `auth.admin.listUsers`).
   - Actualiza `profiles.plan_tier` con la **service role key**.
-  - Envía email de bienvenida por Resend.
 - `Dashboard.tsx` / `MemoryDetail.tsx` leen `plan_tier` para mostrar el plan actual.
 
 ---
 
 ## 14. Edge Functions
-
-### `send-email`
-Proxy genérico de **Resend**: recibe `{ to, subject, html, text }` y envía. Se despliega con `--no-verify-jwt` (no usa auth).
 
 ### `lemon-squeezy-webhook`
 Webhook de pagos (ver §13). Requiere secret `LEMON_SQUEEZY_WEBHOOK_SECRET` (aunque el código actual **no firma/verifica el payload** — pendiente de endurecer).

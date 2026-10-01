@@ -150,22 +150,17 @@ exports.handler = async () => {
   const headers = { 'Content-Type': 'application/json' };
   try {
     const { createClient } = require('@supabase/supabase-js');
-    const { Resend } = require('resend');
 
     const supabaseUrl = process.env.SUPABASE_URL || process.env.VITE_SUPABASE_URL;
     const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
-    const resendApiKey = process.env.RESEND_API_KEY;
 
     if (!supabaseUrl) return { statusCode: 500, headers, body: JSON.stringify({ success: false, error: 'SUPABASE_URL no configurada' }) };
     if (!serviceKey) return { statusCode: 500, headers, body: JSON.stringify({ success: false, error: 'SUPABASE_SERVICE_ROLE_KEY no configurada' }) };
-    if (!resendApiKey) return { statusCode: 500, headers, body: JSON.stringify({ success: false, error: 'RESEND_API_KEY no configurada' }) };
 
     const supabase = createClient(supabaseUrl, serviceKey);
-    const resend = new Resend(resendApiKey);
 
     const appBaseUrl = process.env.APP_BASE_URL || process.env.URL || 'https://resmoke.es';
     const reviewUrl = `${appBaseUrl.replace(/\/$/, '')}/admin/productos/confirmaciones`;
-    const from = process.env.EMAIL_FROM || 'Resmoke <onboarding@resend.dev>';
     const developerEmail = process.env.MODERATION_ALERT_EMAIL || 'developerjhony@gmail.com';
 
     const { data: products, error } = await supabase
@@ -215,25 +210,6 @@ exports.handler = async () => {
 
       flagged += 1;
       processed.push({ id: product.id, decision: 'pending_human_review', violations });
-
-      const user = product?.Users || null;
-      const developerHtml = buildDeveloperHtml({ product, user, violations, productUrl, reviewUrl });
-      await resend.emails.send({
-        from,
-        to: [developerEmail],
-        subject: `Resmoke · Producto rechazado por moderación automática (${product.id})`,
-        html: developerHtml
-      });
-
-      if (user?.email) {
-        const userHtml = buildUserHtml({ userName: user?.nombre || '', productName: product?.name || '', productUrl });
-        await resend.emails.send({
-          from,
-          to: [user.email],
-          subject: 'Resmoke · Tu producto pasará a verificación humana',
-          html: userHtml
-        });
-      }
     }
 
     return {

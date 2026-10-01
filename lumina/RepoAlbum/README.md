@@ -11,7 +11,6 @@
 - **💸 Monetization Built-in**: Integrated with **Lemon Squeezy** for one-time payments (PRO Plan).
 - **☁️ Cloud Storage**: Powered by Supabase Storage for unlimited 4K photos/videos.
 - **📱 Mobile First**: Responsive design that works perfectly on any device without installing an app.
-- **📧 Transactional Emails**: Automated welcome and purchase confirmation emails via **Resend**.
 - **🌍 Internationalization**: Fully translated into English (EN) and Spanish (ES).
 - **⚡ Real-time Updates**: See new photos appear instantly as guests upload them.
 
@@ -21,7 +20,6 @@
 - **Styling**: Tailwind CSS, Lucide Icons
 - **Backend / Database**: Supabase (PostgreSQL, Auth, Storage, Edge Functions)
 - **Payments**: Lemon Squeezy
-- **Emails**: Resend
 - **State Management**: Zustand, React Query
 
 ## 📦 Installation
@@ -68,7 +66,6 @@ We use Supabase Edge Functions for webhooks and emails.
 
 2.  **Set Secrets**:
     ```bash
-    npx supabase secrets set RESEND_API_KEY=re_123...
     npx supabase secrets set LEMON_SQUEEZY_WEBHOOK_SECRET=your_secret
     ```
 
@@ -85,14 +82,6 @@ We use Supabase Edge Functions for webhooks and emails.
     `https://[project-ref].supabase.co/functions/v1/lemon-squeezy-webhook`
 3.  Listen for `order_created` events.
 
-## 📧 Emails (Resend)
-
-We use Resend to send:
-- Welcome emails on signup.
-- Purchase confirmation emails.
-- Support request notifications.
-
-Ensure you have a valid API Key and (optionally) a verified domain.
 
 ## 📄 License
 

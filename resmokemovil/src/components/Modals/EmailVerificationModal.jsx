@@ -40,7 +40,10 @@ const EmailVerificationModal = ({ onClose }) => {
       if (status === 404 || e.includes('usuario no encontrado')) {
         return 'No encontramos tu usuario. Cierra sesión e inicia sesión otra vez.'
       }
-      if (status === 500 && (e.includes('resend_api_key') || e.includes('supabase') || e.includes('no configurada'))) {
+      if (status === 501) {
+        return 'La verificación por email ya no está disponible en esta versión.'
+      }
+      if (status === 500 && (e.includes('supabase') || e.includes('no configurada'))) {
         return 'El servicio de verificación no está disponible ahora mismo. Inténtalo más tarde.'
       }
       if (e.includes('rate') || e.includes('limit') || status === 429) {

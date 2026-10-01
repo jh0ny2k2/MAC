@@ -17,8 +17,6 @@
   "dependencies": {
     "@emailjs/browser": "^4.4.1",
     "@google-analytics/data": "^5.2.1",
-    "@react-email/components": "1.0.1",
-    "@react-email/render": "2.0.0",
     "@react-oauth/google": "^0.12.2",
     "@sentry/react": "^10.32.1",
     "@stripe/stripe-js": "^8.0.0",
@@ -39,7 +37,6 @@
     "react-helmet-async": "^2.0.5",
     "react-leaflet": "^5.0.0",
     "react-router-dom": "^7.7.1",
-    "resend": "^6.0.1",
     "stripe": "^19.1.0",
     "tailwindcss": "^4.1.11",
     "workbox-core": "^7.4.0",

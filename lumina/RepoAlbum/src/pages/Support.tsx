@@ -37,30 +37,11 @@ export default function Support() {
     e.preventDefault();
     setSending(true);
 
-    try {
-        // Use our existing send-email function
-        await fetch('https://maoxewgqbagqglqckluw.supabase.co/functions/v1/send-email', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                to: 'chavesnano@gmail.com', // Support email
-                subject: `New Support Request from ${form.name}`,
-                html: `
-                  <h3>New Support Request</h3>
-                  <p><strong>Name:</strong> ${form.name}</p>
-                  <p><strong>Email:</strong> ${form.email}</p>
-                  <p><strong>Message:</strong></p>
-                  <p>${form.message}</p>
-                `
-            })
-        });
-        setSent(true);
-        setForm({ name: '', email: '', message: '' });
-    } catch (err) {
-        console.error(err);
-        alert('Failed to send message. Please try again.');
-    }
+    // The Resend delivery channel was removed; no backend endpoint is configured.
+    // Keep the form visible but do not pretend the message was delivered.
+    alert('Email support is temporarily unavailable. Please reach us directly.');
     setSending(false);
+    setSent(false);
   };
 
   return (

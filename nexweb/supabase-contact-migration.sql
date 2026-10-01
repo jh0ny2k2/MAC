@@ -33,32 +33,3 @@ ALTER TABLE requests ADD COLUMN IF NOT EXISTS phone text NOT NULL DEFAULT '';
 ALTER TABLE requests ADD COLUMN IF NOT EXISTS company text NOT NULL DEFAULT '';
 
 ALTER TABLE requests DISABLE ROW LEVEL SECURITY;
-
--- Send email function (for admin notifications)
-CREATE EXTENSION IF NOT EXISTS pg_net;
-
-CREATE OR REPLACE FUNCTION send_reply_email(
-  to_email text,
-  subject text,
-  message_text text
-) RETURNS void AS $$
-DECLARE
-  api_key text := 'REPLACE_WITH_RESEND_API_KEY';
-BEGIN
-  PERFORM net.http_post(
-    url := 'https://api.resend.com/emails',
-    headers := jsonb_build_object(
-      'Authorization', concat('Bearer ', api_key),
-      'Content-Type', 'application/json'
-    ),
-    body := jsonb_build_object(
-      'from', 'NexWeb <onboarding@resend.dev>',
-      'to', to_email,
-      'subject', subject,
-      'text', message_text
-    )
-  );
-END;
-$$ LANGUAGE plpgsql SECURITY DEFINER;
-
-GRANT EXECUTE ON FUNCTION send_reply_email TO anon;

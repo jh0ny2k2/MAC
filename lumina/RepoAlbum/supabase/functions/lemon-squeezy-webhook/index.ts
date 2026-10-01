@@ -3,7 +3,6 @@ import { createClient } from "https://esm.sh/@supabase/supabase-js@2"
 
 const SUPABASE_URL = Deno.env.get('SUPABASE_URL')
 const SUPABASE_SERVICE_ROLE_KEY = Deno.env.get('SUPABASE_SERVICE_ROLE_KEY')
-const RESEND_API_KEY = Deno.env.get('RESEND_API_KEY')
 
 serve(async (req) => {
   try {
@@ -66,32 +65,7 @@ serve(async (req) => {
       console.log('SUCCESS! USER UPGRADED:', email)
 
       // SEND EMAIL NOTIFICATION
-      if (RESEND_API_KEY) {
-          await fetch('https://api.resend.com/emails', {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Authorization': `Bearer ${RESEND_API_KEY}`,
-            },
-            body: JSON.stringify({
-                from: 'Lumina <onboarding@resend.dev>',
-                to: email,
-                subject: `Welcome to Lumina ${planName}! 🌟`,
-                html: `
-                  <div style="font-family: sans-serif; text-align: center; color: #333;">
-                    <h1 style="color: #E11D48;">Welcome to Lumina ${planName}!</h1>
-                    <p>Your payment was successful and your account has been upgraded.</p>
-                    <p>You now have access to all ${planName} features.</p>
-                    <br/>
-                    <a href="https://luminamemories.netlify.app/app" style="background: #E11D48; color: white; padding: 12px 24px; text-decoration: none; border-radius: 99px; font-weight: bold;">Go to Dashboard</a>
-                  </div>
-                `
-            }),
-          })
-          console.log('EMAIL SENT TO:', email)
-      }
-
-      return new Response(JSON.stringify({ success: true }), { headers: { 'Content-Type': 'application/json' } })
+            return new Response(JSON.stringify({ success: true }), { headers: { 'Content-Type': 'application/json' } })
     }
 
     return new Response('Event received but ignored', { status: 200 })
